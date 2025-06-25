@@ -17,7 +17,7 @@ Version:                2.62.7
 Manage your dotfiles across multiple diverse machines, securely.}
 
 %global golicenses      LICENSE
-%global godocs          README.md 
+%global godocs          README.md
 
 Name:           chezmoi
 Release:        %autorelease
@@ -28,6 +28,9 @@ URL:            %{gourl}
 Source:         %{gosource}
 
 BuildRequires: git
+%if 0%{?fedora}
+BuildRequires: go-rpm-macros
+%endif
 BuildRequires: golang >= 1.24
 
 %description %{common_description}
