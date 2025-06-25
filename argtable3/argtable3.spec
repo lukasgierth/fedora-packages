@@ -1,13 +1,11 @@
-%global shortcommit 116da6c
-
 Name:			argtable3
-Version:		3.3.0
+Version:		3.3.1
 Release:		%autorelease
 Summary:		ANSI C command-line parsing library that parses GNU-style command-line options.
 License:		BSD
 URL:			https://www.argtable.org
 
-Source0:		https://github.com/argtable/argtable3/archive/v%{version}.%{shortcommit}/argtable3-%{version}.tar.gz
+Source0:		https://github.com/argtable/argtable3/archive/v%{version}/argtable3-%{version}.tar.gz
 
 BuildRequires:	gcc
 BuildRequires:	pkgconfig
@@ -25,7 +23,7 @@ Requires: %{name}%{?_isa} = %{version}-%{release}
 Header and development files for using argtable3
 
 %prep
-%autosetup -n %{name}-%{version}.%{shortcommit}
+%autosetup -n %{name}-%{version}
 
 %build
 %cmake \
