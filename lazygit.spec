@@ -82,7 +82,7 @@ install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/%{name}
 %changelog
 ##########
 
-* Wed June 25 2025 Lukas Gierth <lukas.gierth@posteo.de> - 0.52.0-1
+* Wed Jun 25 2025 Lukas Gierth <lukas.gierth@posteo.de> - 0.52.0-1
 - Update to latest release
 
 * Fri May 23 2025 Dejan Lekic <dejan.lekic@gmail.com> - 0.51.1-1
