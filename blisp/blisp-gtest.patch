@@ -1,0 +1,72 @@
+From 4854f34f5df7087add344dd22e69b5a5d8495424 Mon Sep 17 00:00:00 2001
+From: Luca Magrone <luca@magrone.cc>
+Date: Sun, 9 Mar 2025 14:58:32 +0100
+Subject: [PATCH] Fix tests path and GTest sourcing
+
+In the main CMakeLists.txt the path for the tests source code is wrong.
+Fix it.
+
+Do not fetch GTest from the internet, use find package.
+
+Signed-off-by: Luca Magrone <luca@magrone.cc>
+---
+ CMakeLists.txt                                |  2 +-
+ .../src/file_parsers/dfu/tests/CMakeLists.txt | 20 +++++--------------
+ 2 files changed, 6 insertions(+), 16 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4fe0ea2..415bb59 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -105,5 +105,5 @@ endif()
+ 
+ 
+ if(COMPILE_TESTS)
+-    add_subdirectory(tools/blisp/src/cmd/dfu/tests)
++    add_subdirectory(tools/blisp/src/file_parsers/dfu/tests)
+ endif(COMPILE_TESTS)
+diff --git a/tools/blisp/src/file_parsers/dfu/tests/CMakeLists.txt b/tools/blisp/src/file_parsers/dfu/tests/CMakeLists.txt
+index 5ec8aed..08d248c 100644
+--- a/tools/blisp/src/file_parsers/dfu/tests/CMakeLists.txt
++++ b/tools/blisp/src/file_parsers/dfu/tests/CMakeLists.txt
+@@ -1,26 +1,16 @@
+ enable_language(CXX)
+ 
+ enable_testing()
+-include(FetchContent)
+-
+-
+-FetchContent_Declare(
+-        googletest
+-        GIT_REPOSITORY https://github.com/google/googletest.git
+-        GIT_TAG release-1.11.0
+-)
+-FetchContent_MakeAvailable(googletest)
+-add_library(GTest::GTest INTERFACE IMPORTED)
+-target_link_libraries(GTest::GTest INTERFACE gtest_main)
+-
++find_package(GTest REQUIRED)
+ 
+ add_executable(dfu_file_test test_dfu_file.cpp ../dfu_file.c ../dfu_crc.c)
+ 
+ target_link_libraries(dfu_file_test
+         PRIVATE
+-        GTest::GTest
++        GTest::gtest_main
++        file_parsers
+         )
+-include_directories(dfu_file_test PRIVATE ../)
++include_directories(dfu_file_test PRIVATE ../ ../../)
+ add_test(dfu_file_test_gtests dfu_file_test)
+ 
+ configure_file(Config.h.in ${CMAKE_BINARY_DIR}/Config.h)
+@@ -28,4 +18,4 @@ include_directories(${CMAKE_BINARY_DIR})
+ 
+ set(TEST_APP_NAME dfu_file_tests)
+ 
+-#add_custom_command(TARGET ${TEST_APP_NAME} COMMAND ./${TEST_APP_NAME} POST_BUILD)
+\ No newline at end of file
++#add_custom_command(TARGET ${TEST_APP_NAME} COMMAND ./${TEST_APP_NAME} POST_BUILD)
+-- 
+2.43.5
+
