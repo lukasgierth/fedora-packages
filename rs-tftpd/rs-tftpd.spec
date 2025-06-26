@@ -19,7 +19,7 @@ TODO
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked --feature client
+cargo build --release --locked --features client
 
 %install
 install -Dpm 0755 target/release/tftpd -t %{buildroot}%{_bindir}/
