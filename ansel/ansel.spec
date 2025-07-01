@@ -9,6 +9,8 @@ Source:  https://github.com/aurelienpierreeng/ansel/releases/download/v0.0.0/Ans
 Source2: ansel.desktop
 Source3: ansel.svg
 
+Requires: fuse
+
 %description
 TODO
 
