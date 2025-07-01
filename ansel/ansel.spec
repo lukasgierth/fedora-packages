@@ -15,8 +15,8 @@ TODO
 
 %install
 install -Dpm 0755 %{_sourcedir}/Ansel-0.0.0+%{version}-x86_64.AppImage %{buildroot}%{_bindir}/ansel
-install -Dpm 0644 %{_sourcedir}/ansel.desktop -t %{buildroot}/usr/share/applications/ansel.desktop
-install -Dpm 0644 %{_sourcedir}/ansel.svg -t %{buildroot}/usr/share/icons/ansel.svg
+install -Dpm 0644 %{_sourcedir}/ansel.desktop %{buildroot}/usr/share/applications/ansel.desktop
+install -Dpm 0644 %{_sourcedir}/ansel.svg %{buildroot}/usr/share/icons/ansel.svg
 
 %files
 %{_bindir}/ansel
