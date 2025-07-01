@@ -20,6 +20,8 @@ install -Dpm 0644 %{_sourcedir}/ansel.svg -t %{buildroot}/usr/share/icons/ansel.
 
 %files
 %{_bindir}/ansel
+/usr/share/applications/ansel.desktop
+/usr/share/icons/ansel.svg
 
 %changelog
 %autochangelog
