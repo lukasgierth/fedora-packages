@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    eza
-Version: 0.21.6
+Version: 0.22.0
 Release: %autorelease
 Summary: A modern replacement for ls
 # Main package is EUPL-1.2, remaining licenses are from statically linked dependencies
