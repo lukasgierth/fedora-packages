@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
-Name:    hex
+Name:    hex-rs
 Version: 0.6.0
 Release: %autorelease
 Summary: Futuristic take on hexdump.
 License: MIT
-URL:     https://github.com/sitkevij/%{name}
-Source:  https://github.com/sitkevij/%{name}/archive/refs/tags/v%{version}.tar.gz
+URL:     https://github.com/sitkevij/hex
+Source:  https://github.com/sitkevij/hex/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust
@@ -15,7 +15,7 @@ BuildRequires: rust
 TODO
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n hex-%{version}
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
