@@ -8,7 +8,7 @@ License: UNLICENSE
 URL:     https://github.com/joehillen/%{name}
 Source:  https://github.com/joehillen/%{name}/archive/refs/tags/%{version}.tar.gz
 
-Requires: awk
+Requires: gawk
 Requires: bash > 4.3
 Requires: fzf >= 0.27.1
 
