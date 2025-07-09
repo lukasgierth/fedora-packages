@@ -31,7 +31,7 @@ BuildRequires: git
 %if 0%{?fedora}
 BuildRequires: go-rpm-macros
 %endif
-BuildRequires: golang >= 1.24
+BuildRequires: golang >= 1.24.5
 
 %description %{common_description}
 
