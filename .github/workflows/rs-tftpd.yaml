@@ -1,10 +1,10 @@
-name: Ansel copr rebuild
+name: rs-tftpd copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - ansel/ansel.spec
+      - rs-tftpd/rs-tftpd.spec
   workflow_dispatch:
 
 jobs:
@@ -14,4 +14,4 @@ jobs:
       - name: curl
         uses: enflo/curl-action@master
         with:
-          curl: -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/ansel-bin/
+          curl: -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/rs-tftpd/
