@@ -1,0 +1,153 @@
+set allow-duplicate-recipes := false
+set ignore-comments := true
+
+_default:
+	#!/usr/bin/env bash
+	/usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
+
+reboot-to-bios:
+	#!/usr/bin/env bash
+	if [ -d /sys/firmware/efi ]; then
+		systemctl reboot --firmware-setup
+	else
+		echo "Rebooting to legacy BIOS from OS is not supported."
+	fi
+
+logs-this-boot:
+	sudo journalctl --no-hostname -b 0
+
+logs-last-boot:
+	sudo journalctl --no-hostname -b -1
+
+clean-system:
+	#!/usr/bin/env bash
+	podman image prune -af
+	podman volume prune -f
+	docker image prune -af
+	docker volume prune -f
+	flatpak uninstall --unused --noninteractive --assumeyes
+	rpm-ostree cleanup -bm
+
+update-system:
+	#!/usr/bin/env fish
+	flatpak update --assumeyes --noninteractive
+	mise upgrade
+	if type -q fisher
+		fisher update
+	end
+	rpm-ostree update
+
+[no-exit-message]
+update-firmware:
+	fwupdmgr refresh --force
+	fwupdmgr update
+
+changelogs:
+	rpm-ostree db diff --changelogs
+
+bios-info:
+	#!/usr/bin/env bash
+	echo "Manufacturer: $(sudo dmidecode -s baseboard-manufacturer)"
+	echo "Product Name: $(sudo dmidecode -s baseboard-product-name)"
+	echo "Version: $(sudo dmidecode -s bios-version)"
+	echo "Release Date: $(sudo dmidecode -s bios-release-date)"
+
+setup-groups:
+	#!/usr/bin/env bash
+	sudo groupadd -f docker
+	sudo groupadd --system -f libvirt
+	sudo usermod -a -G docker "$(whoami)"
+	sudo usermod -a -G libvirt "$(whoami)"
+
+create-firewall-zone-for-vnet:
+	#!/usr/bin/env bash
+	sudo firewall-cmd --permanent --new-zone=libvirt-vnet
+	sudo firewall-cmd --permanent --zone=libvirt-vnet --set-target=ACCEPT
+	sudo firewall-cmd --permanent --zone=libvirt-vnet --add-interface="vnet+"
+
+install-recommended-misetools:
+	#!/usr/bin/env bash
+	function implement() {
+		mise install "${1}"@latest
+		mise use -g "${1}"@latest
+	}
+
+	implement calicoctl
+	implement cosign
+	implement go
+	implement helm
+	implement k9s
+	implement kubecolor
+	implement kubectl
+	implement kustomize
+	implement nodejs
+	implement opentofu
+	implement talosctl
+	implement trivy
+	implement velero
+
+install-recommended-flatpaks:
+	#!/usr/bin/env bash
+	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+	flatpak install --noninteractive --assumeyes flathub \
+		be.alexandervanhee.gradia \
+		com.github.finefindus.eyedropper \
+		com.github.tchx84.Flatseal \
+		com.google.Chrome \
+		com.mattjakeman.ExtensionManager \
+		com.rafaelmardojai.Blanket \
+		dev.vencord.Vesktop \
+		hu.irl.cameractrls \
+		io.dbeaver.DBeaverCommunity \
+		io.dbeaver.DBeaverCommunity.Client.pgsql \
+		io.github.dweymouth.supersonic \
+		io.github.flattool.Warehouse \
+		io.gitlab.adhami3310.Impression \
+		io.mpv.Mpv \
+		it.mijorus.gearlever \
+		org.gnome.Calculator \
+		org.gnome.Characters \
+		org.gnome.Fractal \
+		org.gnome.Loupe \
+		org.gnome.Papers \
+		org.gnome.SimpleScan \
+		org.gnome.Solanum \
+		org.gnome.TextEditor \
+		org.gnome.seahorse.Application \
+		org.libreoffice.LibreOffice \
+		org.mozilla.Thunderbird \
+		org.mozilla.firefox \
+		org.musicbrainz.Picard \
+		org.raspberrypi.rpi-imager \
+		org.remmina.Remmina \
+		org.wezfurlong.wezterm \
+		page.tesk.Refine
+
+enable-automatic-updates:
+	#!/usr/bin/env bash
+	sudo systemctl enable --now flatpak-system-update.timer rpm-ostreed-automatic.timer
+	systemctl enable --now --user flatpak-user-update.timer
+
+disable-automatic-updates:
+	#!/usr/bin/env bash
+	sudo systemctl disable --now flatpak-system-update.timer rpm-ostreed-automatic.timer
+	systemctl disable --now --user flatpak-user-update.timer
+
+show-toolbox-examples:
+	#!/usr/bin/env bash
+	echo "Example for Images:"
+	echo "toolbox create -c rhel-8 -i registry.access.redhat.com/ubi8/toolbox:latest"
+	echo "toolbox create -c rhel-9 -i registry.access.redhat.com/ubi9/toolbox:latest"
+	echo "toolbox create -c rhel-10 -i registry.access.redhat.com/ubi10/toolbox:latest"
+	echo "toolbox create -c fedora-41 -i registry.fedoraproject.org/fedora-toolbox:41"
+
+show-distrobox-examples:
+	#!/usr/bin/env bash
+	echo "Example for Images:"
+	echo "distrobox create -c alma -i quay.io/toolbx-images/almalinux-toolbox:latest"
+	echo "distrobox create -c arch -i ghcr.io/ublue-os/arch-toolbox:latest"
+	echo "distrobox create -c centos -i quay.io/toolbx-images/centos-toolbox:latest"
+	echo "distrobox create -c debian -i quay.io/toolbx-images/debian-toolbox:unstable"
+	echo "distrobox create -c fedora -i ghcr.io/ublue-os/fedora-toolbox:latest"
+	echo "distrobox create -c opensuse -i quay.io/toolbx-images/opensuse-toolbox:tumbleweed"
+	echo "distrobox create -c ubuntu -i ghcr.io/ublue-os/ubuntu-toolbox:latest"
