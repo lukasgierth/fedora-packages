@@ -18,6 +18,8 @@ Requires: fd-find
 Requires: ripgrep
 Requires: fzf
 
+%description
+
 %prep
 %autosetup -n %{name}-%{version}
 
