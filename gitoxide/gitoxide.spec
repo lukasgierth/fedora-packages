@@ -8,9 +8,11 @@ License: MIT
 URL:     https://github.com/GitoxideLabs/%{name}
 Source:  https://github.com/GitoxideLabs/%{name}/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires: cargo
-BuildRequires: rust
+BuildRequires: cargo >= 1.39
+BuildRequires: rust >= 1.39
 BuildRequires: openssl-devel
+
+Requires: zlib
 
 %description
 
