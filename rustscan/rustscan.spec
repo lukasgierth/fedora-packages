@@ -14,6 +14,8 @@ BuildRequires: rust
 
 Requires: nmap
 
+%description
+
 %prep
 %autosetup -n RustScan-%{version}
 
