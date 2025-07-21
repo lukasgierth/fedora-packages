@@ -11,6 +11,8 @@ Source3: ansel.svg
 
 Requires: fuse
 
+%description
+
 %prep
 
 %build
