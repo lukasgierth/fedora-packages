@@ -11,6 +11,8 @@ Source:  https://github.com/Chleba/%{name}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: rust
 
+%description
+
 %prep
 %autosetup -n %{name}-%{version}
 
