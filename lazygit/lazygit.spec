@@ -4,7 +4,6 @@ Name:       lazygit
 Version:    0.53.0
 Release:    1%{?dist}
 Summary:    Simple, pragmatic TUI (Terminal UI) frontend for GIT
-
 License:    MIT
 URL:        https://github.com/jesseduffield/lazygit
 Source0:    %{url}/archive/v%{version}/%{name}-%{version}.tar.gz

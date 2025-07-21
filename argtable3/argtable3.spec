@@ -4,7 +4,6 @@ Release:		%autorelease
 Summary:		ANSI C command-line parsing library that parses GNU-style command-line options.
 License:		BSD
 URL:			https://www.argtable.org
-
 Source0:		https://github.com/argtable/argtable3/archive/v%{version}/argtable3-%{version}.tar.gz
 
 BuildRequires:	gcc

@@ -10,15 +10,13 @@ Source:  https://github.com/sxyazi/%{name}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust
+
 Requires: file
 Requires: jq
 Requires: ffmpeg
 Requires: fd-find
 Requires: ripgrep
 Requires: fzf
-
-%description
-TODO
 
 %prep
 %autosetup -n %{name}-%{version}

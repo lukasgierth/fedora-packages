@@ -18,9 +18,6 @@ BuildRequires: rust
 
 Requires: curl
 
-%description
-TODO
-
 %prep
 %autosetup -n %{name}-%{version}
 

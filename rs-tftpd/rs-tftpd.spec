@@ -11,9 +11,6 @@ Source:  https://github.com/altugbakan/%{name}/archive/refs/tags/%{version}.tar.
 BuildRequires: cargo
 BuildRequires: rust
 
-%description
-TODO
-
 %prep
 %autosetup -n %{name}-%{version}
 

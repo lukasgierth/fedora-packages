@@ -10,7 +10,6 @@ Release:		%{autorelease}%{?pre:~%pre}
 Summary:		ISP tool for Bouffalo Labs RISC-V Microcontrollers and SoCs
 License:		MIT
 URL:			https://github.com/pine64/%{name}
-
 Source0:		https://github.com/pine64/%{name}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
 
 # Fix tests path

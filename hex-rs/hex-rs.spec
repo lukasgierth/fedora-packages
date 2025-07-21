@@ -11,9 +11,6 @@ Source:  https://github.com/sitkevij/hex/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: rust
 
-%description
-TODO
-
 %prep
 %autosetup -n hex-%{version}
 

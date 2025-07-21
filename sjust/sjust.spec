@@ -9,9 +9,6 @@ Source2: sjust
 
 Requires: just
 
-%description
-TODO
-
 %prep
 
 %build

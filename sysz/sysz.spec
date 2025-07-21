@@ -12,9 +12,6 @@ Requires: gawk
 Requires: bash > 4.3
 Requires: fzf >= 0.27.1
 
-%description
-TODO
-
 %prep
 %autosetup -n %{name}-%{version}
 
