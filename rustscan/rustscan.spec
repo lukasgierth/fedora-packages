@@ -7,6 +7,7 @@ Summary: The Modern Port Scanner. Find ports quickly (3 seconds at its fastest).
 License: GPLv3
 URL:     https://github.com/bee-san/RustScan
 Source:  https://github.com/bee-san/RustScan/archive/refs/tags/%{version}.tar.gz
+Source0: RustScan-%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust
@@ -14,7 +15,7 @@ BuildRequires: rust
 Requires: nmap
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n RustScan-%{version}
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
