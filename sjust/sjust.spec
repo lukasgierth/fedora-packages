@@ -1,6 +1,6 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 0.2
+Version: 0.3
 Release: %autorelease
 Summary: Helper based on just
 License: GPLv3
@@ -20,10 +20,12 @@ Requires: coreutils
 
 %install
 install -Dpm 0755 %{_sourcedir}/sjust %{buildroot}%{_bindir}/sjust
+install -Dpm 0755 %{_sourcedir}/sjust-interactive %{buildroot}%{_bindir}/sjust-interactive
 install -Dpm 0644 %{_sourcedir}/justfile %{buildroot}/usr/share/sjust/justfile
 
 %files
 %{_bindir}/sjust
+%{_bindir}/sjust-interactive
 /usr/share/sjust/justfile
 
 %changelog
