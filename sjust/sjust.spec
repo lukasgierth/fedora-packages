@@ -8,6 +8,9 @@ Source1: justfile
 Source2: sjust
 
 Requires: just
+Requires: fzf
+Requires: gawk
+Requires: coreutils
 
 %description
 
