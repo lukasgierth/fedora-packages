@@ -6,6 +6,7 @@ Summary: Helper based on just
 License: GPLv3
 Source1: justfile
 Source2: sjust
+Source3: sjust-interactive
 
 Requires: just
 Requires: fzf
