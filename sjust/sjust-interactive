@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+/usr/bin/just --justfile /usr/share/sjust/justfile $(/usr/bin/just --justfile /usr/share/sjust/justfile | tail -n +2 | awk '{print $2}' | fzf)
