@@ -79,6 +79,9 @@ install-recommended-misetools:
 	implement k9s
 	implement kubecolor
 	implement kubectl
+        implement kubectx
+        implement kubens
+        implement kubie
 	implement kustomize
 	implement nodejs
 	implement opentofu
