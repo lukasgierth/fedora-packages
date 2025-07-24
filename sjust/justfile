@@ -73,17 +73,14 @@ install-recommended-misetools:
 	}
 
 	implement calicoctl
-	implement cosign
 	implement go
 	implement helm
-	implement k9s
 	implement kubecolor
 	implement kubectl
         implement kubectx
         implement kubens
         implement kubie
 	implement kustomize
-	implement nodejs
 	implement opentofu
 	implement talosctl
 	implement trivy
