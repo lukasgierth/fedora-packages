@@ -77,9 +77,9 @@ install-recommended-misetools:
 	implement helm
 	implement kubecolor
 	implement kubectl
-        implement kubectx
-        implement kubens
-        implement kubie
+	implement kubectx
+	implement kubens
+	implement kubie
 	implement kustomize
 	implement opentofu
 	implement talosctl
