@@ -5,7 +5,7 @@
 %global pre %{date}.%{shortcommit}
 
 Name:			blisp
-Version:		0.0.4
+Version:		0.0.5
 Release:		%{autorelease}%{?pre:~%pre}
 Summary:		ISP tool for Bouffalo Labs RISC-V Microcontrollers and SoCs
 License:		MIT
