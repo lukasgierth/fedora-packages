@@ -28,7 +28,7 @@ clean-system:
 	flatpak uninstall --unused --noninteractive --assumeyes
 	rpm-ostree cleanup -bm
 
-update-system:
+update:
 	#!/usr/bin/env fish
 	flatpak update --assumeyes --noninteractive
 	mise upgrade
@@ -38,7 +38,7 @@ update-system:
 	rpm-ostree update
 
 [no-exit-message]
-update-firmware:
+firmware:
 	fwupdmgr refresh --force
 	fwupdmgr update
 
@@ -75,7 +75,6 @@ install-recommended-misetools:
 	implement calicoctl
 	implement go
 	implement helm
-	implement kubecolor
 	implement kubectl
 	implement kubectx
 	implement kubens
