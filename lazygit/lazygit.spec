@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       lazygit
-Version:    0.54.0
+Version:    0.54.1
 Release:    1%{?dist}
 Summary:    Simple, pragmatic TUI (Terminal UI) frontend for GIT
 License:    MIT
@@ -47,7 +47,7 @@ for you.
 
 go get
 go build \
-    -ldflags "-X main.version=%{version}" \
+    -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}
 
 %if 0%{?fedora}
