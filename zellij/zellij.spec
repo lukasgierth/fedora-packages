@@ -2,7 +2,7 @@
 
 Name:       zellij
 Version:    0.43.0
-Release:    2%{?dist}
+Release:    3%{?dist}
 Summary:    A terminal workspace with batteries included.
 License:    MIT
 URL:        https://github.com/zellij-org/zellij
@@ -27,7 +27,7 @@ Zellij is a workspace aimed at developers, ops-oriented people and anyone who lo
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/zellij -t %{buildroot}%{_bindir}/
