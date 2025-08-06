@@ -30,7 +30,7 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release
 
 %install
-install -Dpm 0755 target/release/rustscan -t %{buildroot}%{_bindir}/
+install -Dpm 0755 target/release/zellij -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE.md
