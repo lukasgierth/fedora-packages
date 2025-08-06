@@ -76,3 +76,6 @@ install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/%{name}
 %if 0%{?fedora}
 %{_mandir}/man1/*.1*
 %endif
+
+%changelog
+%autochangelog
