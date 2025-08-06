@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    git-cliff
-Version: 2.9.1
+Version: 2.10.0
 Release: %autorelease
 Summary: A highly customizable Changelog Generator that follows Conventional Commit specifications.
 License: MIT
