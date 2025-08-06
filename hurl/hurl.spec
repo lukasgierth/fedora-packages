@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    hurl
-Version: 6.1.1
+Version: 7.0.0
 Release: %autorelease
 Summary: Hurl is a command line tool that runs HTTP requests defined in a simple plain text format
 License: APACHEv2
