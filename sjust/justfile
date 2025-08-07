@@ -19,16 +19,8 @@ logs-this-boot:
 logs-last-boot:
 	sudo journalctl --no-hostname -b -1
 
-clean-system:
-	#!/usr/bin/env bash
-	podman image prune -af
-	podman volume prune -f
-	docker image prune -af
-	docker volume prune -f
-	flatpak uninstall --unused --noninteractive --assumeyes
-	rpm-ostree cleanup -bm
 
-update:
+system-update:
 	#!/usr/bin/env fish
 	flatpak update --assumeyes --noninteractive
 	mise upgrade
@@ -37,8 +29,17 @@ update:
 	end
 	rpm-ostree update
 
+system-clean:
+	#!/usr/bin/env bash
+	podman image prune -af
+	podman volume prune -f
+	docker image prune -af
+	docker volume prune -f
+	flatpak uninstall --unused --noninteractive --assumeyes
+	rpm-ostree cleanup -bm
+
 [no-exit-message]
-firmware:
+firmware-update:
 	fwupdmgr refresh --force
 	fwupdmgr update
 
@@ -84,43 +85,6 @@ install-recommended-misetools:
 	implement talosctl
 	implement trivy
 	implement velero
-
-install-recommended-flatpaks:
-	#!/usr/bin/env bash
-	flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-	flatpak install --noninteractive --assumeyes flathub \
-		be.alexandervanhee.gradia \
-		com.github.finefindus.eyedropper \
-		com.github.tchx84.Flatseal \
-		com.google.Chrome \
-		com.mattjakeman.ExtensionManager \
-		com.rafaelmardojai.Blanket \
-		dev.vencord.Vesktop \
-		hu.irl.cameractrls \
-		io.dbeaver.DBeaverCommunity \
-		io.dbeaver.DBeaverCommunity.Client.pgsql \
-		io.github.dweymouth.supersonic \
-		io.github.flattool.Warehouse \
-		io.gitlab.adhami3310.Impression \
-		io.mpv.Mpv \
-		it.mijorus.gearlever \
-		org.gnome.Calculator \
-		org.gnome.Characters \
-		org.gnome.Fractal \
-		org.gnome.Loupe \
-		org.gnome.Papers \
-		org.gnome.SimpleScan \
-		org.gnome.Solanum \
-		org.gnome.TextEditor \
-		org.gnome.seahorse.Application \
-		org.libreoffice.LibreOffice \
-		org.mozilla.Thunderbird \
-		org.mozilla.firefox \
-		org.musicbrainz.Picard \
-		org.raspberrypi.rpi-imager \
-		org.remmina.Remmina \
-		org.wezfurlong.wezterm \
-		page.tesk.Refine
 
 enable-automatic-updates:
 	#!/usr/bin/env bash
