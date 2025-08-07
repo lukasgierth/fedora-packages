@@ -1,6 +1,6 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 0.7
+Version: 0.8
 Release: %autorelease
 Summary: Helper based on just
 License: GPLv3
