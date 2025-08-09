@@ -1,11 +1,11 @@
 %global debug_package %{nil}
 
 Name:       zellij
-Version:    0.43.0
-Release:    3%{?dist}
+Version:    0.43.1
+Release:    1%{?dist}
 Summary:    A terminal workspace with batteries included.
 License:    MIT
-URL:        https://github.com/zellij-org/zellij
+URL:        https://github.com/zellij-org/%{name}
 Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo >= 1.39
@@ -27,15 +27,25 @@ Zellij is a workspace aimed at developers, ops-oriented people and anyone who lo
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release --locked --no-default-features --features plugins_from_target,vendored_curl
 
 %install
 install -Dpm 0755 target/release/zellij -t %{buildroot}%{_bindir}/
+# FIX:
+# install -Dpm 0644 assets/completions/zellij.bash -t %{buildroot}%{_datadir}/bash-completion/completions/zellij.bash
+# install -Dpm 0644 assets/completions/zellij.fish -t %{buildroot}%{_datadir}/fish/vendor_completions.d/zellij.fish
+# install -Dpm 0644 assets/completions/_zellij -t %{buildroot}%{_datadir}/zsh/vendor-completions/_zellij
+# install -Dpm 0644 assets/man/zellij.1 -t %{buildroot}%{_mandir}/man1/zellij.1
 
 %files
 %license LICENSE.md
 %doc README.md
 %{_bindir}/zellij
+# %{_datadir}/bash-completion/completions/zellij.bash
+# %{_datadir}/fish/vendor_completions.d/zellij.fish
+# %{_datadir}/zsh/vendor-completions/_zellij
+# %{_mandir}/man1/zellij.1
+
 
 %changelog
 %autochangelog
