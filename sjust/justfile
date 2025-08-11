@@ -86,16 +86,6 @@ install-recommended-misetools:
 	implement trivy
 	implement velero
 
-enable-automatic-updates:
-	#!/usr/bin/env bash
-	sudo systemctl enable --now flatpak-system-update.timer rpm-ostreed-automatic.timer
-	systemctl enable --now --user flatpak-user-update.timer
-
-disable-automatic-updates:
-	#!/usr/bin/env bash
-	sudo systemctl disable --now flatpak-system-update.timer rpm-ostreed-automatic.timer
-	systemctl disable --now --user flatpak-user-update.timer
-
 show-toolbox-examples:
 	#!/usr/bin/env bash
 	echo "Example for Images:"
