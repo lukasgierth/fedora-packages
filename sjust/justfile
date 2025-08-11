@@ -27,7 +27,7 @@ system-update:
 	if type -q fisher
 		fisher update
 	end
-	rpm-ostree update
+	sudo bootc update
 
 system-clean:
 	#!/usr/bin/env bash
@@ -36,7 +36,7 @@ system-clean:
 	docker image prune -af
 	docker volume prune -f
 	flatpak uninstall --unused --noninteractive --assumeyes
-	rpm-ostree cleanup -bm
+	# rpm-ostree cleanup -bm
 
 [no-exit-message]
 firmware-update:
