@@ -97,10 +97,10 @@ show-toolbox-examples:
 show-distrobox-examples:
 	#!/usr/bin/env bash
 	echo "Example for Images:"
-	echo "distrobox create -c alma -i quay.io/toolbx-images/almalinux-toolbox:latest"
-	echo "distrobox create -c arch -i ghcr.io/ublue-os/arch-toolbox:latest"
-	echo "distrobox create -c centos -i quay.io/toolbx-images/centos-toolbox:latest"
-	echo "distrobox create -c debian -i quay.io/toolbx-images/debian-toolbox:unstable"
-	echo "distrobox create -c fedora -i ghcr.io/ublue-os/fedora-toolbox:latest"
-	echo "distrobox create -c opensuse -i quay.io/toolbx-images/opensuse-toolbox:tumbleweed"
-	echo "distrobox create -c ubuntu -i ghcr.io/ublue-os/ubuntu-toolbox:latest"
+	echo "distrobox create -n alma -i quay.io/toolbx-images/almalinux-toolbox:latest"
+	echo "distrobox create -n arch -i ghcr.io/ublue-os/arch-toolbox:latest"
+	echo "distrobox create -n centos -i quay.io/toolbx-images/centos-toolbox:latest"
+	echo "distrobox create -n debian -i quay.io/toolbx-images/debian-toolbox:unstable"
+	echo "distrobox create -n fedora -i ghcr.io/ublue-os/fedora-toolbox:latest"
+	echo "distrobox create -n opensuse -i quay.io/toolbx-images/opensuse-toolbox:tumbleweed"
+	echo "distrobox create -n ubuntu -i ghcr.io/ublue-os/ubuntu-toolbox:latest"
