@@ -27,7 +27,7 @@ system-update:
 	if type -q fisher
 		fisher update
 	end
-	sudo bootc update
+	sudo bootc upgrade
 
 system-clean:
 	#!/usr/bin/env bash
