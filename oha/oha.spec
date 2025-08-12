@@ -1,0 +1,32 @@
+%global debug_package %{nil}
+
+Name:    oha
+Version: 1.9.0
+Release: %autorelease
+Summary: Ohayou(おはよう), HTTP load generator, inspired by rakyll/hey with tui animation.
+License: MIT
+URL:     https://github.com/hatoo/%{name}
+Source:  https://github.com/hatoo/%{name}/archive/refs/tags/v%{version}.tar.gz
+
+BuildRequires: cargo
+BuildRequires: rust
+
+%description
+
+%prep
+%autosetup -n %{name}-%{version}
+
+%build
+export RUSTFLAGS="%{build_rustflags}"
+cargo build --release --locked
+
+%install
+install -Dpm 0755 target/release/oha -t %{buildroot}%{_bindir}/
+
+%files
+%license LICENSE
+%doc README.md
+%{_bindir}/oha
+
+%changelog
+%autochangelog
