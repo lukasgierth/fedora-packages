@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    rainfrog
-Version: 0.3.4
+Version: 0.3.5
 Release: %autorelease
 Summary: A database tool for the terminal
 License: MIT
