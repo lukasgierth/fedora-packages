@@ -22,12 +22,12 @@ logs-last-boot:
 
 system-update:
 	#!/usr/bin/env fish
+	sudo bootc upgrade
 	flatpak update --assumeyes --noninteractive
 	mise upgrade
 	if type -q fisher
 		fisher update
 	end
-	sudo bootc upgrade
 
 system-clean:
 	#!/usr/bin/env bash
