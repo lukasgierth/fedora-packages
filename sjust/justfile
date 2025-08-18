@@ -14,20 +14,20 @@ reboot-to-bios:
 	fi
 
 logs-this-boot:
+	#!/usr/bin/env bash
 	sudo journalctl --no-hostname -b 0
 
 logs-last-boot:
+	#!/usr/bin/env bash
 	sudo journalctl --no-hostname -b -1
 
 
 system-update:
-	#!/usr/bin/env fish
-	sudo bootc upgrade
-	flatpak update --assumeyes --noninteractive
+	#!/usr/bin/env bash
+	fish -c "if type -q fisher; fisher update; end"
 	mise upgrade
-	if type -q fisher
-		fisher update
-	end
+	flatpak update --assumeyes --noninteractive
+	sudo bootc upgrade
 
 system-clean:
 	#!/usr/bin/env bash
@@ -36,14 +36,15 @@ system-clean:
 	docker image prune -af
 	docker volume prune -f
 	flatpak uninstall --unused --noninteractive --assumeyes
-	# rpm-ostree cleanup -bm
 
 [no-exit-message]
 firmware-update:
+	#!/usr/bin/env bash
 	fwupdmgr refresh --force
 	fwupdmgr update
 
 changelogs:
+	#!/usr/bin/env bash
 	rpm-ostree db diff --changelogs
 
 bios-info:
