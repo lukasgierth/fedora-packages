@@ -1,6 +1,6 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 1.0
+Version: 1.1
 Release: %autorelease
 Summary: Helper based on just
 License: GPLv3
@@ -8,10 +8,12 @@ Source1: justfile
 Source2: sjust
 Source3: sjust-interactive
 
-Requires: just
+Requires: bash
+Requires: coreutils
+Requires: fish
 Requires: fzf
 Requires: gawk
-Requires: coreutils
+Requires: just
 
 %description
 

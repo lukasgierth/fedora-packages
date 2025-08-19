@@ -67,6 +67,23 @@ create-firewall-zone-for-vnet:
 	sudo firewall-cmd --permanent --zone=libvirt-vnet --set-target=ACCEPT
 	sudo firewall-cmd --permanent --zone=libvirt-vnet --add-interface="vnet+"
 
+install-recommended-fisher-plugins:
+	#!/usr/bin/env fish
+	function install-plugin
+		fisher install $argv[1]
+	end
+	install-plugin blackjid/plugin-kubectl
+	install-plugin jethrokuan/z
+	install-plugin jorgebucaran/autopair.fish
+	install-plugin jorgebucaran/getopts.fish
+	install-plugin jorgebucaran/hydro
+	install-plugin jorgebucaran/replay.fish
+	install-plugin lewisacidic/fish-git-abbr
+	install-plugin nickeb96/puffer-fish
+	install-plugin patrickf1/fzf.fish
+	#install-plugin meaningful-ooo/sponge
+
+
 install-recommended-misetools:
 	#!/usr/bin/env bash
 	function implement() {
