@@ -98,9 +98,7 @@ install-recommended-misetools:
 	implement kubens
 	implement kubie
 	implement kustomize
-	implement node
 	implement opentofu
-	implement ruby
 	implement talosctl
 	implement trivy
 	implement velero
