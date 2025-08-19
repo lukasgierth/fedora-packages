@@ -73,7 +73,6 @@ install-recommended-fisher-plugins:
 		fisher install $argv[1]
 	end
 	install-plugin blackjid/plugin-kubectl
-	install-plugin jethrokuan/z
 	install-plugin jorgebucaran/autopair.fish
 	install-plugin jorgebucaran/getopts.fish
 	install-plugin jorgebucaran/hydro
