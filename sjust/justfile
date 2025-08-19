@@ -61,18 +61,13 @@ setup-groups:
 	sudo usermod -a -G docker "$(whoami)"
 	sudo usermod -a -G libvirt "$(whoami)"
 
-create-firewall-zone-for-vnet:
-	#!/usr/bin/env bash
-	sudo firewall-cmd --permanent --new-zone=libvirt-vnet
-	sudo firewall-cmd --permanent --zone=libvirt-vnet --set-target=ACCEPT
-	sudo firewall-cmd --permanent --zone=libvirt-vnet --add-interface="vnet+"
-
 install-recommended-fisher-plugins:
 	#!/usr/bin/env fish
 	function install-plugin
 		fisher install $argv[1]
 	end
 	install-plugin blackjid/plugin-kubectl
+	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
 	install-plugin jorgebucaran/getopts.fish
 	install-plugin jorgebucaran/hydro
