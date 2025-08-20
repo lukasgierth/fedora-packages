@@ -1,0 +1,187 @@
+<background>
+	<starttime>
+		<year>2024</year>
+		<month>1</month>
+		<day>1</day>
+		<hour>0</hour>
+		<minute>0</minute>
+		<second>0</second>
+	</starttime>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/0.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/0.jxl</from>
+		<to>/usr/share/backgrounds/aurora/2.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/2.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/2.jxl</from>
+		<to>/usr/share/backgrounds/aurora/4.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/4.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/4.jxl</from>
+		<to>/usr/share/backgrounds/aurora/5.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/5.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/5.jxl</from>
+		<to>/usr/share/backgrounds/aurora/6.jxl</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/6.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/6.jxl</from>
+		<to>/usr/share/backgrounds/aurora/8.jxl</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/8.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/8.jxl</from>
+		<to>/usr/share/backgrounds/aurora/10.jxl</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/10.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/10.jxl</from>
+		<to>/usr/share/backgrounds/aurora/11.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/11.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/11.jxl</from>
+		<to>/usr/share/backgrounds/aurora/12.jxl</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/12.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/12.jxl</from>
+		<to>/usr/share/backgrounds/aurora/14.jxl</to>
+	</transition>
+
+	<static>
+		<file>/usr/share/backgrounds/aurora/14.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/14.jxl</from>
+		<to>/usr/share/backgrounds/aurora/15.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/15.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/15.jxl</from>
+		<to>/usr/share/backgrounds/aurora/16.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/16.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/16.jxl</from>
+		<to>/usr/share/backgrounds/aurora/17.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/17.jxl</file>
+		<duration>3000.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/17.jxl</from>
+		<to>/usr/share/backgrounds/aurora/18.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/18.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/18.jxl</from>
+		<to>/usr/share/backgrounds/aurora/20.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/20.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/20.jxl</from>
+		<to>/usr/share/backgrounds/aurora/22.jxl</to>
+	</transition>
+	
+	<static>
+		<file>/usr/share/backgrounds/aurora/22.jxl</file>
+		<duration>6600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>600</duration>
+		<from>/usr/share/backgrounds/aurora/22.jxl</from>
+		<to>/usr/share/backgrounds/aurora/0.jxl</to>
+	</transition>
+	
+</background>
