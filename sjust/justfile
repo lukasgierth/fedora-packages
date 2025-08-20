@@ -83,6 +83,7 @@ install-recommended-misetools:
 		mise use -g "${1}"@latest
 	}
 
+	implement act
 	implement calicoctl
 	implement go
 	implement helm
