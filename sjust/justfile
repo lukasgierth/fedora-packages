@@ -54,11 +54,9 @@ bios-info:
 	echo "Version: $(sudo dmidecode -s bios-version)"
 	echo "Release Date: $(sudo dmidecode -s bios-release-date)"
 
-setup-groups:
+setup-libvirt-group:
 	#!/usr/bin/env bash
-	sudo groupadd -f docker
 	sudo groupadd --system -f libvirt
-	sudo usermod -a -G docker "$(whoami)"
 	sudo usermod -a -G libvirt "$(whoami)"
 
 install-recommended-fisher-plugins:
