@@ -1,5 +1,4 @@
-name: Renovate
-on:
+name: renovate
   workflow_dispatch:
   schedule:
     - cron: "0 6 * * 5" # Friday 6 UTC
@@ -14,3 +13,5 @@ jobs:
         uses: renovatebot/github-action@v43.0.7
         with:
           token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          RENOVATE_REPOSITORIES: ${{ github.repository }}
