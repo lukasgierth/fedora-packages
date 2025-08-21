@@ -1,27 +1,16 @@
-%global commit e45941c45e2418b2bb7e3dab49468a8f4d132439
-%global date 20250304
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-
-%global pre %{date}.%{shortcommit}
-
 Name:			blisp
 # renovate: datasource=github-releases depName=pine64/blisp
 Version:		0.0.5
-Release:		%{autorelease}%{?pre:~%pre}
+Release:		%{autorelease}
 Summary:		ISP tool for Bouffalo Labs RISC-V Microcontrollers and SoCs
 License:		MIT
 URL:			https://github.com/pine64/%{name}
-Source0:		https://github.com/pine64/%{name}/archive/%{commit}/%{name}-%{shortcommit}.tar.gz
-
-# Fix tests path
-Patch0:			blisp-gtest.patch
+Source:			%{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires:	cmake
 BuildRequires:	gcc-c++
-BuildRequires:	gtest-devel
 BuildRequires:	libserialport-devel
 BuildRequires:	argtable3-devel
-
 Requires:		libblisp%{?_isa} = %{version}-%{release}
 
 %description
@@ -41,14 +30,13 @@ Requires:		libblisp%{?_isa} = %{version}-%{release}
 Development files for Bouffalo Labs RISC-V Microcontrollers and SoCs
 
 %prep
-%autosetup -p1 -n %{name}-%{commit}
+%autosetup -p1 -n %{name}-%{version}
 
 %build
 %cmake \
 	-DBLISP_BUILD_CLI=ON \
 	-DBLISP_USE_SYSTEM_LIBRARIES=ON \
-	-DCOMPILE_TESTS=ON
-
+	-DCOMPILE_TESTS=OFF
 %cmake_build
 
 %install
@@ -72,4 +60,3 @@ Development files for Bouffalo Labs RISC-V Microcontrollers and SoCs
 
 %changelog
 %autochangelog
-
