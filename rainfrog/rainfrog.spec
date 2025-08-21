@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    rainfrog
+# renovate: datasource=github-releases depName=achristmascarl/rainfrog
 Version: 0.3.5
 Release: %autorelease
 Summary: A database tool for the terminal

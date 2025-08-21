@@ -10,6 +10,7 @@
 
 # https://github.com/twpayne/chezmoi
 %global goipath         github.com/twpayne/chezmoi
+# renovate: datasource=github-releases depName=twpayne/chezmoi
 Version:                2.64.0
 %gometa -f
 

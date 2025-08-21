@@ -1,6 +1,7 @@
 %define debug_package %{nil}
 
 Name:           fisher
+# renovate: datasource=github-releases depName=jorgebucaran/fisher
 Version:        4.4.5
 Release:        %autorelease
 Summary:        A plugin manager for Fish - the friendly interactive shell

@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:       zellij
+# renovate: datasource=github-releases depName=zellij-org/zellij
 Version:    0.43.1
 Release:    1%{?dist}
 Summary:    A terminal workspace with batteries included.

@@ -5,6 +5,7 @@
 %global pre %{date}.%{shortcommit}
 
 Name:			blisp
+# renovate: datasource=github-releases depName=pine64/blisp
 Version:		0.0.5
 Release:		%{autorelease}%{?pre:~%pre}
 Summary:		ISP tool for Bouffalo Labs RISC-V Microcontrollers and SoCs

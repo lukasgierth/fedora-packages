@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    rs-tftpd
+# renovate: datasource=github-releases depName=altugbakan/rs-tftpd
 Version: 0.4.0
 Release: %autorelease
 Summary: TFTP Server Daemon (+ Client) implemented in Rust

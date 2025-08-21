@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    netscanner
+# renovate: datasource=github-releases depName=Chleba/netscanner
 Version: 0.6.3
 Release: %autorelease
 Summary: Network scanner & diagnostic tool.

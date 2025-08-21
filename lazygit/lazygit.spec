@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:       lazygit
+# renovate: datasource=github-releases depName=jesseduffield/lazygit
 Version:    0.54.2
 Release:    1%{?dist}
 Summary:    Simple, pragmatic TUI (Terminal UI) frontend for GIT

@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    hex-rs
+# renovate: datasource=github-releases depName=sitkevij/hex
 Version: 0.6.0
 Release: %autorelease
 Summary: Futuristic take on hexdump.

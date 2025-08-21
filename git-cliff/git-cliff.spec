@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    git-cliff
+# renovate: datasource=github-releases depName=orhun/git-cliff
 Version: 2.10.0
 Release: %autorelease
 Summary: A highly customizable Changelog Generator that follows Conventional Commit specifications.

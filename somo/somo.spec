@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:    somo
+# renovate: datasource=github-releases depName=theopfr/somo
 Version: 1.1.0
 Release: %autorelease
 Summary: A human-friendly alternative to netstat/iproute-ss for socket and port monitoring on Linux and macOS.
