@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: A highly customizable Changelog Generator that follows Conventional Commit specifications.
 License: MIT
 URL:     https://github.com/orhun/%{name}
-Source:  https://github.com/orhun/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust >= 1.75.0

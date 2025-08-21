@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: TFTP Server Daemon (+ Client) implemented in Rust
 License: MIT
 URL:     https://github.com/altugbakan/%{name}
-Source:  https://github.com/altugbakan/%{name}/archive/refs/tags/%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: Futuristic take on hexdump.
 License: MIT
 URL:     https://github.com/sitkevij/hex
-Source:  https://github.com/sitkevij/hex/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

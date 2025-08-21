@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: Blazing Fast Terminal File Manager
 License: MIT
 URL:     https://github.com/sxyazi/%{name}
-Source:  https://github.com/sxyazi/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

@@ -7,7 +7,8 @@ Release: %autorelease
 Summary: The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported).
 License: GPLv3
 URL:     https://github.com/bee-san/%{name}
-Source:  https://github.com/bee-san/%{name}/archive/refs/tags/%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/%{version}.tar.gz
+
 BuildRequires: cargo
 BuildRequires: rust
 

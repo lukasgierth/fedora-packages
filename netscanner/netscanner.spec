@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: Network scanner & diagnostic tool.
 License: MIT
 URL:     https://github.com/Chleba/%{name}
-Source:  https://github.com/Chleba/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

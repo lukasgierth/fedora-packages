@@ -4,8 +4,8 @@ Version:        1.1.0
 Release:        1%{?dist}
 Summary:        A Device Firmware Update based USB programmer for Atmel chips
 License:        GPLv2+
-URL:            http://dfu-programmer.github.io/
-Source:         https://github.com/%{name}/%{name}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+URL:            https://github.com/dfu-programmer/%{name}
+Source:         %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  pkgconfig(libusb-1.0) >= 1.0.0

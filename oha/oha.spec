@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: Ohayou(おはよう), HTTP load generator, inspired by rakyll/hey with tui animation.
 License: MIT
 URL:     https://github.com/hatoo/%{name}
-Source:  https://github.com/hatoo/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

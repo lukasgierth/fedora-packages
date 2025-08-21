@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: A fzf terminal UI for systemctl
 License: UNLICENSE
 URL:     https://github.com/joehillen/%{name}
-Source:  https://github.com/joehillen/%{name}/archive/refs/tags/%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 
 Requires: gawk
 Requires: bash > 4.3

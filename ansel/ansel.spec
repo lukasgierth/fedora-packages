@@ -5,7 +5,7 @@ Release: %autorelease
 Summary: Ansel Photo Editor (based on darktable)
 License: GPLv3
 URL:     https://github.com/aurelienpierreeng/ansel
-Source:  https://github.com/aurelienpierreeng/ansel/releases/download/v0.0.0/Ansel-%{version}-x86_64.AppImage
+Source1:  %{url}/releases/download/v0.0.0/Ansel-%{version}-x86_64.AppImage
 Source2: ansel.desktop
 Source3: ansel.svg
 

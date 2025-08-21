@@ -1,16 +1,15 @@
-Name:			argtable3
+Name:		argtable3
 # renovate: datasource=github-releases depName=argtable/argtable3
-Version:		3.3.1
-Release:		%autorelease
-Summary:		ANSI C command-line parsing library that parses GNU-style command-line options.
-License:		BSD
-URL:			https://www.argtable.org
-Source0:		https://github.com/argtable/argtable3/archive/v%{version}/argtable3-%{version}.tar.gz
+Version:	3.3.1
+Release:	%autorelease
+Summary:	ANSI C command-line parsing library that parses GNU-style command-line options.
+License:	BSD
+URL:		https://github.com/argtable/argtable3
+Source:		%{url}/archive/v%{version}/argtable3-%{version}.tar.gz
 
 BuildRequires:	gcc
 BuildRequires:	pkgconfig
 BuildRequires:	cmake
-
 
 %description
 Argtable3 is an open source ANSI C library that parses GNU-style command-line options with the getopt library. It simplifies command-line parsing by defining a declarative-style API that you can use to specify what your command-line syntax looks like. Argtable3 will automatically generate consistent error handling logic and textual descriptions of the command line syntax, which are essential but tedious to implement for a robust CLI program.

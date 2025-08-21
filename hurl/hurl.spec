@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: Hurl is a command line tool that runs HTTP requests defined in a simple plain text format
 License: APACHEv2
 URL:     https://github.com/Orange-OpenSource/%{name}
-Source:  https://github.com/Orange-OpenSource/%{name}/archive/refs/tags/%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: clang-devel

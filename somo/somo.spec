@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: A human-friendly alternative to netstat/iproute-ss for socket and port monitoring on Linux and macOS.
 License: MIT
 URL:     https://github.com/theopfr/%{name}
-Source:  https://github.com/theopfr/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust

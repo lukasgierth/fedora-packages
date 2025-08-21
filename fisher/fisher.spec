@@ -5,10 +5,9 @@ Name:           fisher
 Version:        4.4.5
 Release:        %autorelease
 Summary:        A plugin manager for Fish - the friendly interactive shell
-
 License:        MIT
 URL:            https://github.com/jorgebucaran/%{name}
-Source0:        https://github.com/jorgebucaran/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        %{url}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 Requires:       curl
 Requires:       fish

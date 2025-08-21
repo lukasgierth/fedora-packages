@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: A fast, simple TUI for interacting with systemd services and their logs.
 License: MIT
 URL:     https://github.com/rgwood/%{name}
-Source:  https://github.com/rgwood/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust
