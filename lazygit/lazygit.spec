@@ -58,10 +58,7 @@ go build \
 
 
 %install
-########
-
 install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/%{name}
-
 %if 0%{?fedora}
   # Man page
   install -Dpm 0644 %{name}.1 %{buildroot}/%{_mandir}/man1/%{name}.1
@@ -69,8 +66,6 @@ install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/%{name}
 
 
 %files
-######
-
 %license LICENSE
 %doc README.md CONTRIBUTING.md docs/
 %{_bindir}/%{name}

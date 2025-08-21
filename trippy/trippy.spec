@@ -7,7 +7,7 @@ Release: %autorelease
 Summary: A network diagnostic tool
 License: Apache-2.0
 URL:     https://github.com/fujiapple852/%{name}
-Source:  ${url}/archive/refs/tags/%{version}.tar.gz
+Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires: cargo
 BuildRequires: rust
