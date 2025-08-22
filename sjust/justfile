@@ -24,7 +24,7 @@ logs-last-boot:
 
 system-update:
 	#!/usr/bin/env bash
-	fish -c "if type -q fisher; fisher update; end"
+	fish -c "if type -q fisher; fisher update >/dev/null; end"
 	mise upgrade
 	flatpak update --assumeyes --noninteractive
 	sudo bootc upgrade
