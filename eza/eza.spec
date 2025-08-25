@@ -3,7 +3,7 @@
 Name:    eza
 # renovate: datasource=github-releases depName=eza-community/eza
 Version: 0.23.0
-Release: %autorelease
+Release: 1%{?dist}
 Summary: A modern replacement for ls
 # Main package is EUPL-1.2, remaining licenses are from statically linked dependencies
 License: EUPL-1.2 AND MPL-2.0 AND Unicode-3.0 AND (MIT OR Apache-2.0) AND (Unlicense OR MIT) AND (MIT OR Zlib OR Apache-2.0) AND (MIT OR Apache-2.0 OR CC0-1.0) AND (Apache-2.0 OR BSL-1.0) AND (Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT) AND (0BSD OR MIT OR Apache-2.0)

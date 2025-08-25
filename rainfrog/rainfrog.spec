@@ -3,7 +3,7 @@
 Name:    rainfrog
 # renovate: datasource=github-releases depName=achristmascarl/rainfrog
 Version: 0.3.5
-Release: %autorelease
+Release: 1%{?dist}
 Summary: A database tool for the terminal
 License: MIT
 URL:     https://github.com/achristmascarl/%{name}

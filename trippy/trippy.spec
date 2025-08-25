@@ -3,7 +3,7 @@
 Name:    trippy
 # renovate: datasource=github-releases depName=fujiapple852/trippy
 Version: 0.13.0
-Release: %autorelease
+Release: 1%{?dist}
 Summary: A network diagnostic tool
 License: Apache-2.0
 URL:     https://github.com/fujiapple852/%{name}

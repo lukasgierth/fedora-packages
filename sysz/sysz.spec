@@ -3,7 +3,7 @@
 Name:    sysz
 # renovate: datasource=github-releases depName=joehillen/sysz
 Version: 1.4.3
-Release: %autorelease
+Release: 1%{?dist}
 Summary: A fzf terminal UI for systemctl
 License: UNLICENSE
 URL:     https://github.com/joehillen/%{name}
