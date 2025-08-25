@@ -1,11 +1,10 @@
 %global debug_package %{nil}
-%global _missing_build_ids_terminate_build 0
 
 Name:           oh-my-posh
 # renovate: datasource=github-releases depName=JanDeDobbeleer/oh-my-posh
 Version:        26.19.1
-Release:        1%{?dist}
-Summary:        The most customisable and low-latency cross platform/shell prompt renderer 
+Release:        2%{?dist}
+Summary:        The most customisable and low-latency cross platform/shell prompt renderer
 License:        MIT
 URL:            https://github.com/JanDeDobbeleer/oh-my-posh
 Source:        %{url}/archive/refs/tags/v%{version}.tar.gz
@@ -13,8 +12,15 @@ Source:        %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: golang
 BuildRequires: git-core
 
+%package -n oh-my-posh-themes
+Summary: Default themes for oh-my-posh
+Requires: oh-my-posh
+BuildArch: noarch
+
 %description
 Oh My Posh is a highly customisable and extensible cross shell prompt theme engine.
+
+%description -n oh-my-posh-themes
 
 %prep
 %autosetup -n oh-my-posh-%{version}
@@ -35,8 +41,10 @@ install -Dm 0644 themes/* %{buildroot}%{_datadir}/%{name}/themes/
 
 %files
 %{_bindir}/oh-my-posh
-%{_datadir}/%{name}/themes/
 %license %{_datadir}/licenses/oh-my-posh/COPYING
+
+%files -n oh-my-posh-themes
+%{_datadir}/%{name}/themes/
 
 %changelog
 %autochangelog
