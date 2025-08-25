@@ -12,7 +12,14 @@ Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: rust
 
+%package -n skim-tmux
+Summary: tmux script for skim fuzzy finder
+Requires: skim
+Requires: tmux
+
 %description
+
+%description -n skim-tmux
 
 %prep
 %autosetup -n %{name}-%{version}
@@ -25,12 +32,15 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release --locked
 
 %install
+# skim
 install -Dpm 0755 target/release/sk -t %{buildroot}%{_bindir}/
+install -Dpm 0755 bin/sk-tmux -t %{buildroot}%{_bindir}/
 install -Dpm 0644 man/man1/sk.1 -t %{buildroot}/%{_mandir}/man1/
-# create dirs first because we install without -D
+install -Dpm 0644 man/man1/sk-tmux.1 -t %{buildroot}/%{_mandir}/man1/
 install -Dpm 0644 shell/skim -t %{buildroot}%{bash_completions_dir}/
 install -Dpm 0644 shell/skim.fish -t %{buildroot}%{fish_completions_dir}/
 install -Dpm 0644 shell/_skim -t %{buildroot}%{zsh_completions_dir}/
+# skim-tmux
 
 %files
 %license LICENSE
@@ -40,6 +50,10 @@ install -Dpm 0644 shell/_skim -t %{buildroot}%{zsh_completions_dir}/
 %{bash_completions_dir}/skim
 %{fish_completions_dir}/skim.fish
 %{zsh_completions_dir}/_skim
+
+%files -n skim-tmux
+%{_bindir}/sk-tmux
+%{_mandir}/man1/sk-tmux.1.gz
 
 %changelog
 %autochangelog
