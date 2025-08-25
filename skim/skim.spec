@@ -3,7 +3,7 @@
 Name:    skim
 # renovate: datasource=github-releases depName=skim-rs/skim
 Version: 0.20.5
-Release: %autorelease
+Release: 2%{?dist}
 Summary: Fuzzy Finder in rust!
 License: MIT
 URL:     https://github.com/skim-rs/%{name}
