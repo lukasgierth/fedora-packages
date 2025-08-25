@@ -32,21 +32,11 @@ cargo build --release --locked --no-default-features --features plugins_from_tar
 
 %install
 install -Dpm 0755 target/release/zellij -t %{buildroot}%{_bindir}/
-# FIX:
-# install -Dpm 0644 assets/completions/zellij.bash -t %{buildroot}%{_datadir}/bash-completion/completions/zellij.bash
-# install -Dpm 0644 assets/completions/zellij.fish -t %{buildroot}%{_datadir}/fish/vendor_completions.d/zellij.fish
-# install -Dpm 0644 assets/completions/_zellij -t %{buildroot}%{_datadir}/zsh/vendor-completions/_zellij
-# install -Dpm 0644 assets/man/zellij.1 -t %{buildroot}%{_mandir}/man1/zellij.1
 
 %files
 %license LICENSE.md
 %doc README.md
 %{_bindir}/zellij
-# %{_datadir}/bash-completion/completions/zellij.bash
-# %{_datadir}/fish/vendor_completions.d/zellij.fish
-# %{_datadir}/zsh/vendor-completions/_zellij
-# %{_mandir}/man1/zellij.1
-
 
 %changelog
 %autochangelog

@@ -3,7 +3,7 @@
 Name:    hex-rs
 # renovate: datasource=github-releases depName=sitkevij/hex
 Version: 0.6.0
-Release: %autorelease
+Release: 2%{?dist}
 Summary: Futuristic take on hexdump.
 License: MIT
 URL:     https://github.com/sitkevij/hex
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/hx -t %{buildroot}%{_bindir}/

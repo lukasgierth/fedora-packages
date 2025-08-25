@@ -3,7 +3,7 @@
 Name:    yazi
 # renovate: datasource=github-releases depName=sxyazi/yazi
 Version: 25.5.31
-Release: %autorelease
+Release: 2%{?dist}
 Summary: Blazing Fast Terminal File Manager
 License: MIT
 URL:     https://github.com/sxyazi/%{name}
@@ -26,7 +26,7 @@ Requires: fzf
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/ya -t %{buildroot}%{_bindir}/

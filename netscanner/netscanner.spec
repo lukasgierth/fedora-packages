@@ -3,7 +3,7 @@
 Name:    netscanner
 # renovate: datasource=github-releases depName=Chleba/netscanner
 Version: 0.6.3
-Release: %autorelease
+Release: 2%{?dist}
 Summary: Network scanner & diagnostic tool.
 License: MIT
 URL:     https://github.com/Chleba/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/netscanner -t %{buildroot}%{_bindir}/

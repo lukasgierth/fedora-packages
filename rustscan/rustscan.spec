@@ -3,7 +3,7 @@
 Name:    RustScan
 # renovate: datasource=github-releases depName=bee-san/RustScan
 Version: 2.4.1
-Release: %autorelease
+Release: 2%{?dist}
 Summary: The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported).
 License: GPLv3
 URL:     https://github.com/bee-san/%{name}
@@ -21,7 +21,7 @@ Requires: nmap
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/rustscan -t %{buildroot}%{_bindir}/

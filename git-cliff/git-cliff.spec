@@ -3,7 +3,7 @@
 Name:    git-cliff
 # renovate: datasource=github-releases depName=orhun/git-cliff
 Version: 2.10.0
-Release: %autorelease
+Release: 2%{?dist}
 Summary: A highly customizable Changelog Generator that follows Conventional Commit specifications.
 License: MIT
 URL:     https://github.com/orhun/%{name}
@@ -21,7 +21,7 @@ BuildRequires: zlib
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release
+cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/git-cliff -t %{buildroot}%{_bindir}/
