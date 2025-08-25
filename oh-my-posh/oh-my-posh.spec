@@ -23,7 +23,7 @@ Oh My Posh is a highly customisable and extensible cross shell prompt theme engi
 %description -n oh-my-posh-themes
 
 %prep
-%autosetup -n oh-my-posh-%{version}
+%autosetup -n %{name}-%{version}
 
 %build
 cd ./src/
@@ -35,13 +35,13 @@ go build \
 
 %install
 mkdir -p %{buildroot}%{_datadir}/%{name}/themes/
-install -Dm 0755 src/src %{buildroot}%{_bindir}/oh-my-posh
-install -Dm 0644 COPYING %{buildroot}%{_datadir}/licenses/oh-my-posh/COPYING
+install -Dm 0755 src/src %{buildroot}%{_bindir}/%{name}
+install -Dm 0644 COPYING %{buildroot}%{_datadir}/licenses/%{name}/COPYING
 install -Dm 0644 themes/* %{buildroot}%{_datadir}/%{name}/themes/
 
 %files
-%{_bindir}/oh-my-posh
-%license %{_datadir}/licenses/oh-my-posh/COPYING
+%{_bindir}/%{name}
+%license %{_datadir}/licenses/%{name}/COPYING
 
 %files -n oh-my-posh-themes
 %{_datadir}/%{name}/themes/
