@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    netscanner
-# renovate: datasource=github-releases depName=Chleba/netscanner
+# renovate: datasource=github-releases depName=Chleba/netscanner extractVersion=true
 Version: 0.6.3
 Release: 2%{?dist}
 Summary: Network scanner & diagnostic tool.
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/netscanner -t %{buildroot}%{_bindir}/
