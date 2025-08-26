@@ -68,11 +68,11 @@ install-recommended-fisher-plugins:
 	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
 	install-plugin jorgebucaran/getopts.fish
-	install-plugin jorgebucaran/hydro
 	install-plugin jorgebucaran/replay.fish
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
 	install-plugin patrickf1/fzf.fish
+	#install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
