@@ -3,7 +3,7 @@
 Name:           oh-my-posh
 # renovate: datasource=github-releases depName=JanDeDobbeleer/oh-my-posh extractVersion=true
 Version:        26.19.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        The most customisable and low-latency cross platform/shell prompt renderer
 License:        MIT
 URL:            https://github.com/JanDeDobbeleer/oh-my-posh
@@ -11,10 +11,10 @@ Source:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: golang
 BuildRequires: git-core
+Recommends: oh-my-posh-themes
 
 %package -n oh-my-posh-themes
 Summary: Default themes for oh-my-posh
-Requires: oh-my-posh
 BuildArch: noarch
 
 %description
