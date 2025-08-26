@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    oha
-# renovate: datasource=github-releases depName=hatoo/oha
+# renovate: datasource=github-releases depName=hatoo/oha extractVersion=true
 Version: 1.9.0
 Release: 1%{?dist}
 Summary: Ohayou(おはよう), HTTP load generator, inspired by rakyll/hey with tui animation.

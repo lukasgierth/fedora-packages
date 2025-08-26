@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    trippy
-# renovate: datasource=github-releases depName=fujiapple852/trippy
+# renovate: datasource=github-releases depName=fujiapple852/trippy extractVersion=true
 Version: 0.13.0
 Release: 1%{?dist}
 Summary: A network diagnostic tool

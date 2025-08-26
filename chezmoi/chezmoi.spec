@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:       chezmoi
-# renovate: datasource=github-releases depName=twpayne/chezmoi
+# renovate: datasource=github-releases depName=twpayne/chezmoi extractVersion=true
 Version:    2.64.0
 Release:    2%{?dist}
 Summary:    Manage your dotfiles across multiple diverse machines, securely

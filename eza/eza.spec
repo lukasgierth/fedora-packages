@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    eza
-# renovate: datasource=github-releases depName=eza-community/eza
+# renovate: datasource=github-releases depName=eza-community/eza extractVersion=true
 Version: 0.23.0
 Release: 1%{?dist}
 Summary: A modern replacement for ls

@@ -1,5 +1,5 @@
 Name:			blisp
-# renovate: datasource=github-releases depName=pine64/blisp
+# renovate: datasource=github-releases depName=pine64/blisp extractVersion=true
 Version:		0.0.5
 Release:		%{autorelease}
 Summary:		ISP tool for Bouffalo Labs RISC-V Microcontrollers and SoCs

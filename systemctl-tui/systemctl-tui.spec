@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    systemctl-tui
-# renovate: datasource=github-releases depName=rgwood/systemctl-tui
+# renovate: datasource=github-releases depName=rgwood/systemctl-tui extractVersion=true
 Version: 0.4.0
 Release: 1%{?dist}
 Summary: A fast, simple TUI for interacting with systemd services and their logs.

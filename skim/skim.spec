@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    skim
-# renovate: datasource=github-releases depName=skim-rs/skim
+# renovate: datasource=github-releases depName=skim-rs/skim extractVersion=true
 Version: 0.20.5
 Release: 2%{?dist}
 Summary: Fuzzy Finder in rust!

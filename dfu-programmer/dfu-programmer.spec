@@ -1,5 +1,5 @@
 Name:           dfu-programmer
-# renovate: datasource=github-releases depName=dfu-programmer/dfu-programmer
+# renovate: datasource=github-releases depName=dfu-programmer/dfu-programmer extractVersion=true
 Version:        1.1.0
 Release:        1%{?dist}
 Summary:        A Device Firmware Update based USB programmer for Atmel chips

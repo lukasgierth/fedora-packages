@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    yazi
-# renovate: datasource=github-releases depName=sxyazi/yazi
+# renovate: datasource=github-releases depName=sxyazi/yazi extractVersion=true
 Version: 25.5.31
 Release: 2%{?dist}
 Summary: Blazing Fast Terminal File Manager

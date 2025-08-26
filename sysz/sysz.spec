@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    sysz
-# renovate: datasource=github-releases depName=joehillen/sysz
+# renovate: datasource=github-releases depName=joehillen/sysz extractVersion=true
 Version: 1.4.3
 Release: 1%{?dist}
 Summary: A fzf terminal UI for systemctl

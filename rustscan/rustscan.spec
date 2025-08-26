@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    RustScan
-# renovate: datasource=github-releases depName=bee-san/RustScan
+# renovate: datasource=github-releases depName=bee-san/RustScan extractVersion=true
 Version: 2.4.1
 Release: 2%{?dist}
 Summary: The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported).

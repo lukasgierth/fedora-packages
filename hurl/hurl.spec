@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:    hurl
-# renovate: datasource=github-releases depName=Orange-OpenSource/hurl
+# renovate: datasource=github-releases depName=Orange-OpenSource/hurl extractVersion=true
 Version: 7.0.0
 Release: 2%{?dist}
 Summary: Hurl is a command line tool that runs HTTP requests defined in a simple plain text format
