@@ -24,7 +24,7 @@ logs-last-boot:
 
 system-update:
 	#!/usr/bin/env bash
-	fish -c "if type -q fisher; fisher update >/dev/null; end"
+	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; fisher update >/dev/null; end"
 	mise upgrade
 	flatpak update --assumeyes --noninteractive
 	sudo bootc upgrade
@@ -61,6 +61,7 @@ setup-libvirt-group:
 
 install-recommended-fisher-plugins:
 	#!/usr/bin/env fish
+	source /usr/share/fish/vendor_conf.d/fisher.fish
 	function install-plugin
 		fisher install $argv[1]
 	end
