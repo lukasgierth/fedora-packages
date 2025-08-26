@@ -9,7 +9,7 @@
         "#\\s?renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?\\s*Version:\\s*(?<currentValue>.*)\\s"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
-      "extractVersionTemplate": "{{#if (eq extractVersion 'true')}}{{replace version \"v\" \"\"}}{{else}}{{version}}{{/if}}"
+      "extractVersionTemplate": "{{#if (equals extractVersion 'true')}}^v?(?<version>\\S+){{/if}}"
     }
   ]
 }
