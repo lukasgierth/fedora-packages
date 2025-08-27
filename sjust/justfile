@@ -24,9 +24,13 @@ logs-last-boot:
 
 system-update:
 	#!/usr/bin/env bash
-	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; fisher update >/dev/null; end"
+	echo "== Update Fisher =="
+	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
+	echo "== Update Mise Tools =="
 	mise upgrade
+	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
+	echo "== Update System Image =="
 	sudo bootc upgrade
 
 system-clean:
