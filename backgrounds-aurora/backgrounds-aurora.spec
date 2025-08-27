@@ -2,12 +2,11 @@
 %global bgname aurora
 
 Name:       backgrounds-aurora
-Version:    0.2.0
+Version:    0.3.0
 Release:    1%{?dist}
 License:    CC-BY-NC-SA-4.0
 Summary:    Aurora Time of Day backgrounds
-
-URL:        https://github.com/chronoscrat/copr.specs
+URL:        https://github.com/lukasgierth/fedora-packages
 VCS:        {{{ git_dir_vcs }}}
 Source:     {{{ git_dir_pack }}}
 
@@ -27,13 +26,13 @@ mkdir -p -m0755 \
     %{buildroot}%{_datadir}/backgrounds/%{bgname} \
     %{buildroot}%{_datadir}/gnome-background-properties
 
-mv images/*.jxl %{buildroot}%{_datadir}/backgrounds/%{bgname}
-mv aurora-dynamic.xml %{buildroot}%{_datadir}/backgrounds/%{bgname}
-mv aurora-gnome.xml %{buildroot}%{_datadir}/gnome-background-properties
+install -Dpm 0644 images/*.jxl -t %{buildroot}%{_datadir}/backgrounds/%{bgname}
+install -Dpm 0644 aurora-dynamic.xml -t %{buildroot}%{_datadir}/backgrounds/%{bgname}
+install -Dpm 0644 aurora-gnome.xml -t %{buildroot}%{_datadir}/gnome-background-properties
 
 %files
-%attr(0755,root,root) %{_datadir}/backgrounds/%{bgname}/*
-%attr(0755,root,root) %{_datadir}/gnome-background-properties/aurora-gnome.xml
+%{_datadir}/backgrounds/%{bgname}/*
+%{_datadir}/gnome-background-properties/aurora-gnome.xml
 
 %changelog
 %autochangelog
