@@ -27,7 +27,7 @@ system-update:
 	echo "== Update Fisher =="
 	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
-	mise upgrade
+	mise upgrade --bump
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
 	echo "== Update System Image =="
