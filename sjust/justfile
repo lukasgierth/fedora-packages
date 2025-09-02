@@ -90,6 +90,7 @@ install-recommended-misetools:
 
 	implement act
 	implement calicoctl
+	implement flux2
 	implement go
 	implement helm
 	implement kubectl
