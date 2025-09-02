@@ -98,6 +98,7 @@ install-recommended-misetools:
 	implement kubie
 	implement kustomize
 	implement opentofu
+	implement sops
 	implement talosctl
 	implement trivy
 	implement velero
