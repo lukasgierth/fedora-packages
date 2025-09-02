@@ -101,6 +101,7 @@ install-recommended-misetools:
 	implement opentofu
 	implement sops
 	implement talosctl
+	implement teleport-community
 	implement trivy
 	implement velero
 
