@@ -10,6 +10,7 @@ URL:     https://github.com/achristmascarl/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
+BuildRequires: gcc-c++
 BuildRequires: rust
 
 %description
