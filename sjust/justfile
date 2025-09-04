@@ -69,6 +69,7 @@ install-recommended-fisher-plugins:
 	function install-plugin
 		fisher install $argv[1]
 	end
+	install-plugin IlanCosman/tide@v6
 	install-plugin blackjid/plugin-kubectl
 	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
