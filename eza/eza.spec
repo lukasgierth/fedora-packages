@@ -2,7 +2,7 @@
 
 Name:    eza
 # renovate: datasource=github-releases depName=eza-community/eza extractVersion=true
-Version: 0.23.2
+Version: 0.23.3
 Release: 1%{?dist}
 Summary: A modern replacement for ls
 # Main package is EUPL-1.2, remaining licenses are from statically linked dependencies
