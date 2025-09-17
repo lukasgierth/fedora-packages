@@ -1,3 +1,4 @@
+---
 name: renovate
 on:
   workflow_dispatch:
@@ -5,6 +6,7 @@ on:
     - cron: "0 6 * * 3" # Wednesday 6 UTC
 jobs:
   renovate:
+    name: Run renovate in repo
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
