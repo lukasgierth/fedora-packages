@@ -9,6 +9,7 @@ License:    Apache-2.0
 URL:        https://github.com/anchore/grype
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
+BuildRequires: git-core
 BuildRequires: go-md2man
 BuildRequires: golang >= 1.24.1
 
