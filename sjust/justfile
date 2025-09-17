@@ -103,7 +103,6 @@ install-recommended-misetools:
 	implement sops
 	implement talosctl
 	implement teleport-community
-	implement trivy
 	implement velero
 
 show-toolbox-examples:
