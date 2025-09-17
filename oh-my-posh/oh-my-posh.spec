@@ -9,7 +9,7 @@ License:        MIT
 URL:            https://github.com/JanDeDobbeleer/oh-my-posh
 Source:        %{url}/archive/refs/tags/v%{version}.tar.gz
 
-BuildRequires: golang
+BuildRequires: golang >= 1.25.0
 BuildRequires: git-core
 Recommends: oh-my-posh-themes
 
