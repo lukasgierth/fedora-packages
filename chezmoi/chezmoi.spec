@@ -3,7 +3,7 @@
 Name:       chezmoi
 # renovate: datasource=github-releases depName=twpayne/chezmoi extractVersion=true
 Version:    2.65.0
-Release:    2%{?dist}
+Release:    1%{?dist}
 Summary:    Manage your dotfiles across multiple diverse machines, securely
 License:    MIT
 URL:        https://github.com/twpayne/%{name}
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git
 BuildRequires: go-rpm-macros
-BuildRequires: golang >= 1.24.5
+BuildRequires: golang >= 1.25.0
 
 %description
 
