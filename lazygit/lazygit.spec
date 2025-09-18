@@ -3,7 +3,7 @@
 Name:       lazygit
 # renovate: datasource=github-releases depName=jesseduffield/lazygit extractVersion=true
 Version:    0.55.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Simple, pragmatic TUI (Terminal UI) frontend for GIT
 License:    MIT
 URL:        https://github.com/jesseduffield/lazygit
@@ -12,6 +12,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
 BuildRequires: golang >= 1.24
+Requires: git >= 2.32.0
 
 %description
 
