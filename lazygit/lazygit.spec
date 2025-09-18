@@ -3,7 +3,7 @@
 Name:       lazygit
 # renovate: datasource=github-releases depName=jesseduffield/lazygit extractVersion=true
 Version:    0.55.1
-Release:    2%{?dist}
+Release:    1%{?dist}
 Summary:    Simple, pragmatic TUI (Terminal UI) frontend for GIT
 License:    MIT
 URL:        https://github.com/jesseduffield/lazygit
