@@ -12,6 +12,9 @@ Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: rust
 BuildRequires: libpcap-devel
+BuildRequires: elfutils-libelf-devel
+BuildRequires: clang
+BuildRequires: llvm
 
 Requires: libpcap
 
