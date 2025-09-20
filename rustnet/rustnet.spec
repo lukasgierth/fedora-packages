@@ -2,7 +2,7 @@
 
 Name:    rustnet
 # renovate: datasource=github-releases depName=domcyrus/rustnet extractVersion=true
-Version: 0.8.0
+Version: 0.9.0
 Release: 1%{?dist}
 Summary: A cross-platform network monitoring terminal UI tool built with Rust.
 License: Apache-2.0
@@ -22,7 +22,7 @@ Requires: libpcap
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release --features ebpf --locked
 
 %install
 install -Dpm 0755 target/release/rustnet -t %{buildroot}%{_bindir}/
