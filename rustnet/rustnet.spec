@@ -25,7 +25,8 @@ Requires: libpcap
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --features ebpf --locked
+cargo build --release --features ebpf
+# cargo build --release --features ebpf --locked
 
 %install
 install -Dpm 0755 target/release/rustnet -t %{buildroot}%{_bindir}/
