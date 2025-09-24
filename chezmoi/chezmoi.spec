@@ -2,7 +2,7 @@
 
 Name:       chezmoi
 # renovate: datasource=github-releases depName=twpayne/chezmoi extractVersion=true
-Version:    2.65.0
+Version:    2.65.2
 Release:    1%{?dist}
 Summary:    Manage your dotfiles across multiple diverse machines, securely
 License:    MIT
