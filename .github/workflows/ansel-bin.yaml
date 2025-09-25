@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - tools-misc/ansel-bin.spec
+      - tools-misc/ansel-bin/ansel-bin.spec
   workflow_dispatch:
 
 jobs:
