@@ -1,6 +1,6 @@
 ---
 # yamllint disable rule:line-length
-name: Ansel-bin copr rebuild
+name: ansel-bin copr rebuild
 on:
   push:
     branches:
