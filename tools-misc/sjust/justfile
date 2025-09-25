@@ -89,17 +89,15 @@ install-recommended-misetools:
 		mise use -g "${1}"@latest
 	}
 
-	implement act
+	implement age
 	implement calicoctl
 	implement flux2
-	implement go
 	implement helm
 	implement kubectl
 	implement kubectx
 	implement kubens
 	implement kubie
 	implement kustomize
-	implement opentofu
 	implement sops
 	implement talosctl
 	implement teleport-community
