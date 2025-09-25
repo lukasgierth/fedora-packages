@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - broot/broot.spec
+      - tools-rust/broot/broot.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/broot/
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197879/8b58d803-7237-4892-9ddd-3fc56b27df3a/broot
