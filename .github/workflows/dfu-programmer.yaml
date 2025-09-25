@@ -1,3 +1,5 @@
+---
+# yamllint disable rule:line-length
 name: dfu-programmer copr rebuild
 on:
   push:
@@ -11,7 +13,6 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-      - name: curl
-        uses: enflo/curl-action@master
-        with:
-          curl: -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/dfu-programmer/
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/dfu-programmer/
