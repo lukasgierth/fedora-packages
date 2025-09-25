@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - lazygit/lazygit.spec
+      - tools-golang/lazygit/lazygit.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/183973/b217f930-6409-41d8-ad9c-eefe9a425524/lazygit/
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197878/3a0cc198-115b-4d04-80e1-8b29ec8f624d/lazygit
