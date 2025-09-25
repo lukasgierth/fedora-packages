@@ -24,12 +24,12 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release --locked
 
 %install
-install -Dpm 0755 target/release/%{rustscan} -t %{buildroot}%{_bindir}/
+install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/%{rustscan}
+%{_bindir}/%{name}
 
 %changelog
 %autochangelog

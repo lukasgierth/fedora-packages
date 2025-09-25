@@ -23,12 +23,12 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release --locked
 
 %install
-install -Dpm 0755 target/release/comchan -t %{buildroot}%{_bindir}/
+install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
 %doc README.md docs/
-%{_bindir}/comchan
+%{_bindir}/%{name}
 
 %changelog
 %autochangelog
