@@ -1,12 +1,14 @@
 %global __os_install_post %{nil}
 Name:    sjust
 Version: 1.17
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Helper based on just
 License: GPLv3
 Source1: justfile
 Source2: sjust
 Source3: sjust-fzf
+
+BuildArch: noarch
 
 Requires: bash
 Requires: coreutils
