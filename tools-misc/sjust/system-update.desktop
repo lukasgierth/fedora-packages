@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=System Update
+Comment=Update Fish Plugins, Mise Tools, Flatpaks and System
+Icon=system-update
+Categories=ConsoleOnly;System;
+Terminal=true
+Exec=/usr/bin/sjust system-update
