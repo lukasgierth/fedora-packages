@@ -35,16 +35,16 @@ system-update:
 
 	# Prompt user to quit or reboot
 	while true; do
-  		read -n 1 -s -r -p "(Q)uit, (R)eboot, (P)oweroff" key
-  		if [[ $key == "q" ]]; then
-   			break
-  		elif [[ $key == "r" ]]; then
+		read -n 1 -s -r -p "(Q)uit, (R)eboot, (P)oweroff" key
+		if [[ $key == "q" ]]; then
+			break
+		elif [[ $key == "r" ]]; then
 			systemctl reboot
-    		break
+			break
 		elif [[ $key == "p" ]]; then
 			systemctl poweroff
-    		break
-  		fi
+			break
+		fi
 	done
 
 system-clean:
