@@ -53,6 +53,8 @@ DESTDIR=%{buildroot} zig build \
     -Dpie=true \
     -Demit-docs
 
+rm -f "%{buildroot}%{_prefix}/share/terminfo/g/ghostty"
+
 %files
 %license LICENSE
 %{_bindir}/ghostty
@@ -88,7 +90,6 @@ DESTDIR=%{buildroot} zig build \
 %{_prefix}/share/locale/*/LC_MESSAGES/com.mitchellh.ghostty.mo
 %{_prefix}/share/metainfo/com.mitchellh.ghostty.metainfo.xml
 %{_prefix}/share/systemd/user/app-com.mitchellh.ghostty.service
-%{_prefix}/share/terminfo/g/ghostty
 %{_prefix}/share/terminfo/x/xterm-ghostty
 
 %changelog
