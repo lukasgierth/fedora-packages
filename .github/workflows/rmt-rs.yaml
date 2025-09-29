@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: rmt copr rebuild
+name: rmt-rs copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-rust/rmt/rmt.spec
+      - tools-rust/rmt-rs/rmt-rs.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197879/8b58d803-7237-4892-9ddd-3fc56b27df3a/rmt
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197879/8b58d803-7237-4892-9ddd-3fc56b27df3a/rmt-rs
