@@ -1,7 +1,7 @@
 %global __os_install_post %{nil}
 Name:    sjust
 Version: 1.18
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Helper based on just
 License: GPLv3
 Source1: justfile
@@ -10,8 +10,8 @@ Source3: sjust-fzf
 Source4: system-update.desktop
 Source5: system-update.svg
 # SVG
-# downloaded from: https://www.svgrepo.com/svg/438930/update
-# LICENSE: Public Domain
+# downloaded from: https://www.svgrepo.com/svg/451874/software-update-urgent
+# LICENSE: GPL
 
 BuildArch: noarch
 
