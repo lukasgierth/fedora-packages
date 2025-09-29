@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - tools-rust/ghostty/ghostty.spec
+      - tools-misc/ghostty/ghostty.spec
   workflow_dispatch:
 
 jobs:
