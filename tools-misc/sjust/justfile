@@ -35,7 +35,7 @@ system-update:
 
 	# Prompt user to quit or reboot
 	while true; do
-		read -n 1 -s -r -p "(Q)uit, (R)eboot, (P)oweroff" key
+		read -n 1 -s -r -p $'\e[32m(Q)uit,\e[0m\e[31m (R)eboot, (P)oweroff \e[0m' key
 		if [[ $key == "q" ]]; then
 			break
 		elif [[ $key == "r" ]]; then
