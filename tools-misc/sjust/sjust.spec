@@ -43,7 +43,9 @@ install -Dpm 0755 %{_sourcedir}/sjust-fzf %{buildroot}%{_bindir}/sjust-fzf
 %files
 %{_bindir}/sjust
 %{_bindir}/sjust-fzf
+%{_datadir}/applications/firmware-update.desktop
 %{_datadir}/applications/system-update.desktop
+%{_datadir}/pixmaps/firmware-update.svg
 %{_datadir}/pixmaps/system-update.svg
 %{_datadir}/sjust/justfile
 
