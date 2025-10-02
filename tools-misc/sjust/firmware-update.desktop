@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Firmware Update
-Comment=Update detected and supported firmware
-Icon=firmware-update
-Categories=ConsoleOnly;System;
-Terminal=true
-Exec=/usr/bin/sjust firmware-update
