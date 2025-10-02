@@ -5,6 +5,11 @@ _default:
 	#!/usr/bin/env bash
 	/usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
 
+reset-user-custom-keybindings:
+	#!/usr/bin/env bash
+	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
+	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
+
 reboot-to-bios:
 	#!/usr/bin/env bash
 	if [ -d /sys/firmware/efi ]; then
