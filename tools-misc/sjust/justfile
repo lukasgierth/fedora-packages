@@ -58,8 +58,16 @@ system-clean:
 [no-exit-message]
 firmware-update:
 	#!/usr/bin/env bash
-	fwupdmgr refresh --force
-	fwupdmgr update
+	while true; do
+		read -n 1 -s -r -p $'\e[31mMight require multiple reboots, continue? (y)es, (n)o \e[0m' key
+		if [[ $key == "y" ]]; then
+			fwupdmgr refresh --force
+			fwupdmgr update
+			break
+		elif [[ $key == "n" ]]; then
+			break
+		fi
+	done
 
 changelogs:
 	#!/usr/bin/env bash
