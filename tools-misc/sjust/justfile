@@ -5,6 +5,11 @@ _default:
 	#!/usr/bin/env bash
 	/usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
 
+download-additional-wallpaper:
+	#!/usr/bin/env bash
+	rm -rf ~/Pictures/Wallpaper
+	wget -r -np -P ~/Pictures --reject="*index.html*" --reject=".*Phone.*" https://dufs-prod-1.casa.gierth.nl/Wallpaper/ --no-host-directories
+
 reset-user-custom-keybindings:
 	#!/usr/bin/env bash
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
