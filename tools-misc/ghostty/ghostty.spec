@@ -1,7 +1,8 @@
 %global debug_package %{nil}
 
 Name:		ghostty
-Version:	1.2.0
+# renovate: datasource=github-releases depName=ghostty-org/ghostty extractVersion=true
+Version:	1.2.1
 Release:	1%{?dist}
 Summary:	Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
 License:	MIT
