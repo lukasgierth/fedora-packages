@@ -9,6 +9,8 @@ Source1:  %{url}/releases/download/v0.0.0/Ansel-%{version}-x86_64.AppImage
 Source2: ansel.desktop
 Source3: ansel.svg
 
+BuildArch: x86_64
+
 Requires: fuse
 
 %description
