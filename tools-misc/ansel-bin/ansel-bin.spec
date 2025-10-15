@@ -1,15 +1,13 @@
 %global __os_install_post %{nil}
 Name:    ansel-bin
 Version: 0.0.0+1996.gb51cfa3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Ansel Photo Editor (based on darktable)
 License: GPLv3
 URL:     https://github.com/aurelienpierreeng/ansel
 Source1:  %{url}/releases/download/v0.0.0/Ansel-%{version}-x86_64.AppImage
 Source2: ansel.desktop
 Source3: ansel.svg
-
-BuildArch: x86_64
 
 Requires: fuse
 
