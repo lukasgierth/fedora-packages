@@ -1,13 +1,13 @@
 %global debug_package %{nil}
-%global commit 599e89d11fe0b27144e8584e96031a585f5768c5
-%global UUID gnome-shell-extension-maximized-by-default@stiggimy.github.com
+%global commit da9bf57c578baf8ec60dee58f30325eebe8337d8
+%global UUID gnome-shell-extension-maximized-by-default@lukasgierth.github.com
 
 Name:		gnome-shell-extension-maximized-by-default
-Version:	20251101_%{commit}
+Version:	20251103_%{commit}
 Release:	1%{?dist}
 Summary:	GNOME Shell extension that made windows maximized on start. Supports GNOME 49.
 License:	MIT
-URL:		https://github.com/Stiggimy/%{name}
+URL:		https://github.com/lukasgierth/%{name}
 Source:		%{url}/archive/%{commit}.tar.gz
 
 BuildArch:	noarch
