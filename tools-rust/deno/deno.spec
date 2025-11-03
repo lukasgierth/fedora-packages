@@ -12,8 +12,9 @@ Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: clang
 BuildRequires: cmake
-BuildRequires: rust >= 1.89.0
+BuildRequires: rust >= 1.90.0
 BuildRequires: glib2-devel
+BuildRequires: protobuf-compiler
 
 %description
 
