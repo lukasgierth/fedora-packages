@@ -101,7 +101,7 @@ install-recommended-fisher-plugins:
 	function install-plugin
 		fisher install $argv[1]
 	end
-	install-plugin IlanCosman/tide@v6
+	#install-plugin IlanCosman/tide@v6
 	install-plugin blackjid/plugin-kubectl
 	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
@@ -110,7 +110,7 @@ install-recommended-fisher-plugins:
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
 	install-plugin patrickf1/fzf.fish
-	#install-plugin jorgebucaran/hydro
+	install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
