@@ -7,10 +7,9 @@ Release: 1%{?dist}
 Summary: Iosevka Fonts with Nerd glpyhs added
 License: MIT
 URL: https://github.com/ryanoasis/nerd-fonts      
-Source0:  %{url}/releases/download/v%{version}/Iosevka.tar.xz 
+Source0:  %{url}/releases/download/v%{version}/Iosevka.tar.xz
 
-%define name iosevka-nerd-fonts
-%define fontdir /fonts/%{name}
+BuildArch:      noarch
 
 %description
 
@@ -21,7 +20,7 @@ Source0:  %{url}/releases/download/v%{version}/Iosevka.tar.xz
 install -m 0644 -D -t %{buildroot}%{_datadir}%{fontdir} *.ttf
 
 %files
-%{_datadir}/%{fontdir}
+%{_datadir}/fonts/iosevka-nerd-fonts
 
 %changelog
 %autochangelog
