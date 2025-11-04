@@ -17,6 +17,7 @@ BuildArch:      noarch
 %autosetup -c
 
 %install
+mkdir -p %{buildroot}%{_datadir}%{fontdir}
 install -m 0644 -D -t %{buildroot}%{_datadir}%{fontdir} *.ttf
 
 %files
