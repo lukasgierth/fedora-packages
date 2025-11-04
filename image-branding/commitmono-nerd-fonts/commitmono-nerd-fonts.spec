@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 %global fontdir fonts/commitmono-nerd-fonts
 
-Name: iosevka-nerd-fonts
+Name: commitmono-nerd-fonts
 # renovate: datasource=github-releases depName=ryanoasis/nerd-fonts extractVersion=true
 Version: 3.4.0
 Release: 1%{?dist}
