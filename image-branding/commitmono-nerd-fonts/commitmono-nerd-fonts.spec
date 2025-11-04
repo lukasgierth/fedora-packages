@@ -19,7 +19,7 @@ BuildArch: noarch
 
 %install
 mkdir -p %{buildroot}%{_datadir}/%{fontdir}
-install -m 0644 -D -t %{buildroot}%{_datadir}/%{fontdir} *.ttf
+install -m 0644 -D -t %{buildroot}%{_datadir}/%{fontdir} *.otf
 
 %files
 %{_datadir}/%{fontdir}
