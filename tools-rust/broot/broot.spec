@@ -2,7 +2,7 @@
 
 Name:    broot
 # renovate: datasource=github-releases depName=Canop/broot extractVersion=true
-Version: 1.52.0
+Version: 1.53.0
 Release: 1%{?dist}
 Summary: A new way to see and navigate directory trees
 License: MIT
