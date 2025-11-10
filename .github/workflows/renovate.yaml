@@ -3,7 +3,7 @@ name: renovate runner
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 6 * * 2" # Wednesday 6 UTC
+    - cron: "0 6 * * 1" # Monday 6 UTC
 jobs:
   renovate:
     name: Run renovate in repo
