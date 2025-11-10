@@ -152,3 +152,16 @@ show-distrobox-examples:
 	echo "distrobox create -n fedora -i ghcr.io/ublue-os/fedora-toolbox:latest"
 	echo "distrobox create -n opensuse -i quay.io/toolbx-images/opensuse-toolbox:tumbleweed"
 	echo "distrobox create -n ubuntu -i ghcr.io/ublue-os/ubuntu-toolbox:latest"
+
+set-hostname:
+	#!/usr/bin/env bash
+	while true; do
+		read -p "New hostname: " answer
+		if [[ $answer == "" ]]; then
+			echo "Error: Empty string"
+			exit 1
+		else
+		    break
+		fi
+	done
+	sudo hostnamectl hostname "${answer}"
