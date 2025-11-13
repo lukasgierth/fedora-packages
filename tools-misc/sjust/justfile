@@ -101,6 +101,7 @@ install-steam:
 		flatpak --noninteractive --assumeyes install $argv[1]
 	end
 	install-package com.valvesoftware.Steam
+	install-package net.davidotek.pupgui2
 	install-package org.freedesktop.Platform.VulkanLayer.MangoHud
 	install-package org.freedesktop.Platform.VulkanLayer.gamescope
 
