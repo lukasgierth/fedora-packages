@@ -95,6 +95,15 @@ setup-libvirt-group:
 	sudo groupadd --system -f libvirt
 	sudo usermod -a -G libvirt "$(whoami)"
 
+install-steam:
+	#!/usr/bin/env fish
+	function install-package
+		flatpak --noninteractive --assumeyes install $argv[1]
+	end
+	install-package com.valvesoftware.Steam
+	install-package org.freedesktop.Platform.VulkanLayer.MangoHud
+	install-package org.freedesktop.Platform.VulkanLayer.gamescope
+
 install-recommended-fisher-plugins:
 	#!/usr/bin/env fish
 	source /usr/share/fish/vendor_conf.d/fisher.fish
