@@ -11,22 +11,19 @@ Source0: %{url}/releases/download/v%{version}/deno-x86_64-unknown-linux-gnu.zip
 Source1: %{url}/releases/download/v%{version}/deno-aarch64-unknown-linux-gnu.zip
 Source2: https://raw.githubusercontent.com/denoland/deno/refs/tags/v%{version}/LICENSE.md
 
-
 ExclusiveArch: x86_64 aarch64
-
 Requires: glibc
-
 Conflicts: deno
 
 %description
 
 %prep
 %ifarch x86_64
-%setup -c -b 0 -a 1
+%setup -c -T -a 0
 %endif
 
 %ifarch aarch64
-%setup -c -b 1 -a 0
+%setup -c -T -a 1
 %endif
 
 cp %{SOURCE2} ./
