@@ -22,11 +22,11 @@ Conflicts: deno
 
 %prep
 %ifarch x86_64
-%setup -c -b 0
+%setup -c -b 0 -a 1
 %endif
 
 %ifarch aarch64
-%setup -c -b 1
+%setup -c -b 1 -a 0
 %endif
 
 cp %{SOURCE2} ./
