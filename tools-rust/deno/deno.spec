@@ -32,9 +32,9 @@ cargo build --release --locked
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 # completions
-mkdir -p %{buildroot}{%bash_completions_dir}
-mkdir -p %{buildroot}{%fish_completions_dir}
-mkdir -p %{buildroot}{%zsh_completions_dir}
+mkdir -p %{buildroot}%{bash_completions_dir}
+mkdir -p %{buildroot}%{fish_completions_dir}
+mkdir -p %{buildroot}%{zsh_completions_dir}
 target/release/%{name} completions bash > %{buildroot}%{bash_completions_dir}/%{name}.sh
 target/release/%{name} completions fish > %{buildroot}%{fish_completions_dir}/%{name}.fish
 target/release/%{name} completions zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
