@@ -38,9 +38,9 @@ install -D --mode=755 deno "%{buildroot}%{_bindir}/deno"
 mkdir -p %{buildroot}%{bash_completions_dir}
 mkdir -p %{buildroot}%{fish_completions_dir}
 mkdir -p %{buildroot}%{zsh_completions_dir}
-deno completions bash > %{buildroot}%{bash_completions_dir}/deno.sh
-deno completions fish > %{buildroot}%{fish_completions_dir}/deno.fish
-deno completions zsh > %{buildroot}%{zsh_completions_dir}/_deno
+./deno completions bash > %{buildroot}%{bash_completions_dir}/deno.sh
+./deno completions fish > %{buildroot}%{fish_completions_dir}/deno.fish
+./deno completions zsh > %{buildroot}%{zsh_completions_dir}/_deno
 
 %files
 %license LICENSE.md
