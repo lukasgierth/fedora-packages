@@ -3,7 +3,7 @@
 Name:    hurl
 # renovate: datasource=github-releases depName=Orange-OpenSource/hurl extractVersion=true
 Version: 7.1.0
-Release: 3%{?dist}
+Release: 1%{?dist}
 Summary: Hurl is a command line tool that runs HTTP requests defined in a simple plain text format
 License: APACHEv2
 URL:     https://github.com/Orange-OpenSource/%{name}
