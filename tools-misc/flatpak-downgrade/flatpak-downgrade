@@ -1,0 +1,277 @@
+#!/usr/bin/env python3
+import re
+import subprocess
+import sys
+from typing import Dict, List, Optional
+
+# ANSI escape codes for coloring
+COLOR_BLUE = "\033[34m"
+COLOR_GREEN = "\033[32m"
+COLOR_YELLOW = "\033[33m"
+COLOR_RED = "\033[31m"
+COLOR_MAGENTA = "\033[35m"
+COLOR_RESET = "\033[0m"
+COLOR_DIM = "\033[90m"
+COLOR_CYAN = "\033[96m"
+
+
+def handle_error(message: str, exit_code: int = 1):
+    """Prints an error message and exits the script."""
+    print(f"\n{COLOR_RED}Error: {message}{COLOR_RESET}", file=sys.stderr)
+    sys.exit(exit_code)
+
+
+def run_flatpak_command(command: List[str], check_error: bool = True) -> str:
+    """
+    Executes a flatpak command and returns the stdout output.
+    Handles errors if check_error is True.
+    """
+    try:
+        result = subprocess.run(
+            command, capture_output=True, text=True, check=check_error, encoding="utf-8"
+        )
+        return result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        # Include stderr in the error report if the command failed
+        handle_error(
+            f"Command failed: {' '.join(command)}\nDetails: {e.stderr.strip()}", 1
+        )
+    except FileNotFoundError:
+        handle_error(
+            f"Command not found. Is Flatpak installed? (Attempted: {' '.join(command)})",
+            1,
+        )
+    return ""  # Should not be reached
+
+
+def get_app_list() -> List[Dict[str, str]]:
+    """Retrieves a list of installed Flatpak apps with their details."""
+    print(
+        f"\n{COLOR_YELLOW}Step 1: Select the application you want to downgrade.{COLOR_RESET}"
+    )
+    print(f"Format: [ID] [Origin] [Scope]")
+
+    # Use flatpak list with columns for clean data
+    raw_output = run_flatpak_command(
+        ["flatpak", "list", "--app", "--columns=application,origin,installation"]
+    )
+
+    app_list: List[Dict[str, str]] = []
+    # Skip the header line (first line)
+    for line in raw_output.splitlines()[1:]:
+        parts = line.split("\t")
+        if len(parts) >= 3:
+            # flatpak list output is tab-separated
+            app_list.append(
+                {
+                    "id": parts[0].strip(),
+                    "origin": parts[1].strip(),
+                    "scope": parts[2].strip(),
+                }
+            )
+
+    if not app_list:
+        handle_error(
+            "No installed Flatpak applications found with 'flatpak list --app'. Exiting."
+        )
+
+    return app_list
+
+
+def select_item_from_list(items: List[str], prompt: str) -> Optional[int]:
+    """Displays a numbered list and handles user selection."""
+    for i, item in enumerate(items, 1):
+        print(f" {COLOR_MAGENTA}{i}.{COLOR_RESET} {item}")
+
+    while True:
+        try:
+            choice = input(f"\n{prompt} ")
+            index = int(choice)
+            if 1 <= index <= len(items):
+                return index - 1
+            else:
+                print(
+                    f"{COLOR_RED}Invalid selection. Please enter a number between 1 and {len(items)}.{COLOR_RESET}"
+                )
+        except ValueError:
+            print(f"{COLOR_RED}Invalid input. Please enter a number.{COLOR_RESET}")
+
+
+def get_commit_history(app_id: str, origin: str) -> List[Dict[str, str]]:
+    """Retrieves and parses the commit history for a given app."""
+    print(
+        f"\n{COLOR_YELLOW}Step 2: Retrieving commit history for {COLOR_GREEN}{app_id}{COLOR_YELLOW}...{COLOR_RESET}"
+    )
+
+    # Use check_error=False because remote-info can fail if the remote is temporarily down/missing
+    raw_log = run_flatpak_command(
+        ["flatpak", "remote-info", "--log", origin, app_id], check_error=False
+    )
+
+    if not raw_log:
+        handle_error(
+            f"Could not retrieve commit history for {app_id} from {origin}. Check remote availability."
+        )
+
+    commit_history: List[Dict[str, str]] = []
+    current_commit_hash = None
+
+    # Parsing the output of flatpak remote-info --log line by line
+    for line in raw_log.splitlines():
+        line = line.strip()
+
+        # Regex to capture the commit hash
+        commit_match = re.match(r"^Commit:\s+([a-fA-F0-9]{64})$", line)
+        if commit_match:
+            current_commit_hash = commit_match.group(1)
+            continue
+
+        # Regex to capture the date
+        date_match = re.match(r"^Date:\s+(.+)$", line)
+        if date_match and current_commit_hash:
+            commit_history.append(
+                {"hash": current_commit_hash, "date": date_match.group(1).strip()}
+            )
+            current_commit_hash = None  # Reset for the next commit block
+
+    if not commit_history:
+        handle_error(
+            "No commit history found. This might mean the app is locally built or the remote is not providing log data."
+        )
+
+    return commit_history
+
+
+def downgrade_app(app_id: str, app_scope: str, commit_hash: str):
+    """Executes the flatpak update/downgrade command."""
+    print(
+        f"\n{COLOR_YELLOW}Step 3: Downgrading {COLOR_GREEN}{app_id}{COLOR_YELLOW} to commit {COLOR_CYAN}{commit_hash[:8]}...{COLOR_RESET}"
+    )
+
+    # Arguments common to both user and system updates, including the new --assumeyes flag
+    update_args = ["update", "--assumeyes", f"--commit={commit_hash}", app_id]
+
+    if app_scope == "user":
+        command = ["flatpak", "--user"] + update_args
+        print(
+            f"{COLOR_DIM}Installing at user level with: {' '.join(command)}{COLOR_RESET}"
+        )
+        run_flatpak_command(command)
+    else:
+        # System or unknown scope defaults to sudo
+        command = ["sudo", "flatpak"] + update_args
+        print(
+            f"{COLOR_DIM}Installing at system level with: {' '.join(command)}{COLOR_RESET}"
+        )
+        print(f"You may be prompted for your sudo password.")
+        run_flatpak_command(command)
+
+    print(
+        f"\n{COLOR_GREEN}Successfully downgraded {app_id} to commit {commit_hash[:8]}...{COLOR_RESET}"
+    )
+
+
+def mask_app(app_id: str, app_scope: str):
+    """Masks the application to prevent automatic updates."""
+    print(
+        f"\n{COLOR_YELLOW}Step 4: Masking {app_id} to prevent automatic updates.{COLOR_RESET}"
+    )
+
+    # Check if already masked
+    current_masks = run_flatpak_command(["flatpak", "mask"], check_error=False)
+    if app_id in current_masks:
+        print(
+            f"{COLOR_DIM}{app_id} is already masked. Skipping masking step.{COLOR_RESET}"
+        )
+        return
+
+    mask_command = ["flatpak", "mask", app_id]
+
+    if app_scope == "user":
+        command = ["flatpak", "mask", "--user", app_id]
+        print(
+            f"{COLOR_DIM}Applying user-level mask with: {' '.join(command)}{COLOR_RESET}"
+        )
+        run_flatpak_command(command)
+    else:
+        # System or unknown scope defaults to sudo
+        command = ["sudo"] + mask_command
+        print(
+            f"{COLOR_DIM}Applying system-level mask (requires sudo) with: {' '.join(command)}{COLOR_RESET}"
+        )
+        run_flatpak_command(command)
+
+    print(
+        f"{COLOR_GREEN}Successfully masked {app_id}.{COLOR_RESET} It will no longer be included in flatpak update commands."
+    )
+    print(f"\n{COLOR_CYAN}To re-enable updates, run:{COLOR_RESET}")
+    if app_scope == "user":
+        print(f"  {COLOR_YELLOW}flatpak mask --user --remove {app_id}{COLOR_RESET}")
+    else:
+        print(f"  {COLOR_YELLOW}sudo flatpak mask --remove {app_id}{COLOR_RESET}")
+
+
+def main():
+    """Main function to run the rollback tool."""
+    print(f"\n{COLOR_BLUE}--- Flatpak Version Rollback Tool (Python) ---{COLOR_RESET}")
+
+    # 1. Select Application
+    app_list = get_app_list()
+    app_options = [f"{app['id']} ({app['origin']}, {app['scope']})" for app in app_list]
+    app_selection = select_item_from_list(
+        app_options, f"Choose the number of the application to inspect:"
+    )
+
+    if app_selection is None:
+        handle_error("No application selected. Exiting.")
+        sys.exit(1)
+
+    selected_app = app_list[app_selection]
+
+    app_id = selected_app["id"]
+    app_origin = selected_app["origin"]
+    app_scope = selected_app["scope"]
+
+    print(
+        f"\nSelected App: {COLOR_GREEN}{app_id}{COLOR_RESET} (Origin: {app_origin}, Scope: {app_scope})"
+    )
+
+    # 2. Select Commit History
+    commit_history = get_commit_history(app_id, app_origin)
+
+    # Commit history is ordered from newest to oldest by flatpak remote-info --log
+    commit_options = [
+        f"{commit['date']} {COLOR_DIM}(Commit: {commit['hash'][:8]}...){COLOR_RESET}"
+        for commit in commit_history
+    ]
+
+    print(
+        f"\n{COLOR_YELLOW}Step 2: Select the target commit (version) to downgrade to.{COLOR_RESET}"
+    )
+    commit_selection = select_item_from_list(
+        commit_options,
+        f"Choose the number of the target commit (older versions are further down the list):",
+    )
+
+    if commit_selection is None:
+        handle_error("No commit selected. Exiting.")
+        sys.exit(1)
+
+    selected_commit_hash = commit_history[commit_selection]["hash"]
+    print(f"\nTarget Commit: {COLOR_GREEN}{selected_commit_hash}{COLOR_RESET}")
+
+    # 3. Downgrade
+    downgrade_app(app_id, app_scope, selected_commit_hash)
+
+    # 4. Mask
+    mask_app(app_id, app_scope)
+
+    print(f"\n{COLOR_BLUE}--- Rollback Process Finished ---{COLOR_RESET}\n")
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except KeyboardInterrupt:
+        print(f"\n{COLOR_RED}Operation cancelled by user (Ctrl+C).{COLOR_RESET}")
+        sys.exit(0)
