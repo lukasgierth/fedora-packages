@@ -2,7 +2,7 @@
 
 Name:    stacker-bin
 # renovate: datasource=github-releases depName=project-stacker/stacker extractVersion=true
-Version: 1.1.3
+Version: 1.1.5
 Release: 1%{?dist}
 Summary: A vendor-neutral OCI-native container image (tgz, squashfs, erofs) builder (purely based on OCI Image Specification)
 License: Apache-2.0
