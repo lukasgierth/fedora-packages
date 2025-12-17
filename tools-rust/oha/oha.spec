@@ -2,7 +2,7 @@
 
 Name:    oha
 # renovate: datasource=github-releases depName=hatoo/oha extractVersion=true
-Version: 1.12.0
+Version: 1.12.1
 Release: 1%{?dist}
 Summary: Ohayou(おはよう), HTTP load generator, inspired by rakyll/hey with tui animation.
 License: MIT
