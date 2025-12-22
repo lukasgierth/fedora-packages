@@ -2,7 +2,7 @@
 
 Name:       hugo
 # renovate: datasource=github-releases depName=gohugoio/hugo extractVersion=true
-Version:    0.152.2
+Version:    0.153.1
 Release:    1%{?dist}
 Summary:    The world’s fastest framework for building websites.
 License:    Apache-2.0
@@ -12,7 +12,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: clang
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25.3
+BuildRequires: golang >= 1.25.4
 
 Requires: glibc
 Requires: libsass
