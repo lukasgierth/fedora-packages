@@ -2,7 +2,7 @@
 
 Name:       lazydocker
 # renovate: datasource=github-releases depName=jesseduffield/lazydocker extractVersion=true
-Version:    0.24.2
+Version:    0.24.3
 Release:    1%{?dist}
 Summary:    The lazier way to manage everything docker
 License:    MIT
