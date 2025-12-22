@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.19
+BuildRequires: golang >= 1.24
 
 Requires: (docker-ce or moby-engine)
 Requires: (docker-ce-cli or docker-cli)
