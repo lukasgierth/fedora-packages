@@ -10,15 +10,15 @@ download-additional-wallpaper:
 	rm -rf ~/Pictures/Wallpaper
 	wget -r -np -P ~/Pictures --reject="*index.html*" --reject=".*Phone.*" https://dufs-prod-1.casa.gierth.nl/Wallpaper/ --no-host-directories
 
-reset-user-custom-keybindings:
+reset-gnome-user-custom-keybindings:
 	#!/usr/bin/env bash
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
 
-reboot-to-bios:
+reboot-to-uefi:
 	#!/usr/bin/env bash
 	if [ -d /sys/firmware/efi ]; then
-		systemctl reboot --firmware-setup
+		gum confirm "Reboot to UEFI?" && systemctl reboot --firmware-setup
 	else
 		echo "Rebooting to legacy BIOS from OS is not supported."
 	fi
@@ -43,19 +43,16 @@ system-update:
 	echo "== Update System Image =="
 	sudo bootc upgrade
 
-	# Prompt user to quit or reboot
-	while true; do
-		read -n 1 -s -r -p $'\e[32m(Q)uit,\e[0m\e[31m (R)eboot, (P)oweroff \e[0m' key
-		if [[ $key == "q" ]]; then
-			break
-		elif [[ $key == "r" ]]; then
-			systemctl reboot
-			break
-		elif [[ $key == "p" ]]; then
-			systemctl poweroff
-			break
-		fi
-	done
+	key=$(gum choosen Quit Reboot Poweroff)
+	if [[ $key == "Quit" ]]; then
+		break
+	elif [[ $key == "Reboot" ]]; then
+		systemctl reboot
+		break
+	elif [[ $key == "Poweroff" ]]; then
+		systemctl poweroff
+		break
+	fi
 
 system-clean:
 	#!/usr/bin/env bash
@@ -68,16 +65,10 @@ system-clean:
 [no-exit-message]
 firmware-update:
 	#!/usr/bin/env bash
-	while true; do
-		read -n 1 -s -r -p $'\e[31mMight require multiple reboots, continue? (y)es, (n)o \e[0m' key
-		if [[ $key == "y" ]]; then
-			fwupdmgr refresh --force
-			fwupdmgr update
-			break
-		elif [[ $key == "n" ]]; then
-			break
-		fi
-	done
+	if gum confirm
+		fwupdmgr refresh --force
+		fwupdmgr update
+	fi
 
 changelogs:
 	#!/usr/bin/env bash
@@ -166,13 +157,6 @@ show-distrobox-examples:
 
 set-hostname:
 	#!/usr/bin/env bash
-	while true; do
-		read -p "New hostname: " answer
-		if [[ $answer == "" ]]; then
-			echo "Error: Empty string"
-			exit 1
-		else
-		    break
-		fi
-	done
-	sudo hostnamectl hostname "${answer}"
+	if INPUT_STR=$(gum input --placeholder hostname); then
+		sudo hostnamectl hostname "${INPUT_STR}"
+    fi
