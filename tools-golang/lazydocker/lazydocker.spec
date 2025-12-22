@@ -2,7 +2,7 @@
 
 Name:       lazydocker
 # renovate: datasource=github-releases depName=jesseduffield/lazydocker extractVersion=true
-Version:    0.24.2
+Version:    0.24.3
 Release:    1%{?dist}
 Summary:    The lazier way to manage everything docker
 License:    MIT
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.19
+BuildRequires: golang >= 1.24
 
 Requires: (docker-ce or moby-engine)
 Requires: (docker-ce-cli or docker-cli)
