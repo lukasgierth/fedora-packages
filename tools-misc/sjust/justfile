@@ -159,4 +159,4 @@ set-hostname:
 	#!/usr/bin/env bash
 	if INPUT_STR=$(gum input --placeholder hostname); then
 		sudo hostnamectl hostname "${INPUT_STR}"
-    fi
+	fi
