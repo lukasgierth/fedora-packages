@@ -2,7 +2,7 @@
 
 Name:       nom
 # renovate: datasource=github-releases depName=guyfedwards/nom extractVersion=true
-Version:    2.20.0
+Version:    3.0.0
 Release:    1%{?dist}
 Summary:    RSS reader for the terminal
 License:    GPL-3.0
