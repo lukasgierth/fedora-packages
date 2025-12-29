@@ -43,15 +43,13 @@ system-update:
 	echo "== Update System Image =="
 	sudo bootc upgrade
 
-	key=$(gum choosen Quit Reboot Poweroff)
+	key=$(gum choose Quit Reboot Poweroff)
 	if [[ $key == "Quit" ]]; then
 		break
 	elif [[ $key == "Reboot" ]]; then
 		systemctl reboot
-		break
 	elif [[ $key == "Poweroff" ]]; then
 		systemctl poweroff
-		break
 	fi
 
 system-clean:
@@ -65,7 +63,7 @@ system-clean:
 [no-exit-message]
 firmware-update:
 	#!/usr/bin/env bash
-	if gum confirm
+	if gum confirm; then
 		fwupdmgr refresh --force
 		fwupdmgr update
 	fi
