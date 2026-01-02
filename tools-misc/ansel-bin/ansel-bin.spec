@@ -1,6 +1,6 @@
 %global __os_install_post %{nil}
 Name:    ansel-bin
-Version: 0.0.0+1996.gb51cfa3
+Version: 0.0.0+2013.g06961da4b
 Release: 1%{?dist}
 Summary: Ansel Photo Editor (based on darktable)
 License: GPLv3

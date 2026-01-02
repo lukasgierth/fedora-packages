@@ -5,15 +5,20 @@ _default:
 	#!/usr/bin/env bash
 	/usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
 
-reset-user-custom-keybindings:
+download-additional-wallpaper:
+	#!/usr/bin/env bash
+	rm -rf ~/Pictures/Wallpaper
+	wget -r -np -P ~/Pictures --reject="*index.html*" --reject=".*Phone.*" https://dufs-prod-1.casa.gierth.nl/Wallpaper/ --no-host-directories
+
+reset-gnome-user-custom-keybindings:
 	#!/usr/bin/env bash
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
 
-reboot-to-bios:
+reboot-to-uefi:
 	#!/usr/bin/env bash
 	if [ -d /sys/firmware/efi ]; then
-		systemctl reboot --firmware-setup
+		gum confirm "Reboot to UEFI?" && systemctl reboot --firmware-setup
 	else
 		echo "Rebooting to legacy BIOS from OS is not supported."
 	fi
@@ -38,19 +43,14 @@ system-update:
 	echo "== Update System Image =="
 	sudo bootc upgrade
 
-	# Prompt user to quit or reboot
-	while true; do
-		read -n 1 -s -r -p $'\e[32m(Q)uit,\e[0m\e[31m (R)eboot, (P)oweroff \e[0m' key
-		if [[ $key == "q" ]]; then
-			break
-		elif [[ $key == "r" ]]; then
-			systemctl reboot
-			break
-		elif [[ $key == "p" ]]; then
-			systemctl poweroff
-			break
-		fi
-	done
+	key=$(gum choose Quit Reboot Poweroff)
+	if [[ $key == "Quit" ]]; then
+		break
+	elif [[ $key == "Reboot" ]]; then
+		systemctl reboot
+	elif [[ $key == "Poweroff" ]]; then
+		systemctl poweroff
+	fi
 
 system-clean:
 	#!/usr/bin/env bash
@@ -63,16 +63,10 @@ system-clean:
 [no-exit-message]
 firmware-update:
 	#!/usr/bin/env bash
-	while true; do
-		read -n 1 -s -r -p $'\e[31mMight require multiple reboots, continue? (y)es, (n)o \e[0m' key
-		if [[ $key == "y" ]]; then
-			fwupdmgr refresh --force
-			fwupdmgr update
-			break
-		elif [[ $key == "n" ]]; then
-			break
-		fi
-	done
+	if gum confirm; then
+		fwupdmgr refresh --force
+		fwupdmgr update
+	fi
 
 changelogs:
 	#!/usr/bin/env bash
@@ -90,13 +84,23 @@ setup-libvirt-group:
 	sudo groupadd --system -f libvirt
 	sudo usermod -a -G libvirt "$(whoami)"
 
+install-steam:
+	#!/usr/bin/env fish
+	function install-package
+		flatpak --noninteractive --assumeyes install $argv[1]
+	end
+	install-package com.valvesoftware.Steam
+	install-package net.davidotek.pupgui2
+	install-package org.freedesktop.Platform.VulkanLayer.MangoHud
+	install-package org.freedesktop.Platform.VulkanLayer.gamescope
+
 install-recommended-fisher-plugins:
 	#!/usr/bin/env fish
 	source /usr/share/fish/vendor_conf.d/fisher.fish
 	function install-plugin
 		fisher install $argv[1]
 	end
-	install-plugin IlanCosman/tide@v6
+	#install-plugin IlanCosman/tide@v6
 	install-plugin blackjid/plugin-kubectl
 	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
@@ -104,8 +108,7 @@ install-recommended-fisher-plugins:
 	install-plugin jorgebucaran/replay.fish
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
-	install-plugin patrickf1/fzf.fish
-	#install-plugin jorgebucaran/hydro
+	install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
@@ -120,6 +123,7 @@ install-recommended-misetools:
 	implement calicoctl
 	implement flux2
 	implement helm
+	implement krew
 	implement kubectl
 	implement kubectx
 	implement kubens
@@ -148,3 +152,9 @@ show-distrobox-examples:
 	echo "distrobox create -n fedora -i ghcr.io/ublue-os/fedora-toolbox:latest"
 	echo "distrobox create -n opensuse -i quay.io/toolbx-images/opensuse-toolbox:tumbleweed"
 	echo "distrobox create -n ubuntu -i ghcr.io/ublue-os/ubuntu-toolbox:latest"
+
+set-hostname:
+	#!/usr/bin/env bash
+	if INPUT_STR=$(gum input --placeholder hostname); then
+		sudo hostnamectl hostname "${INPUT_STR}"
+	fi

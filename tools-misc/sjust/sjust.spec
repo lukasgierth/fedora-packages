@@ -1,7 +1,7 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 1.23
-Release: 1%{?dist}
+Version: 1.28
+Release: 3%{?dist}
 Summary: Helper based on just
 License: GPLv3
 Source1: justfile
@@ -21,6 +21,7 @@ Requires: fish
 Requires: fzf
 Requires: gawk
 Requires: just
+Requires: gum
 
 %description
 

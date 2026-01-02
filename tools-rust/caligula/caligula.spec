@@ -1,16 +1,15 @@
 %global debug_package %{nil}
 
-Name:    rainfrog
-# renovate: datasource=github-releases depName=achristmascarl/rainfrog extractVersion=true
-Version: 0.3.12
+Name:    caligula
+# renovate: datasource=github-releases depName=ifd3f/caligula extractVersion=true
+Version: 0.4.10
 Release: 1%{?dist}
-Summary: A database tool for the terminal
-License: MIT
-URL:     https://github.com/achristmascarl/%{name}
+Summary: A user-friendly, lightweight TUI for disk imaging
+License: GPLv3
+URL:     https://github.com/ifd3f/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
-BuildRequires: gcc-c++
 BuildRequires: rust
 
 %description
@@ -23,12 +22,12 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release --locked
 
 %install
-install -Dpm 0755 target/release/rainfrog -t %{buildroot}%{_bindir}/
+install -Dpm 0755 target/release/caligula -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/rainfrog
+%{_bindir}/caligula
 
 %changelog
 %autochangelog

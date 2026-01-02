@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: hugo copr rebuild
+name: golazo copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-golang/hugo/hugo.spec
+      - tools-golang/golazo/golazo.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197878/3a0cc198-115b-4d04-80e1-8b29ec8f624d/hugo
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197878/3a0cc198-115b-4d04-80e1-8b29ec8f624d/golazo

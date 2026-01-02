@@ -1,0 +1,18 @@
+---
+# yamllint disable rule:line-length
+name: ctop copr rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools-golang/ctop/ctop.spec
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197878/3a0cc198-115b-4d04-80e1-8b29ec8f624d/ctop

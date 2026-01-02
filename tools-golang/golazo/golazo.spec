@@ -1,17 +1,19 @@
 %global debug_package %{nil}
 
-Name:       trufflehog
-# renovate: datasource=github-releases depName=trufflesecurity/trufflehog extractVersion=true
-Version:    3.92.4
+Name:       golazo
+# renovate: datasource=github-releases depName=0xjuanma/golazo extractVersion=true
+Version:    0.9.0
 Release:    1%{?dist}
-Summary:    Find, verify, and analyze leaked credentials
-License:    AGPL-3.0
-URL:        https://github.com/trufflesecurity/trufflehog
+Summary:    Golazo is a terminal app for keeping up with live football/soccer. Check scores, match events, and stats from major leagues without leaving your terminal.
+License:    MIT
+URL:        https://github.com/0xjuanma/golazo
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
 BuildRequires: golang >= 1.24
+
+Requires: libnotify
 
 %description
 
@@ -31,7 +33,7 @@ install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/
 
 %files
 %license LICENSE
-%doc README.md CONTRIBUTING.md docs/
+%doc README.md
 %{_bindir}/%{name}
 %{_mandir}/man1/*.1*
 
