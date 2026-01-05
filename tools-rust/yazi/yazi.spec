@@ -2,7 +2,7 @@
 
 Name:    yazi
 # renovate: datasource=github-releases depName=sxyazi/yazi extractVersion=true
-Version: 25.12.29
+Version: 26.1.4
 Release: 1%{?dist}
 Summary: Blazing Fast Terminal File Manager
 License: MIT
