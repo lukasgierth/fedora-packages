@@ -123,6 +123,7 @@ install-recommended-misetools:
 	implement calicoctl
 	implement flux2
 	implement helm
+	implement kompose
 	implement krew
 	implement kubectl
 	implement kubectx
