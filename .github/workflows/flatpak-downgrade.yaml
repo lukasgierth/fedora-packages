@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197880/c61ad174-3b66-4910-b4fb-8d33b0b9abdb/flatpak-downgrade
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/flatpak-downgrade
