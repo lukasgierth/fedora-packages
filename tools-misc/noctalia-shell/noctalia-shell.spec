@@ -1,6 +1,7 @@
 %global debug_package %{nil}
 
 Name:   	noctalia-shell
+# renovate: datasource=github-releases depName=noctalia-dev/noctalia-shell extractVersion=true
 Version:	3.8.2
 Release:	1%{?dist}
 Summary:	A sleek and minimal desktop shell thoughtfully crafted for Wayland, built with Quickshell.
