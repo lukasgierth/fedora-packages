@@ -38,6 +38,10 @@ system-update:
 	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade --bump
+	if which krew >/dev/null; then
+		echo "== Update Krew Tools =="
+		krew update; krew upgrade
+	fi
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
 	echo "== Update System Image =="
@@ -134,6 +138,16 @@ install-recommended-misetools:
 	implement talosctl
 	implement teleport-community
 	implement velero
+
+install-recommended-krewtools:
+	#!/usr/bin/env bash
+	if which krew >/dev/null; then
+		krew install ktop
+		krew install node-resource
+	else
+		echo "krew not installed!"
+		exit 1
+	fi
 
 show-toolbox-examples:
 	#!/usr/bin/env bash
