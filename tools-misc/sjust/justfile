@@ -112,7 +112,8 @@ install-recommended-fisher-plugins:
 	install-plugin jorgebucaran/replay.fish
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
-	install-plugin jorgebucaran/hydro
+	install-plugin lukasgierth/hydro
+	# install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
