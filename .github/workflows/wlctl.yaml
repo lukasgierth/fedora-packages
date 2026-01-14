@@ -1,0 +1,18 @@
+---
+# yamllint disable rule:line-length
+name: wlctl copr rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools-rust/wlctl/wlctl.spec
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_RUST }}/wlctl
