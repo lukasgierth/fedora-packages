@@ -40,7 +40,7 @@ system-update:
 	mise upgrade --bump
 	if which krew >/dev/null; then
 		echo "== Update Krew Tools =="
-		krew update; krew upgrade
+		krew upgrade >/dev/null
 	fi
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
