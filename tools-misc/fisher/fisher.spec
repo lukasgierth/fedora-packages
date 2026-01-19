@@ -2,7 +2,7 @@
 
 Name:           fisher
 # renovate: datasource=github-releases depName=jorgebucaran/fisher extractVersion=true
-Version:        4.4.5
+Version:        4.4.6
 Release:        1%{?dist}
 Summary:        A plugin manager for Fish - the friendly interactive shell
 License:        MIT
