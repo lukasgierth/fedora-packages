@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24
+BuildRequires: golang >= 1.25
 
 %description
 
