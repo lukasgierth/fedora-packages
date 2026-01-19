@@ -2,7 +2,7 @@
 
 Name:       grype
 # renovate: datasource=github-releases depName=anchore/grype extractVersion=true
-Version:    0.104.4
+Version:    0.105.0
 Release:    1%{?dist}
 Summary:    A vulnerability scanner for container images and filesystems
 License:    Apache-2.0
