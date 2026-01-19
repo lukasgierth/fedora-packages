@@ -2,7 +2,7 @@
 
 Name:       golazo
 # renovate: datasource=github-releases depName=0xjuanma/golazo extractVersion=true
-Version:    0.14.0
+Version:    0.15.0
 Release:    1%{?dist}
 Summary:    Golazo is a terminal app for keeping up with live football/soccer. Check scores, match events, and stats from major leagues without leaving your terminal.
 License:    MIT
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24
+BuildRequires: golang >= 1.25
 
 Requires: libnotify
 
