@@ -113,6 +113,7 @@ install-recommended-fisher-plugins:
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
 	install-plugin lukasgierth/hydro
+	install-plugin lukasgierth/docker-abbr
 	# install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
