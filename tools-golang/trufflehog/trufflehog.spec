@@ -2,7 +2,7 @@
 
 Name:       trufflehog
 # renovate: datasource=github-releases depName=trufflesecurity/trufflehog extractVersion=true
-Version:    3.92.4
+Version:    3.92.5
 Release:    1%{?dist}
 Summary:    Find, verify, and analyze leaked credentials
 License:    AGPL-3.0

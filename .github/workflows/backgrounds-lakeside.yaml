@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197881/b132ac2b-dd7b-41ca-99e1-bb25d45b8729/backgrounds-lakeside
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_IMAGE_BRANDING }}/backgrounds-lakeside

@@ -38,6 +38,10 @@ system-update:
 	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade --bump
+	if which krew >/dev/null; then
+		echo "== Update Krew Tools =="
+		krew upgrade >/dev/null
+	fi
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
 	echo "== Update System Image =="
@@ -108,7 +112,9 @@ install-recommended-fisher-plugins:
 	install-plugin jorgebucaran/replay.fish
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
-	install-plugin jorgebucaran/hydro
+	install-plugin lukasgierth/hydro
+	install-plugin lukasgierth/docker-abbr
+	# install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
@@ -123,6 +129,7 @@ install-recommended-misetools:
 	implement calicoctl
 	implement flux2
 	implement helm
+	implement kompose
 	implement krew
 	implement kubectl
 	implement kubectx
@@ -133,6 +140,16 @@ install-recommended-misetools:
 	implement talosctl
 	implement teleport-community
 	implement velero
+
+install-recommended-krewtools:
+	#!/usr/bin/env bash
+	if which krew >/dev/null; then
+		krew install ktop
+		krew install node-resource
+	else
+		echo "krew not installed!"
+		exit 1
+	fi
 
 show-toolbox-examples:
 	#!/usr/bin/env bash

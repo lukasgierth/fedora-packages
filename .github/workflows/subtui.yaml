@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: deno copr rebuild
+name: subtui copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-rust/deno/deno.spec
+      - tools-golang/subtui/subtui.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/197879/8b58d803-7237-4892-9ddd-3fc56b27df3a/deno
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_GOLANG }}/subtui
