@@ -35,7 +35,7 @@ logs-last-boot:
 system-update:
 	#!/usr/bin/env bash
 	echo "== Update Fisher =="
-	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
+	fish -c "source /usr/share/fish/vendor_conf.d/10-fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade --bump
 	if which krew >/dev/null; then
