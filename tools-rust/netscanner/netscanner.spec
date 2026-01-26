@@ -2,7 +2,7 @@
 
 Name:    netscanner
 # renovate: datasource=github-releases depName=Chleba/netscanner extractVersion=true
-Version: 0.6.3
+Version: 0.6.41
 Release: 2%{?dist}
 Summary: Network scanner & diagnostic tool.
 License: MIT
