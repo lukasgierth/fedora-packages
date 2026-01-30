@@ -38,7 +38,7 @@ system-update:
 	fish -c "source /usr/share/fish/vendor_conf.d/10-fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade --bump
-	if which krew >/dev/null; then
+	if which krew >/dev/null 2>&1; then
 		echo "== Update Krew Tools =="
 		krew upgrade >/dev/null
 	fi
