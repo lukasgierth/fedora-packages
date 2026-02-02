@@ -50,10 +50,10 @@ system-update:
 	key=$(gum choose Quit Reboot Poweroff)
 	if [[ $key == "Quit" ]]; then
 		break
-	elif [[ $key == "Reboot" ]]; then
-		systemctl reboot
 	elif [[ $key == "Poweroff" ]]; then
 		systemctl poweroff
+	elif [[ $key == "Reboot" ]]; then
+		systemctl reboot
 	fi
 
 system-clean:
