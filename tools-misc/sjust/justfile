@@ -145,6 +145,7 @@ install-recommended-krewtools:
 	#!/usr/bin/env bash
 	if which krew >/dev/null; then
 		krew install ktop
+		krew install kubescape
 		krew install node-resource
 	else
 		echo "krew not installed!"
