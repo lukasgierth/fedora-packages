@@ -38,10 +38,8 @@ system-update:
 	fish -c "source /usr/share/fish/vendor_conf.d/10-fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade --bump
-	if which krew >/dev/null 2>&1; then
-		echo "== Update Krew Tools =="
-		krew upgrade >/dev/null
-	fi
+	echo "== Update Krew Tools =="
+	krew upgrade >/dev/null
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
 	echo "== Update System Image =="
@@ -120,25 +118,12 @@ install-recommended-fisher-plugins:
 
 install-recommended-misetools:
 	#!/usr/bin/env bash
-	function implement() {
-		mise install "${1}"@latest
-		mise use -g "${1}"@latest
-	}
-
-	implement age
-	implement calicoctl
-	implement flux2
-	implement helm
-	implement kompose
-	implement krew
-	implement kubecolor
-	implement kubectl
-	implement kubie
-	implement kustomize
-	implement sops
-	implement talosctl
-	implement teleport-community
-	implement velero
+	echo "Example for additional tools:"
+	echo ""
+	echo "mise-install-global calicoctl@latest"
+	echo "mise-install-global teleport-community@latest"
+	echo "mise-install-global velero@latest"
+	echo "mise-install-global flux2@latest"
 
 install-recommended-krewtools:
 	#!/usr/bin/env bash
@@ -146,6 +131,7 @@ install-recommended-krewtools:
 		krew install ktop
 		krew install kubescape
 		krew install node-resource
+		krew install stern
 	else
 		echo "krew not installed!"
 		exit 1
