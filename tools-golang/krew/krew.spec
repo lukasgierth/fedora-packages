@@ -20,7 +20,7 @@ BuildRequires: golang >= 1.25
 
 %build
 go build \
-    -ldflags "-X main.version=%{version} -s -w" \
+    -ldflags "-X sigs.k8s.io/krew/internal/version.gitTag=v%{version} -s -w" \
     -o _build/%{name} \
 	./cmd/krew
 go-md2man -in README.md -out %{name}.1
