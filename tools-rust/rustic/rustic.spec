@@ -23,11 +23,20 @@ cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
+install -d %{buildroot}%{bash_completions_dir}
+install -d %{buildroot}%{fish_completions_dir}
+install -d %{buildroot}%{zsh_completions_dir}
+target/release/%{name} completions bash > %{buildroot}%{bash_completions_dir}/%{name}
+target/release/%{name} completions fish > %{buildroot}%{fish_completions_dir}/%{name}.fish
+target/release/%{name} completions zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
 
 %files
 %license LICENSE-MIT LICENSE-APACHE
 %doc README.md
 %{_bindir}/%{name}
+%{bash_completions_dir}/%{name}
+%{fish_completions_dir}/%{name}.fish
+%{zsh_completions_dir}/_%{name}
 
 %changelog
 %autochangelog
