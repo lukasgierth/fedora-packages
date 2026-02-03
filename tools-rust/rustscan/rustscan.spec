@@ -5,7 +5,7 @@ Name:    rustscan
 Version: 2.4.1
 Release: 2%{?dist}
 Summary: The Modern Port Scanner. Find ports quickly (3 seconds at its fastest). Run scripts through our scripting engine (Python, Lua, Shell supported).
-License: GPLv3
+License: GPL-3.0-or-later
 URL:     https://github.com/bee-san/rustscan
 Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 

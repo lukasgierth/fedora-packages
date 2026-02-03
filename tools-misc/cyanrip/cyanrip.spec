@@ -4,7 +4,7 @@ Name:           cyanrip
 Version:        0.9.3.1
 Release:        1%{?dist}
 Summary:        Fully featured CD ripping program
-License:        LGPLv2.1+
+License:        LGPL-2.1-or-later
 URL:            https://github.com/cyanreg/%{name}
 Source:         %{url}/archive/refs/tags/v%{version}.tar.gz
 

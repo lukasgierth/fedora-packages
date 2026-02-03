@@ -5,7 +5,7 @@ Name:       nom
 Version:    3.1.1
 Release:    1%{?dist}
 Summary:    RSS reader for the terminal
-License:    GPL-3.0
+License:    GPL-3.0-or-later
 URL:        https://github.com/guyfedwards/nom
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 

@@ -6,7 +6,7 @@ Name:       discordo
 Version:    20260202.%{short_commit}
 Release:    1%{?dist}
 Summary:    A lightweight, secure, and feature-rich Discord terminal (TUI) client.
-License:    GPLv3
+License:    GPL-3.0-or-later
 URL:        https://github.com/ayn2op/%{name}
 Source:     %{url}/archive/%{commit}.tar.gz#/%{name}-%{commit}.tar.gz
 

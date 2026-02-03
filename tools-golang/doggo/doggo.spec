@@ -5,7 +5,7 @@ Name:       doggo
 Version:    1.1.4
 Release:    1%{?dist}
 Summary:    Command-line DNS Client for Humans. Written in Golang
-License:    GPL-3.0
+License:    GPL-3.0-or-later
 URL:        https://github.com/mr-karan/%{name}
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 

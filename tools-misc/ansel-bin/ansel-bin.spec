@@ -3,7 +3,7 @@ Name:    ansel-bin
 Version: 0.0.0+2013.g06961da4b
 Release: 1%{?dist}
 Summary: Ansel Photo Editor (based on darktable)
-License: GPLv3
+License: GPL-3.0-or-later
 URL:     https://github.com/aurelienpierreeng/ansel
 Source1:  %{url}/releases/download/v0.0.0/Ansel-%{version}-x86_64.AppImage
 Source2: ansel.desktop

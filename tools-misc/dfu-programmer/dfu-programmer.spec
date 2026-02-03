@@ -3,7 +3,7 @@ Name:           dfu-programmer
 Version:        1.1.0
 Release:        1%{?dist}
 Summary:        A Device Firmware Update based USB programmer for Atmel chips
-License:        GPLv2+
+License:        GPL-2.0-or-later
 URL:            https://github.com/dfu-programmer/%{name}
 Source:         %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
 

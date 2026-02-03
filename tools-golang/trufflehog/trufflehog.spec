@@ -5,7 +5,7 @@ Name:       trufflehog
 Version:    3.92.5
 Release:    1%{?dist}
 Summary:    Find, verify, and analyze leaked credentials
-License:    AGPL-3.0
+License:    AGPL-3.0-only
 URL:        https://github.com/trufflesecurity/trufflehog
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 

@@ -3,7 +3,7 @@ Name:    flatpak-downgrade
 Version: 0.1
 Release: 1%{?dist}
 Summary: Python script that lets you interactively downgrade and mask flatpak apps, written mostly by Gemini (LLM)
-License: GPL3
+License: GPL-3.0-or-later
 Source0: flatpak-downgrade
 
 BuildArch: noarch

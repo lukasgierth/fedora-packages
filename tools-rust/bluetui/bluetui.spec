@@ -5,7 +5,7 @@ Name:    bluetui
 Version: 0.8.1
 Release: 1%{?dist}
 Summary: TUI for managing bluetooth on Linux
-License: GPLv3
+License: GPL-3.0-or-later
 URL:     https://github.com/pythops/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
