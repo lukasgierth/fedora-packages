@@ -3,7 +3,7 @@
 Name:    rustic
 # renovate: datasource=github-releases depName=rustic-rs/rustic extractVersion=true
 Version: 0.10.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: rustic - fast, encrypted, and deduplicated backups powered by Rust
 License: MIT OR Apache-2.0
 URL:     https://github.com/rustic-rs/%{name}
