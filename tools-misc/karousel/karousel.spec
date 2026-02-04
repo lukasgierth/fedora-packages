@@ -12,7 +12,6 @@ Source0:	    %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildArch: noarch
 
 BuildRequires: make
-BuildRequires: nodejs
 BuildRequires: npm
 BuildRequires: typescript
 
