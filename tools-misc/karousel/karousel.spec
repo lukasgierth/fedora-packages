@@ -13,6 +13,7 @@ BuildArch: noarch
 
 BuildRequires: make
 BuildRequires: nodejs
+BuildRequires: npm
 BuildRequires: typescript
 
 Requires: kwin
