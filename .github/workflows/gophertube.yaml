@@ -1,0 +1,18 @@
+---
+# yamllint disable rule:line-length
+name: gophertube copr rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools-golang/gophertube/gophertube.spec
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_GOLANG }}/gophertube
