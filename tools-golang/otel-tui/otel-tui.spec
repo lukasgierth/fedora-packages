@@ -2,7 +2,7 @@
 
 Name:       otel-tui
 # renovate: datasource=github-releases depName=ymtdzzz/otel-tui extractVersion=true
-Version:    0.7.0
+Version:    0.7.1
 Release:    2%{?dist}
 Summary:    A terminal OpenTelemetry viewer inspired by otel-desktop-viewer
 License:    Apache-2.0
