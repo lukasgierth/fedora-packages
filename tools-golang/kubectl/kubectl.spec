@@ -2,7 +2,7 @@
 
 Name:       kubectl
 # renovate: datasource=github-releases depName=kubernetes/kubernetes extractVersion=true
-Version:    1.35.0
+Version:    1.35.1
 Release:    1%{?dist}
 Summary:    Kubernetes CLI
 License:    Apache-2.0
