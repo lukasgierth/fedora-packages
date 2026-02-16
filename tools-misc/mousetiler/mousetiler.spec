@@ -2,7 +2,7 @@
 
 Name:           MouseTiler
 # renovate: datasource=github-releases depName=rxappdev/MouseTiler extractVersion=true
-Version:        4.0.0
+Version:        5.2.0
 Release:        1%{?dist}
 Summary:        The fastest, simplest tiler for KDE Plasma 6+ that gives you full freedom at your fingertip. No need to remember dozens of keyboard shortcuts or be limited by a fixed tile layout.
 License:        GPL-3.0-or-later
