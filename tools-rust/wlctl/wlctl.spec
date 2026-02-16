@@ -2,7 +2,7 @@
 
 Name:    wlctl
 # renovate: datasource=github-releases depName=aashish-thapa/wlctl extractVersion=true
-Version: 0.1.3
+Version: 0.1.5
 Release: 1%{?dist}
 Summary: TUI for managing wifi on Linux with Network Manager. Forked from impala
 License: GPL-3.0-or-later
