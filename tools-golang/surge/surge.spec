@@ -16,7 +16,7 @@ BuildRequires: golang >= 1.24.4
 %description
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n Surge-%{version}
 
 %build
 go build \
