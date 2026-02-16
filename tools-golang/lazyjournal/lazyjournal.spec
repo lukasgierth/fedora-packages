@@ -2,7 +2,7 @@
 
 Name:       lazyjournal
 # renovate: datasource=github-releases depName=Lifailon/lazyjournal extractVersion=true
-Version:    0.8.4
+Version:    0.8.5
 Release:    1%{?dist}
 Summary:    A TUI for reading logs from journald, auditd, file system, Docker (including Swarm) containers, Podman and Kubernetes pods with support for output coloring and multiple filtering modes.
 License:    MIT
