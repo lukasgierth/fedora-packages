@@ -25,7 +25,7 @@ cp -r src/contents %{buildroot}%{_datadir}/kwin-wayland/scripts/mousetiler/
 
 %files
 %license LICENSE
-%doc README.md
+%doc README.md AUTOTILERGUIDE.md
 %{_datadir}/kwin-wayland/scripts/mousetiler
 
 %changelog
