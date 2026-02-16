@@ -2,6 +2,7 @@
 %global uuid copyous@boerdereinar.dev
 
 Name:           gnome-shell-extension-copyous
+# renovate: datasource=github-releases depName=boerdereinar/copyous extractVersion=true
 Version:        1.3.0
 Release:        1%{?dist}
 Summary:        Modern Clipboard Manager for GNOME
