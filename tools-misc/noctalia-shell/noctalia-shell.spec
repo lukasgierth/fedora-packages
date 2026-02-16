@@ -2,7 +2,7 @@
 
 Name:   	noctalia-shell
 # renovate: datasource=github-releases depName=noctalia-dev/noctalia-shell extractVersion=true
-Version:	4.3.0
+Version:	4.4.3
 Release:	1%{?dist}
 Summary:	A sleek and minimal desktop shell thoughtfully crafted for Wayland, built with Quickshell.
 License:	MIT
