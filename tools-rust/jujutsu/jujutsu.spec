@@ -12,6 +12,8 @@ Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: cargo
 BuildRequires: rust >= 1.88
 
+Requires: git-core >= 2.41
+
 %description
 
 %prep
