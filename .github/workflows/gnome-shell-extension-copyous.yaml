@@ -1,0 +1,18 @@
+---
+# yamllint disable rule:line-length
+name: gnome-shell-extension-copyous copr rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tools-misc/gnome-shell-extension-copyous/gnome-shell-extension-copyous.spec
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/gnome-shell-extension-copyous
