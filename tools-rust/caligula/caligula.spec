@@ -5,7 +5,7 @@ Name:    caligula
 Version: 0.4.10
 Release: 1%{?dist}
 Summary: A user-friendly, lightweight TUI for disk imaging
-License: GPLv3
+License: GPL-3.0-or-later
 URL:     https://github.com/ifd3f/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 

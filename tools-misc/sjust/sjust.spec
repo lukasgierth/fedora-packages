@@ -1,9 +1,9 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 1.32
-Release: 1%{?dist}
+Version: 1.36
+Release: 2%{?dist}
 Summary: Helper based on just
-License: GPLv3
+License: GPL-3.0-or-later
 Source1: justfile
 Source2: sjust
 Source3: sjust-fzf

@@ -2,10 +2,10 @@
 
 Name:       nom
 # renovate: datasource=github-releases depName=guyfedwards/nom extractVersion=true
-Version:    3.1.0
+Version:    3.1.1
 Release:    1%{?dist}
 Summary:    RSS reader for the terminal
-License:    GPL-3.0
+License:    GPL-3.0-or-later
 URL:        https://github.com/guyfedwards/nom
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 

@@ -2,7 +2,7 @@
 
 Name:    systemctl-tui
 # renovate: datasource=github-releases depName=rgwood/systemctl-tui extractVersion=true
-Version: 0.4.1
+Version: 0.5.1
 Release: 1%{?dist}
 Summary: A fast, simple TUI for interacting with systemd services and their logs.
 License: MIT

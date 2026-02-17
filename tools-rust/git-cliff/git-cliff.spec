@@ -2,7 +2,7 @@
 
 Name:    git-cliff
 # renovate: datasource=github-releases depName=orhun/git-cliff extractVersion=true
-Version: 2.11.0
+Version: 2.12.0
 Release: 1%{?dist}
 Summary: A highly customizable Changelog Generator that follows Conventional Commit specifications.
 License: MIT

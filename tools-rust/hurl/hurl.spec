@@ -5,7 +5,7 @@ Name:    hurl
 Version: 7.1.0
 Release: 1%{?dist}
 Summary: Hurl is a command line tool that runs HTTP requests defined in a simple plain text format
-License: APACHEv2
+License: Apache-2.0
 URL:     https://github.com/Orange-OpenSource/%{name}
 Source:  %{url}/archive/refs/tags/%{version}.tar.gz
 

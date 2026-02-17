@@ -3,7 +3,7 @@ Name:		argtable3
 Version:	3.3.1
 Release:	1%{?dist}
 Summary:	ANSI C command-line parsing library that parses GNU-style command-line options.
-License:	BSD
+License:	BSD-3-Clause
 URL:		https://github.com/argtable/%{name}
 Source:		%{url}/archive/refs/tags/v%{version}.tar.gz
 

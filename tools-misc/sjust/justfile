@@ -35,13 +35,11 @@ logs-last-boot:
 system-update:
 	#!/usr/bin/env bash
 	echo "== Update Fisher =="
-	fish -c "source /usr/share/fish/vendor_conf.d/fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
+	fish -c "source /usr/share/fish/vendor_conf.d/10-fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
-	mise upgrade --bump
-	if which krew >/dev/null; then
-		echo "== Update Krew Tools =="
-		krew upgrade >/dev/null
-	fi
+	mise upgrade
+	echo "== Update Krew Tools =="
+	krew upgrade
 	echo "== Update Flatpak Applications =="
 	flatpak update --assumeyes --noninteractive
 	echo "== Update System Image =="
@@ -50,10 +48,10 @@ system-update:
 	key=$(gum choose Quit Reboot Poweroff)
 	if [[ $key == "Quit" ]]; then
 		break
-	elif [[ $key == "Reboot" ]]; then
-		systemctl reboot
 	elif [[ $key == "Poweroff" ]]; then
 		systemctl poweroff
+	elif [[ $key == "Reboot" ]]; then
+		systemctl reboot
 	fi
 
 system-clean:
@@ -120,32 +118,20 @@ install-recommended-fisher-plugins:
 
 install-recommended-misetools:
 	#!/usr/bin/env bash
-	function implement() {
-		mise install "${1}"@latest
-		mise use -g "${1}"@latest
-	}
-
-	implement age
-	implement calicoctl
-	implement flux2
-	implement helm
-	implement kompose
-	implement krew
-	implement kubectl
-	implement kubectx
-	implement kubens
-	implement kubie
-	implement kustomize
-	implement sops
-	implement talosctl
-	implement teleport-community
-	implement velero
+	echo "Example for additional tools:"
+	echo ""
+	echo "mise-install-global calicoctl@latest"
+	echo "mise-install-global teleport-community@latest"
+	echo "mise-install-global velero@latest"
+	echo "mise-install-global flux2@latest"
 
 install-recommended-krewtools:
 	#!/usr/bin/env bash
 	if which krew >/dev/null; then
 		krew install ktop
+		krew install kubescape
 		krew install node-resource
+		krew install stern
 	else
 		echo "krew not installed!"
 		exit 1
