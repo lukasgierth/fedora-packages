@@ -2,7 +2,7 @@
 
 Name:    oryx
 # renovate: datasource=github-releases depName=pythops/oryx extractVersion=true
-Version: 0.7.2
+Version: 0.8.0
 Release: 1%{?dist}
 Summary: TUI for sniffing network traffic using eBPF on Linux
 License: GPL-3.0
@@ -10,6 +10,7 @@ URL:     https://github.com/pythops/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: rustup
+BuildRequires: llvm >= 21
 
 %description
 
@@ -18,10 +19,12 @@ BuildRequires: rustup
 
 %build
 echo "Installing rust nightly toolchain and rust-src component..."
+rustup-init -y
+source ~/.cargo/env
 rustup toolchain install nightly --component rust-src
 rustup default nightly
 echo "Installing bpf-linker"
-cargo install bpf-linker
+cargo install bpf-linker --no-default-features --features llvm-21
 
 # actual build
 export RUSTFLAGS="%{build_rustflags}"
