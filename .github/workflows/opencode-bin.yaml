@@ -11,7 +11,7 @@ on:
 
 jobs:
   curl:
-    runs-on: uopencodetu-slim
+    runs-on: ubuntu-slim
     steps:
       - name: Run webhook for copr
         run: |
