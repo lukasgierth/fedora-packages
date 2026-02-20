@@ -4,6 +4,11 @@
   "assignees": ["lukasgierth"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
+  "postUpgradeTasks": {
+    "executionMode": "update",
+    "commands": ["sed -i 's/^Release:.*/Release: 1%{?dist}/' {{updatedDeps}}"],
+    "fileFilters": ["**/*.spec"]
+  },
   "customManagers": [
     {
       "customType": "regex",
