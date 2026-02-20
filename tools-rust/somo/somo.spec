@@ -23,11 +23,20 @@ cargo build --release --locked
 
 %install
 install -Dpm 0755 target/release/somo -t %{buildroot}%{_bindir}/
+install -d %{buildroot}%{bash_completions_dir}
+install -d %{buildroot}%{fish_completions_dir}
+install -d %{buildroot}%{zsh_completions_dir}
+_build/%{name} generate-completions bash > %{buildroot}%{bash_completions_dir}/%{name}
+_build/%{name} generate-completions fish > %{buildroot}%{fish_completions_dir}/%{name}.fish
+_build/%{name} generate-completions zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
 
 %files
 %license LICENSE
 %doc README.md
 %{_bindir}/somo
+%{bash_completions_dir}/%{name}
+%{fish_completions_dir}/%{name}.fish
+%{zsh_completions_dir}/_%{name}
 
 %changelog
 %autochangelog
