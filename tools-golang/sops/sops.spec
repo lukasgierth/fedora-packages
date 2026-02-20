@@ -3,7 +3,7 @@
 Name:       sops
 # renovate: datasource=github-releases depName=getsops/sops extractVersion=true
 Version:    3.11.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Simple and flexible tool for managing secrets
 License:    MPL-2.0
 URL:        https://github.com/getsops/%{name}
@@ -26,10 +26,16 @@ go build \
 
 %install
 install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}
+install -d %{buildroot}%{bash_completions_dir}
+install -d %{buildroot}%{zsh_completions_dir}
+_build/%{name} completion bash > %{buildroot}%{bash_completions_dir}/%{name}
+_build/%{name} completion zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
 
 %files
 %license LICENSE
 %{_bindir}/%{name}
+%{bash_completions_dir}/%{name}
+%{zsh_completions_dir}/_%{name}
 
 %changelog
 %autochangelog
