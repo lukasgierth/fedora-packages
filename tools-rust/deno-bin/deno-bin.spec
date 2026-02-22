@@ -2,7 +2,7 @@
 
 Name:    deno-bin
 # renovate: datasource=github-releases depName=denoland/deno extractVersion=true
-Version: 2.6.9
+Version: 2.6.10
 Release: 1%{?dist}
 Summary: A modern runtime for JavaScript and TypeScript.
 License: MIT
