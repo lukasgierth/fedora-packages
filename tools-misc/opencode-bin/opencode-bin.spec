@@ -2,7 +2,7 @@
 %global __strip /bin/true
 
 Name:    opencode-bin
-# renovate: datasource=github-releases depName=anomalyca/opencode extractVersion=true
+# renovate: datasource=github-releases depName=anomalyco/opencode extractVersion=true
 Version: 1.2.6
 Release: 1%{?dist}
 Summary: The open source coding agent.
