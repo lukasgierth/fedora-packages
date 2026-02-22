@@ -2,7 +2,7 @@
 
 Name:       sops
 # renovate: datasource=github-releases depName=getsops/sops extractVersion=true
-Version:    3.11.0
+Version:    3.12.1
 Release:    2%{?dist}
 Summary:    Simple and flexible tool for managing secrets
 License:    MPL-2.0
