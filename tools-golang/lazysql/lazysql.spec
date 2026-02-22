@@ -2,7 +2,7 @@
 
 Name:       lazysql
 # renovate: datasource=github-releases depName=jorgerojas26/lazysql extractVersion=true
-Version:    0.4.7
+Version:    0.4.8
 Release:    1%{?dist}
 Summary:    A cross-platform TUI database management tool written in Go.
 License:    MIT
