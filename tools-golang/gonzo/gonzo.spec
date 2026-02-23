@@ -2,7 +2,7 @@
 
 Name:       gonzo
 # renovate: datasource=github-releases depName=control-theory/gonzo extractVersion=true
-Version:    0.3.0
+Version:    0.3.1
 Release:    1%{?dist}
 Summary:    Gonzo! The Go based TUI log analysis tool
 License:    MIT

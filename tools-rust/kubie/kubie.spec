@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
 Name:    kubie
-# renovate: datasource=github-releases depName=sbstp/kubie extractVersion=true
+# renovate: datasource=github-releases depName=kubie-org/kubie extractVersion=true
 Version: 0.26.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A more powerful alternative to kubectx and kubens
 License: MIT
-URL:     https://github.com/sbstp/%{name}
+URL:     https://github.com/kubie-org/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
