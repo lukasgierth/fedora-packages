@@ -3,7 +3,7 @@
 Name:       pangolin-cli
 # renovate: datasource=github-releases depName=fosrl/cli extractVersion=true
 Version:    0.4.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Pangolin CLI tool and VPN client
 License:    AGPL-3.0 AND Fossorial-Commercial-License
 URL:        https://github.com/fosrl/cli
@@ -25,8 +25,8 @@ go build \
 go-md2man -in README.md -out %{name}.1
 
 %install
-install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}/%{name}
-install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/%{name}.1
+install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}/
+install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/
 install -d %{buildroot}%{bash_completions_dir}
 install -d %{buildroot}%{fish_completions_dir}
 install -d %{buildroot}%{zsh_completions_dir}
