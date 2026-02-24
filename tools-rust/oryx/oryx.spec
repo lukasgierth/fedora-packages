@@ -10,7 +10,8 @@ URL:     https://github.com/pythops/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: rustup
-BuildRequires: llvm >= 21
+BuildRequires: llvm-devel >= 21
+BuildRequires: clang-devel >= 21
 
 %description
 
