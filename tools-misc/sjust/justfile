@@ -15,6 +15,17 @@ reset-gnome-user-custom-keybindings:
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
 
+reorder-gnome-apps:
+	#!/usr/bin/env bash
+	if which gsettings >/dev/null; then
+		gsettings set org.gnome.shell app-picker-layout "[]"
+		echo "Reordered!"
+		return 0
+	else
+		echo "No GNOME installed"
+		return 1
+	fi
+
 reboot-to-uefi:
 	#!/usr/bin/env bash
 	if [ -d /sys/firmware/efi ]; then
