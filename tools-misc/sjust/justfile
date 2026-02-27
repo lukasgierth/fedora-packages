@@ -139,8 +139,12 @@ install-recommended-misetools:
 install-recommended-krewtools:
 	#!/usr/bin/env bash
 	if which krew >/dev/null; then
+		# add extra repo for netshoot
+		krew index add netshoot https://github.com/nilic/kubectl-netshoot.git
+
 		krew install ktop
 		krew install kubescape
+		krew install netshoot/netshoot
 		krew install node-resource
 		krew install stern
 	else
