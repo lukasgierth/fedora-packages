@@ -2,7 +2,7 @@
 
 Name:       doggo
 # renovate: datasource=github-releases depName=mr-karan/doggo extractVersion=true
-Version:    1.1.4
+Version:    1.1.5
 Release:    1%{?dist}
 Summary:    Command-line DNS Client for Humans. Written in Golang
 License:    GPL-3.0-or-later
