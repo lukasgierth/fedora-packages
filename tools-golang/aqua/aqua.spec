@@ -3,7 +3,7 @@
 Name:       aqua
 # renovate: datasource=github-releases depName=aquaproj/aqua extractVersion=true
 Version:    2.56.7
-Release:    2%{?dist}
+Release:    1%{?dist}
 Summary:    Declarative CLI Version manager written in Go. Support Lazy Install, Registry, and continuous update with Renovate. CLI version is switched seamlessly
 License:    MIT
 URL:        https://github.com/aquaproj/%{name}
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25.6
+BuildRequires: golang >= 1.26
 
 Recommends: fzf
 
