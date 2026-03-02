@@ -2,7 +2,7 @@
 
 Name:       krew
 # renovate: datasource=github-releases depName=kubernetes-sigs/krew extractVersion=true
-Version:    0.4.5
+Version:    0.5.0
 Release:    1%{?dist}
 Summary:    Find and install kubectl plugins
 License:    Apache-2.0
