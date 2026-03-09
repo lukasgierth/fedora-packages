@@ -3,7 +3,7 @@
 
 Name:    opencode-bin
 # renovate: datasource=github-releases depName=anomalyco/opencode extractVersion=true
-Version: 1.2.15
+Version: 1.2.21
 Release: 1%{?dist}
 Summary: The open source coding agent.
 License: MIT
