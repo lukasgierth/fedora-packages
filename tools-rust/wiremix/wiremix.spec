@@ -2,7 +2,7 @@
 
 Name:    wiremix
 # renovate: datasource=github-releases depName=tsowell/wiremix extractVersion=true
-Version: 0.9.0
+Version: 0.10.0
 Release: 1%{?dist}
 Summary: Simple TUI audio mixer for PipeWire
 License: MIT OR Apache-2.0
