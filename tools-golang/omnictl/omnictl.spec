@@ -2,7 +2,7 @@
 
 Name:       omnictl
 # renovate: datasource=github-releases depName=siderolabs/omni extractVersion=true
-Version:    1.5.8
+Version:    1.5.11
 Release:    1%{?dist}
 Summary:    Omni CLI
 License:    Business Source License 1.1
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.26
+BuildRequires: golang >= 1.26.1
 
 %description
 
