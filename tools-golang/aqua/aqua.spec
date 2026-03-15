@@ -21,6 +21,7 @@ Recommends: fzf
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.buildVersion=%{version} -s -w" \
     -o _build/%{name} \
