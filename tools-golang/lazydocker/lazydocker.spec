@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24
+BuildRequires: golang
 
 Requires: (docker-ce or moby-engine)
 Requires: (docker-ce-cli or docker-cli)
@@ -23,6 +23,7 @@ Suggests: (docker-compose-plugin or docker-compose)
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}

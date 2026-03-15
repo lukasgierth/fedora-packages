@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.26.1
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.26.1
 %autosetup -n omni-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X github.com/siderolabs/omni/internal/version=%{version} -s -w" \
     -o _build/%{name} \
