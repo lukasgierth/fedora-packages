@@ -2,7 +2,7 @@
 
 Name:           kyanite
 # renovate: datasource=github-releases depName=MurderFromMars/Kyanite extractVersion=true
-Version:        1.4.1
+Version:        1.5
 Release:        1%{?dist}
 Summary:        Kyanite is a kwin extension designed to bring a fluid and minimalist dynamic workspace system to Plasma 6
 License:        MIT
