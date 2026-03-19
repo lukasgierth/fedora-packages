@@ -2,7 +2,7 @@
 
 Name:           karousel
 # renovate: datasource=github-releases depName=peterfajdiga/karousel extractVersion=true
-Version:        0.15
+Version:        0.16
 Release:        1%{?dist}
 Summary:        Scrollable tiling Kwin script
 License:        GPL-3.0-or-later
