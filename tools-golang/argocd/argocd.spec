@@ -20,8 +20,9 @@ BuildRequires: golang
 
 %build
 export GOTOOLCHAIN=auto
+export BUILD_DATE=$(date --iso-8601)
 go build \
-    -ldflags "-s -w" \
+    -ldflags "-X github.com/argoproj/argo-cd/v3/common.version=%{version} -X github.com/argoproj/argo-cd/v3/common.buildDate=${BUILD_DATE} -s -w" \
     -o _build/%{name} \
 	./cmd
 go-md2man -in README.md -out %{name}.1
