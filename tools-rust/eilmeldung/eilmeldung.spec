@@ -23,6 +23,7 @@ BuildRequires: sqlite-devel
 %autosetup -n %{name}-%{version}
 
 %build
+export AWS_LC_SYS_NO_JITTER_ENTROPY=1
 export RUSTFLAGS="%{build_rustflags}"
 cargo build --release --locked
 
