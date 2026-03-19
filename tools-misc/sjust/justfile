@@ -142,6 +142,7 @@ install-recommended-krewtools:
 		# add extra repo for netshoot
 		krew index add netshoot https://github.com/nilic/kubectl-netshoot.git
 
+		krew install konfig
 		krew install ktop
 		krew install kubescape
 		krew install netshoot/netshoot
