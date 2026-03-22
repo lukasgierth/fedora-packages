@@ -2,7 +2,7 @@
 
 Name:       talosctl
 # renovate: datasource=github-releases depName=siderolabs/talos extractVersion=true
-Version:    1.12.5
+Version:    1.12.6
 Release:    1%{?dist}
 Summary:    Talos CLI
 License:    MPL-2.0
