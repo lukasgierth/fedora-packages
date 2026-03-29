@@ -16,6 +16,7 @@ BuildRequires: python3-devel
 BuildRequires: cmake
 BuildRequires: openssl-devel
 BuildRequires: perl-devel
+BuildRequires: perl-core
 BuildRequires: openssl-perl
 BuildRequires: perl-FindBin
 BuildRequires: perl-IPC-Cmd
