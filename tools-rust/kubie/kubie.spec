@@ -2,7 +2,7 @@
 
 Name:    kubie
 # renovate: datasource=github-releases depName=kubie-org/kubie extractVersion=true
-Version: 0.26.1
+Version: 0.27.0
 Release: 2%{?dist}
 Summary: A more powerful alternative to kubectx and kubens
 License: MIT
