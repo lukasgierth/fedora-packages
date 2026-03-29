@@ -3,7 +3,7 @@
 
 Name:           gnome-shell-extension-copyous
 # renovate: datasource=github-releases depName=boerdereinar/copyous extractVersion=true
-Version:        1.3.0
+Version:        2.0.0
 Release:        3%{?dist}
 Summary:        Modern Clipboard Manager for GNOME
 License:        GPL-3.0-or-later
