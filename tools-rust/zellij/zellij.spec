@@ -11,16 +11,17 @@ Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo >= 1.90
 BuildRequires: rust >= 1.90
-BuildRequires: gcc
-BuildRequires: python3-devel
 BuildRequires: cmake
+BuildRequires: gcc
+BuildRequires: libtool
 BuildRequires: openssl-devel
-BuildRequires: perl-devel
-BuildRequires: perl-core
 BuildRequires: openssl-perl
 BuildRequires: perl-FindBin
 BuildRequires: perl-IPC-Cmd
+BuildRequires: perl-core
+BuildRequires: perl-devel
 BuildRequires: protobuf-compiler
+BuildRequires: python3-devel
 
 %description
 Zellij is a workspace aimed at developers, ops-oriented people and anyone who loves the terminal. At its core, it is a terminal multiplexer (similar to tmux and screen), but this is merely its infrastructure layer. Zellij includes a layout system, and a plugin system allowing one to create plugins in any language that compiles to WebAssembly.
