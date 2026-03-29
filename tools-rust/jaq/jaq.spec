@@ -2,7 +2,7 @@
 
 Name:    jaq
 # renovate: datasource=github-releases depName=01mf02/jaq extractVersion=true
-Version: 2.3.0
+Version: 3.0.0
 Release: 1%{?dist}
 Summary: A jq clone focussed on correctness, speed, and simplicity
 License: MIT
