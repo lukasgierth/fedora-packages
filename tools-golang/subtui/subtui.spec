@@ -2,7 +2,7 @@
 
 Name:       subtui
 # renovate: datasource=github-releases depName=MattiaPun/SubTUI extractVersion=true
-Version:    2.5.1
+Version:    2.13.1
 Release:    1%{?dist}
 Summary:    A lightweight Subsonic TUI music player built in Go with scrobbling support.
 License:    MIT
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.25
 %autosetup -n SubTUI-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}

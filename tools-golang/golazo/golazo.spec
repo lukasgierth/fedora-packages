@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25
+BuildRequires: golang
 
 Requires: libnotify
 
@@ -21,6 +21,7 @@ Requires: libnotify
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}

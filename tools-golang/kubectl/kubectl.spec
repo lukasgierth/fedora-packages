@@ -2,7 +2,7 @@
 
 Name:       kubectl
 # renovate: datasource=github-releases depName=kubernetes/kubernetes extractVersion=true
-Version:    1.35.1
+Version:    1.35.3
 Release:    1%{?dist}
 Summary:    Kubernetes CLI
 License:    Apache-2.0
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25.6
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.25.6
 %autosetup -n kubernetes-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X k8s.io/component-base/version.gitVersion=v%{version} -s -w" \
     -o _build/%{name} \

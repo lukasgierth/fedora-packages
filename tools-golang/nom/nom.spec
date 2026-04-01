@@ -2,7 +2,7 @@
 
 Name:       nom
 # renovate: datasource=github-releases depName=guyfedwards/nom extractVersion=true
-Version:    3.2.5
+Version:    3.3.0
 Release:    1%{?dist}
 Summary:    RSS reader for the terminal
 License:    GPL-3.0-or-later
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.24
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name} \

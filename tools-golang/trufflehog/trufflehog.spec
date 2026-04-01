@@ -2,7 +2,7 @@
 
 Name:       trufflehog
 # renovate: datasource=github-releases depName=trufflesecurity/trufflehog extractVersion=true
-Version:    3.93.4
+Version:    3.94.1
 Release:    1%{?dist}
 Summary:    Find, verify, and analyze leaked credentials
 License:    AGPL-3.0-only
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.24
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}

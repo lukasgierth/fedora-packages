@@ -2,7 +2,7 @@
 
 Name:       talosctl
 # renovate: datasource=github-releases depName=siderolabs/talos extractVersion=true
-Version:    1.12.4
+Version:    1.12.6
 Release:    1%{?dist}
 Summary:    Talos CLI
 License:    MPL-2.0
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25.3
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.25.3
 %autosetup -n talos-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name} \

@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: ghostty copr rebuild
+name: argocd copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-misc/ghostty/ghostty.spec
+      - tools-golang/argocd/argocd.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/ghostty
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_GOLANG }}/argocd

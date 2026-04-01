@@ -2,7 +2,7 @@
 
 Name:       surge
 # renovate: datasource=github-releases depName=surge-downloader/surge extractVersion=true
-Version:    0.6.8
+Version:    0.7.5
 Release:    1%{?dist}
 Summary:    Surge is a blazing fast, open-source terminal (TUI) download manager built in Go.
 License:    MIT
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24.4
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.24.4
 %autosetup -n Surge-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}

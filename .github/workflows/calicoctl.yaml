@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: noctalia-shell copr rebuild
+name: calicoctl copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-misc/noctalia-shell/noctalia-shell.spec
+      - tools-golang/calicoctl/calicoctl.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/noctalia-shell
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_GOLANG }}/calicoctl

@@ -2,7 +2,7 @@
 
 Name:       doggo
 # renovate: datasource=github-releases depName=mr-karan/doggo extractVersion=true
-Version:    1.1.4
+Version:    1.1.5
 Release:    1%{?dist}
 Summary:    Command-line DNS Client for Humans. Written in Golang
 License:    GPL-3.0-or-later
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.25.5
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.25.5
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.buildVersion=%{version} -s -w" \
     -o _build/%{name} \

@@ -2,7 +2,7 @@
 
 Name:    rs-tftpd
 # renovate: datasource=github-releases depName=altugbakan/rs-tftpd extractVersion=true
-Version: 0.5.1
+Version: 0.5.2
 Release: %autorelease
 Summary: TFTP Server Daemon (+ Client) implemented in Rust
 License: MIT

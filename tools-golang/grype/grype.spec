@@ -2,7 +2,7 @@
 
 Name:       grype
 # renovate: datasource=github-releases depName=anchore/grype extractVersion=true
-Version:    0.109.0
+Version:    0.110.0
 Release:    1%{?dist}
 Summary:    A vulnerability scanner for container images and filesystems
 License:    Apache-2.0
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.24.1
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.24.1
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name} \

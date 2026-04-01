@@ -5,15 +5,21 @@ _default:
 	#!/usr/bin/env bash
 	/usr/bin/just --list --list-heading $'Available commands:\n' --list-prefix $' - '
 
-download-additional-wallpaper:
-	#!/usr/bin/env bash
-	rm -rf ~/Pictures/Wallpaper
-	wget -r -np -P ~/Pictures --reject="*index.html*" --reject=".*Phone.*" https://dufs-prod-1.casa.gierth.nl/Wallpaper/ --no-host-directories
-
 reset-gnome-user-custom-keybindings:
 	#!/usr/bin/env bash
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/
 	dconf reset -f /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings
+
+reorder-gnome-apps:
+	#!/usr/bin/env bash
+	if which gsettings >/dev/null; then
+		gsettings set org.gnome.shell app-picker-layout "[]"
+		echo "Reordered!"
+		exit 0
+	else
+		echo "No GNOME installed"
+		exit 1
+	fi
 
 reboot-to-uefi:
 	#!/usr/bin/env bash
@@ -128,8 +134,14 @@ install-recommended-misetools:
 install-recommended-krewtools:
 	#!/usr/bin/env bash
 	if which krew >/dev/null; then
+		# add extra repo for netshoot
+		krew index add netshoot https://github.com/nilic/kubectl-netshoot.git
+
+		krew install cnpg
+		krew install konfig
 		krew install ktop
 		krew install kubescape
+		krew install netshoot/netshoot
 		krew install node-resource
 		krew install stern
 	else

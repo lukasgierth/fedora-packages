@@ -2,7 +2,7 @@
 
 Name:       lazyjournal
 # renovate: datasource=github-releases depName=Lifailon/lazyjournal extractVersion=true
-Version:    0.8.5
+Version:    0.8.6
 Release:    1%{?dist}
 Summary:    A TUI for reading logs from journald, auditd, file system, Docker (including Swarm) containers, Podman and Kubernetes pods with support for output coloring and multiple filtering modes.
 License:    MIT
@@ -11,7 +11,7 @@ Source:     %{url}/archive/refs/tags/%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
-BuildRequires: golang >= 1.23
+BuildRequires: golang
 
 %description
 
@@ -19,6 +19,7 @@ BuildRequires: golang >= 1.23
 %autosetup -n %{name}-%{version}
 
 %build
+export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
     -o _build/%{name}
