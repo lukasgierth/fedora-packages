@@ -1,0 +1,18 @@
+---
+# yamllint disable rule:line-length
+name: backgrounds-mixed copr rebuild
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - image-branding/backgrounds-mixed/backgrounds-mixed.spec
+  workflow_dispatch:
+
+jobs:
+  curl:
+    runs-on: ubuntu-slim
+    steps:
+      - name: Run webhook for copr
+        run: |
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_IMAGE_BRANDING }}/backgrounds-mixed
