@@ -28,7 +28,7 @@ mkdir -p -m0755 \
     %{buildroot}%{_datadir}/backgrounds/%{bgname} \
     %{buildroot}%{_datadir}/gnome-background-properties
 
-install -Dpm 0644 images/* -t %{buildroot}%{_datadir}/backgrounds/%{bgname}
+cp -r images/* -t %{buildroot}%{_datadir}/backgrounds/%{bgname}
 install -Dpm 0644 mixed-gnome.xml -t %{buildroot}%{_datadir}/gnome-background-properties
 
 %files
