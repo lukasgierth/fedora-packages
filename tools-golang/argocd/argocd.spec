@@ -3,7 +3,7 @@
 Name:       argocd
 # renovate: datasource=github-releases depName=argoproj/argo-cd extractVersion=true
 Version:    3.3.6
-Release:    3%{?dist}
+Release:    4%{?dist}
 Summary:    Declarative Continuous Deployment for Kubernetes
 License:    Apache-2.0
 URL:        https://github.com/argoproj/argo-cd
@@ -28,7 +28,7 @@ go build \
 go-md2man -in README.md -out %{name}.1
 
 %install
-install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}/argo
+install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/argo
 install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/
 install -d %{buildroot}%{bash_completions_dir}
 install -d %{buildroot}%{fish_completions_dir}
