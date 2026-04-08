@@ -13,7 +13,7 @@ BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
 BuildRequires: golang
 
-Requires: git-core OR git
+Requires: git
 
 %description
 
