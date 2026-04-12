@@ -3,7 +3,7 @@
 
 Name:       backgrounds-mixed
 Version:    0.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 License:    CC-BY-NC-SA-4.0
 Summary:    mixed backgrounds
 URL:        https://github.com/lukasgierth/fedora-packages
