@@ -2,7 +2,7 @@
 
 Name:       zellij
 # renovate: datasource=github-releases depName=zellij-org/zellij extractVersion=true
-Version:    0.44.0
+Version:    0.44.1
 Release:    1%{?dist}
 Summary:    A terminal workspace with batteries included.
 License:    MIT
