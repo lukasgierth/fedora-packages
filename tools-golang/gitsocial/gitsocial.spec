@@ -2,7 +2,7 @@
 
 Name:       gitsocial
 # renovate: datasource=github-releases depName=gitsocial-org/gitsocial extractVersion=true
-Version:    0.6.4
+Version:    0.7.0
 Release:    1%{?dist}
 Summary:    Git-native cross-forge collaboration: posts, issues, PRs, releases, all in your repo
 License:    MIT
