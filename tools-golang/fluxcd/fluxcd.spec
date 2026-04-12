@@ -2,7 +2,7 @@
 
 Name:       fluxcd
 # renovate: datasource=github-releases depName=fluxcd/flux2 extractVersion=true
-Version:    2.8.3
+Version:    2.8.5
 Release:    2%{?dist}
 Summary:    Open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit.
 License:    Apache-2.0
