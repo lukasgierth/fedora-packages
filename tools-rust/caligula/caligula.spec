@@ -2,7 +2,7 @@
 
 Name:    caligula
 # renovate: datasource=github-releases depName=ifd3f/caligula extractVersion=true
-Version: 0.4.10
+Version: 0.4.11
 Release: 1%{?dist}
 Summary: A user-friendly, lightweight TUI for disk imaging
 License: GPL-3.0-or-later
