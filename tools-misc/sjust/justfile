@@ -137,12 +137,16 @@ install-recommended-krewtools:
 		# add extra repo for netshoot
 		krew index add netshoot https://github.com/nilic/kubectl-netshoot.git
 
+		krew install cert-manager
 		krew install cnpg
 		krew install konfig
 		krew install ktop
 		krew install kubescape
+		krew install kubetail
 		krew install netshoot/netshoot
 		krew install node-resource
+		krew install radar
+		krew install relay
 		krew install stern
 	else
 		echo "krew not installed!"
