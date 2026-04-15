@@ -2,8 +2,8 @@
 %global bgname mixed
 
 Name:       backgrounds-mixed
-Version:    0.1.0
-Release:    2%{?dist}
+Version:    2026.04.1
+Release:    1%{?dist}
 License:    CC-BY-NC-SA-4.0
 Summary:    mixed backgrounds
 URL:        https://github.com/lukasgierth/fedora-packages
