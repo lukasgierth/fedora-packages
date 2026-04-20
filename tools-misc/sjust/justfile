@@ -136,12 +136,14 @@ install-recommended-krewtools:
 
 		krew install cert-manager
 		krew install cnpg
+		krew install ctx
 		krew install konfig
 		krew install ktop
 		krew install kubescape
 		krew install kubetail
 		krew install netshoot/netshoot
 		krew install node-resource
+		krew install ns
 		krew install radar
 		krew install relay
 		krew install stern
