@@ -2,7 +2,7 @@
 
 Name:    zizmor
 # renovate: datasource=github-releases depName=zizmorcore/zizmor extractVersion=true
-Version: 1.23.1
+Version: 1.24.1
 Release: 1%{?dist}
 Summary: Static analysis for GitHub Actions
 License: MIT
