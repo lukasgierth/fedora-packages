@@ -3,7 +3,7 @@
 Name:    kubie
 # renovate: datasource=github-releases depName=kubie-org/kubie extractVersion=true
 Version: 0.27.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A more powerful alternative to kubectx and kubens
 License: MIT
 URL:     https://github.com/kubie-org/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release --no-default-features
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
