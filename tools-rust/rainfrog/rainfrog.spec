@@ -3,7 +3,7 @@
 Name:    rainfrog
 # renovate: datasource=github-releases depName=achristmascarl/rainfrog extractVersion=true
 Version: 0.3.18
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A database tool for the terminal
 License: MIT
 URL:     https://github.com/achristmascarl/%{name}
@@ -20,7 +20,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/rainfrog -t %{buildroot}%{_bindir}/

@@ -3,7 +3,7 @@
 Name:    binsider
 # renovate: datasource=github-releases depName=orhun/binsider extractVersion=true
 Version: 0.3.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Analyze ELF binaries like a boss
 License: MIT
 URL:     https://github.com/orhun/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust >= 1.88.0
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
