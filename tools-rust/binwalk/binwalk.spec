@@ -3,7 +3,7 @@
 Name:    binwalk
 # renovate: datasource=github-releases depName=ReFirmLabs/binwalk extractVersion=true
 Version: 3.1.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Firmware Analysis Tool
 License: MIT
 URL:     https://github.com/ReFirmLabs/%{name}
@@ -20,7 +20,7 @@ BuildRequires: fontconfig-devel
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

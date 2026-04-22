@@ -3,7 +3,7 @@
 Name:    impala
 # renovate: datasource=github-releases depName=pythops/impala extractVersion=true
 Version: 0.7.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: TUI for managing wifi on Linux with iwd.
 License: GPL-3.0-or-later
 URL:     https://github.com/pythops/%{name}
@@ -21,7 +21,7 @@ Requires: iwd
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

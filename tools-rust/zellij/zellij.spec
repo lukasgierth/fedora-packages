@@ -2,8 +2,8 @@
 
 Name:       zellij
 # renovate: datasource=github-releases depName=zellij-org/zellij extractVersion=true
-Version:    0.44.0
-Release:    1%{?dist}
+Version:    0.44.1
+Release:    2%{?dist}
 Summary:    A terminal workspace with batteries included.
 License:    MIT
 URL:        https://github.com/zellij-org/%{name}
@@ -31,7 +31,7 @@ Zellij is a workspace aimed at developers, ops-oriented people and anyone who lo
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked --no-default-features --features plugins_from_target,vendored_curl
+cargo build --release --no-default-features --features plugins_from_target,vendored_curl
 
 %install
 install -Dpm 0755 target/release/zellij -t %{buildroot}%{_bindir}/

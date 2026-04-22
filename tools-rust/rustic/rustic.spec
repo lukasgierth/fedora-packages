@@ -2,8 +2,8 @@
 
 Name:    rustic
 # renovate: datasource=github-releases depName=rustic-rs/rustic extractVersion=true
-Version: 0.11.1
-Release: 2%{?dist}
+Version: 0.11.2
+Release: 3%{?dist}
 Summary: rustic - fast, encrypted, and deduplicated backups powered by Rust
 License: MIT OR Apache-2.0
 URL:     https://github.com/rustic-rs/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust >= 1.85.0
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

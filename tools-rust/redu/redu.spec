@@ -3,7 +3,7 @@
 Name:    redu
 # renovate: datasource=github-releases depName=drdo/redu extractVersion=true
 Version: 0.2.15
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: ncdu for your restic repository
 License: MIT
 URL:     https://github.com/drdo/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

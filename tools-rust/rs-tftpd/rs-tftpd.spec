@@ -2,8 +2,8 @@
 
 Name:    rs-tftpd
 # renovate: datasource=github-releases depName=altugbakan/rs-tftpd extractVersion=true
-Version: 0.5.2
-Release: %autorelease
+Version: 0.5.3
+Release: 1%{?dist}
 Summary: TFTP Server Daemon (+ Client) implemented in Rust
 License: MIT
 URL:     https://github.com/altugbakan/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked --features client
+cargo build --release --features client
 
 %install
 install -Dpm 0755 target/release/tftpd -t %{buildroot}%{_bindir}/

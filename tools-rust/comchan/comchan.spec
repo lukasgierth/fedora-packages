@@ -2,8 +2,8 @@
 
 Name:    comchan
 # renovate: datasource=github-releases depName=Vaishnav-Sabari-Girish/ComChan extractVersion=true
-Version: 0.2.5
-Release: 1%{?dist}
+Version: 0.3.2
+Release: 2%{?dist}
 Summary: A Blazingly Fast Minimal Serial Monitor written in Rust
 License: MIT
 URL:     https://github.com/Vaishnav-Sabari-Girish/ComChan
@@ -20,14 +20,14 @@ BuildRequires: rust-libudev-devel
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
-%doc README.md docs/
+%doc README.md
 %{_bindir}/%{name}
 
 %changelog

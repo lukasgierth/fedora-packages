@@ -2,7 +2,7 @@
 
 Name:       cosign
 # renovate: datasource=github-releases depName=sigstore/cosign extractVersion=true
-Version:    3.0.5
+Version:    3.0.6
 Release:    1%{?dist}
 Summary:    Code signing and transparency for containers and binaries
 License:    Apache-2.0

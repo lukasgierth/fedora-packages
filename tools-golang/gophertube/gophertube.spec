@@ -2,7 +2,7 @@
 
 Name:       gophertube
 # renovate: datasource=github-releases depName=KrishnaSSH/gophertube extractVersion=true
-Version:    2.8.0
+Version:    2.8.2
 Release:    1%{?dist}
 Summary:    A modern terminal user interface for searching and watching YouTube videos using mpv and chafa
 License:    GPL-3.0-or-later

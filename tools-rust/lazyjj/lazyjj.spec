@@ -3,7 +3,7 @@
 Name:    lazyjj
 # renovate: datasource=github-releases depName=Cretezy/lazyjj extractVersion=true
 Version: 0.6.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: TUI for Jujutsu/jj
 License: Apache-2.0
 URL:     https://github.com/Cretezy/%{name}
@@ -21,7 +21,7 @@ Requires: jujutsu
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

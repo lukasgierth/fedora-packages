@@ -3,7 +3,7 @@
 Name:    gping
 # renovate: datasource=github-releases depName=orf/gping extractVersion=true
 Version: 1.20.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: Ping, but with a graph
 License: MIT
 URL:     https://github.com/orf/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

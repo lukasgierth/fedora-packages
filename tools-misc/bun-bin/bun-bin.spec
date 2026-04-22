@@ -2,7 +2,7 @@
 
 Name:    bun-bin
 # renovate: datasource=github-releases depName=oven-sh/bun extractVersion=true
-Version: 1.3.11
+Version: 1.3.12
 Release: 1%{?dist}
 Summary: Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one
 License: MIT

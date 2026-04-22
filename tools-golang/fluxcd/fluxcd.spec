@@ -2,7 +2,7 @@
 
 Name:       fluxcd
 # renovate: datasource=github-releases depName=fluxcd/flux2 extractVersion=true
-Version:    2.8.3
+Version:    2.8.5
 Release:    1%{?dist}
 Summary:    Open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit.
 License:    Apache-2.0
@@ -30,7 +30,7 @@ go build \
 go-md2man -in README.md -out %{name}.1
 
 %install
-install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}/flux
+install -Dpm 0755 _build/%{name} %{buildroot}%{_bindir}/flux
 install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/
 install -d %{buildroot}%{bash_completions_dir}
 install -d %{buildroot}%{fish_completions_dir}

@@ -3,7 +3,7 @@
 Name:    jaq
 # renovate: datasource=github-releases depName=01mf02/jaq extractVersion=true
 Version: 3.0.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: A jq clone focussed on correctness, speed, and simplicity
 License: MIT
 URL:     https://github.com/01mf02/%{name}
@@ -19,7 +19,7 @@ BuildRequires: rust
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
-cargo build --release --locked
+cargo build --release
 
 %install
 install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/

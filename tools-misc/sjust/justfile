@@ -108,7 +108,6 @@ install-recommended-fisher-plugins:
 	function install-plugin
 		fisher install $argv[1]
 	end
-	#install-plugin IlanCosman/tide@v6
 	install-plugin blackjid/plugin-kubectl
 	install-plugin halostatue/fish-chezmoi
 	install-plugin jorgebucaran/autopair.fish
@@ -116,9 +115,7 @@ install-recommended-fisher-plugins:
 	install-plugin jorgebucaran/replay.fish
 	install-plugin lewisacidic/fish-git-abbr
 	install-plugin nickeb96/puffer-fish
-	install-plugin lukasgierth/hydro
 	install-plugin lukasgierth/docker-abbr
-	# install-plugin jorgebucaran/hydro
 	#install-plugin meaningful-ooo/sponge
 
 
@@ -137,12 +134,18 @@ install-recommended-krewtools:
 		# add extra repo for netshoot
 		krew index add netshoot https://github.com/nilic/kubectl-netshoot.git
 
+		krew install cert-manager
 		krew install cnpg
+		krew install ctx
 		krew install konfig
 		krew install ktop
 		krew install kubescape
+		krew install kubetail
 		krew install netshoot/netshoot
 		krew install node-resource
+		krew install ns
+		krew install radar
+		krew install relay
 		krew install stern
 	else
 		echo "krew not installed!"
