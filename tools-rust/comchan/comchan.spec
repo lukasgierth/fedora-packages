@@ -2,7 +2,7 @@
 
 Name:    comchan
 # renovate: datasource=github-releases depName=Vaishnav-Sabari-Girish/ComChan extractVersion=true
-Version: 0.3.2
+Version: 0.3.3
 Release: 2%{?dist}
 Summary: A Blazingly Fast Minimal Serial Monitor written in Rust
 License: MIT
