@@ -2,8 +2,8 @@
 
 Name:    purple
 # renovate: datasource=github-releases depName=erickochen/purple extractVersion=true
-Version: 2.45.0
-Release: 2%{?dist}
+Version: 2.45.2
+Release: 1%{?dist}
 Summary: Terminal cockpit for your servers. Search, connect, transfer files, manage containers and run commands across hosts. Syncs from 16 cloud providers. Edits ~/.ssh/config directly.
 License: MIT
 URL:     https://github.com/erickochen/%{name}
