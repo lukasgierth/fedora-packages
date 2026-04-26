@@ -3,7 +3,7 @@
 Name:    flux9s
 # renovate: datasource=github-releases depName=dgunzy/flux9s extractVersion=true
 Version: 0.8.3
-Release: 2%{?dist}
+Release: 1%{?dist}
 Summary: A K9s-inspired terminal UI for monitoring Flux resources in real-time
 License: Apache-2.0
 URL:     https://github.com/dgunzy/%{name}
