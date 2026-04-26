@@ -3,7 +3,7 @@
 Name:       argocd
 # renovate: datasource=github-releases depName=argoproj/argo-cd extractVersion=true
 Version:    3.3.8
-Release:    5%{?dist}
+Release:    1%{?dist}
 Summary:    Declarative Continuous Deployment for Kubernetes
 License:    Apache-2.0
 URL:        https://github.com/argoproj/argo-cd
