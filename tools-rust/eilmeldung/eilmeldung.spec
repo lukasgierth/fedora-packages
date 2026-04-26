@@ -2,8 +2,8 @@
 
 Name:    eilmeldung
 # renovate: datasource=github-releases depName=christo-auer/eilmeldung extractVersion=true
-Version: 1.4.3
-Release: 2%{?dist}
+Version: 1.4.4
+Release: 1%{?dist}
 Summary: eilmeldung is a TUI RSS reader based on the awesome news-flash library
 License: GPL-3.0-or-later
 URL:     https://github.com/christo-auer/%{name}
