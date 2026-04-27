@@ -2,7 +2,7 @@
 
 Name:       pangolin-cli
 # renovate: datasource=github-releases depName=fosrl/cli extractVersion=true
-Version:    0.6.2
+Version:    0.7.0
 Release:    1%{?dist}
 Summary:    Pangolin CLI tool and VPN client
 License:    AGPL-3.0 AND Fossorial-Commercial-License
