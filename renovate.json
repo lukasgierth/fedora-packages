@@ -4,6 +4,15 @@
   "assignees": ["lukasgierth"],
   "prHourlyLimit": 0,
   "prConcurrentLimit": 0,
+  "packageRules": [
+    {
+      "description": "match all and enable all update types",
+      "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
+      "automerge": false,
+      "addLabels": ["{{updateType}}"],
+      "enabled": true
+    }
+  ],
   "customManagers": [
     {
       "customType": "regex",
