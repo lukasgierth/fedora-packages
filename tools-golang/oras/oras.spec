@@ -1,0 +1,49 @@
+%global debug_package %{nil}
+
+Name:       oras
+# renovate: datasource=github-releases depName=oras-project/oras extractVersion=true
+Version:    1.3.2
+Release:    1%{?dist}
+Summary:    OCI registry client - managing content like artifacts, images, packages
+License:    Apache-2.0
+URL:        https://github.com/oras-project/%{name}
+Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
+
+BuildRequires: git-core >= 2.0
+BuildRequires: go-md2man
+BuildRequires: golang
+
+%description
+
+%prep
+%autosetup -n %{name}-%{version}
+
+%build
+export GOTOOLCHAIN=auto
+go build \
+    -ldflags "-X github.com/oras-project/oras/internal/version.BuildMetadata=v%{version} -s -w" \
+    -o _build/%{name} \
+	./cmd/oras
+go-md2man -in README.md -out %{name}.1
+
+%install
+install -Dpm 0755 _build/%{name} -t %{buildroot}%{_bindir}
+install -Dpm 0644 %{name}.1 -t %{buildroot}/%{_mandir}/man1/
+install -d %{buildroot}%{bash_completions_dir}
+install -d %{buildroot}%{fish_completions_dir}
+install -d %{buildroot}%{zsh_completions_dir}
+_build/%{name} completion bash > %{buildroot}%{bash_completions_dir}/%{name}
+_build/%{name} completion fish > %{buildroot}%{fish_completions_dir}/%{name}.fish
+_build/%{name} completion zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
+
+%files
+%license LICENSE
+%doc README.md
+%{_bindir}/%{name}
+%{_mandir}/man1/*.1*
+%{bash_completions_dir}/%{name}
+%{fish_completions_dir}/%{name}.fish
+%{zsh_completions_dir}/_%{name}
+
+%changelog
+%autochangelog
