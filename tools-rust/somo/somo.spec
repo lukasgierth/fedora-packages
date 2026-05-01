@@ -3,7 +3,7 @@
 Name:    somo
 # renovate: datasource=github-releases depName=theopfr/somo extractVersion=true
 Version: 1.3.3
-Release: 3%{?dist}
+Release: 1%{?dist}
 Summary: A human-friendly alternative to netstat/iproute-ss for socket and port monitoring on Linux and macOS.
 License: MIT
 URL:     https://github.com/theopfr/%{name}
