@@ -10,6 +10,7 @@ URL:     https://github.com/Vaishnav-Sabari-Girish/ComChan
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
+BuildRequires: fontconfig-devel
 BuildRequires: rust
 BuildRequires: rust-libudev-devel
 
