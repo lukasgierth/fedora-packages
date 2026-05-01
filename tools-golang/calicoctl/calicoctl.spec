@@ -2,7 +2,7 @@
 
 Name:       calicoctl
 # renovate: datasource=github-releases depName=projectcalico/calico extractVersion=true
-Version:    3.31.5
+Version:    3.32.0
 Release:    1%{?dist}
 Summary:    Calico CLI
 License:    Apache-2.0
