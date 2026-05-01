@@ -2,7 +2,7 @@
 
 Name:    llmfit
 # renovate: datasource=github-releases depName=AlexsJones/llmfit extractVersion=true
-Version: 0.9.15
+Version: 0.9.18
 Release: 1%{?dist}
 Summary: Hundreds of models & providers. One command to find what runs on your hardware.
 License: MIT
