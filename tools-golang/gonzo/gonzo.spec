@@ -12,6 +12,7 @@ Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
 BuildRequires: golang
+BuildRequires: make
 
 %description
 
@@ -19,6 +20,7 @@ BuildRequires: golang
 %autosetup -n %{name}-%{version}
 
 %build
+make ensure-web-dist
 export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
