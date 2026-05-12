@@ -147,6 +147,7 @@ install-recommended-krewtools:
 		krew install radar
 		krew install relay
 		krew install stern
+		krew install wild #use wildcards for deletion/etc.
 	else
 		echo "krew not installed!"
 		exit 1
