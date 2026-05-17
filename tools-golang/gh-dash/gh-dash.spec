@@ -2,7 +2,7 @@
 
 Name:       gh-dash
 # renovate: datasource=github-releases depName=dlvhdr/gh-dash extractVersion=true
-Version:    4.23.2
+Version:    4.24.1
 Release:    1%{?dist}
 Summary:    A rich terminal UI for GitHub that doesn't break your flow.
 License:    MIT
