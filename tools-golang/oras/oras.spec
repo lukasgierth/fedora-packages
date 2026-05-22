@@ -1,18 +1,17 @@
 %global debug_package %{nil}
 
-Name:       gonzo
-# renovate: datasource=github-releases depName=control-theory/gonzo extractVersion=true
-Version:    0.4.2
+Name:       oras
+# renovate: datasource=github-releases depName=oras-project/oras extractVersion=true
+Version:    1.3.2
 Release:    1%{?dist}
-Summary:    Gonzo! The Go based TUI log analysis tool
-License:    MIT
-URL:        https://github.com/control-theory/%{name}
+Summary:    OCI registry client - managing content like artifacts, images, packages
+License:    Apache-2.0
+URL:        https://github.com/oras-project/%{name}
 Source:     %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: git-core >= 2.0
 BuildRequires: go-md2man
 BuildRequires: golang
-BuildRequires: make
 
 %description
 
@@ -20,12 +19,11 @@ BuildRequires: make
 %autosetup -n %{name}-%{version}
 
 %build
-make ensure-web-dist
 export GOTOOLCHAIN=auto
 go build \
-    -ldflags "-X main.version=%{version} -s -w" \
+    -ldflags "-X github.com/oras-project/oras/internal/version.BuildMetadata=v%{version} -s -w" \
     -o _build/%{name} \
-	./cmd/%{name}
+	./cmd/oras
 go-md2man -in README.md -out %{name}.1
 
 %install
@@ -40,7 +38,7 @@ _build/%{name} completion zsh > %{buildroot}%{zsh_completions_dir}/_%{name}
 
 %files
 %license LICENSE
-%doc README.md docs
+%doc README.md
 %{_bindir}/%{name}
 %{_mandir}/man1/*.1*
 %{bash_completions_dir}/%{name}

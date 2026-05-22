@@ -2,7 +2,7 @@
 
 Name:       argonaut
 # renovate: datasource=github-releases depName=darksworm/argonaut extractVersion=true
-Version:    2.16.0
+Version:    2.17.0
 Release:    1%{?dist}
 Summary:    Keyboard-first terminal UI for Argo CD. Browse apps, scope by clusters/namespaces/projects, stream live resource status, trigger syncs, inspect diffs, and roll back safely — all without leaving your terminal.
 License:    GPL-3.0-or-later

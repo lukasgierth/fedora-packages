@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
-Name:    llmfit
-# renovate: datasource=github-releases depName=AlexsJones/llmfit extractVersion=true
-Version: 0.9.25
+Name:    siomon
+# renovate: datasource=github-releases depName=level1techs/siomon extractVersion=true
+Version: 0.2.3
 Release: 1%{?dist}
-Summary: Hundreds of models & providers. One command to find what runs on your hardware.
+Summary: A comprehensive Linux hardware information and real-time sensor monitoring tool
 License: MIT
-URL:     https://github.com/AlexsJones/%{name}
+URL:     https://github.com/level1techs/%{name}
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
@@ -22,12 +22,12 @@ export RUSTFLAGS="%{build_rustflags}"
 cargo build --release
 
 %install
-install -Dpm 0755 target/release/llmfit -t %{buildroot}%{_bindir}/
+install -Dpm 0755 target/release/sio -t %{buildroot}%{_bindir}/
 
 %files
 %license LICENSE
 %doc README.md
-%{_bindir}/llmfit
+%{_bindir}/sio
 
 %changelog
 %autochangelog

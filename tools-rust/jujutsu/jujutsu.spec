@@ -2,8 +2,8 @@
 
 Name:       jujutsu
 # renovate: datasource=github-releases depName=jj-vcs/jj extractVersion=true
-Version:    0.40.0
-Release:    2%{?dist}
+Version:    0.41.0
+Release:    1%{?dist}
 Summary:    A Git-compatible VCS that is both simple and powerful
 License:    Apache-2.0
 URL:        https://github.com/jj-vcs/jj
