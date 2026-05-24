@@ -23,7 +23,6 @@ Requires: git
 %build
 export GOTOOLCHAIN=auto
 go build \
-	-C library \
     -ldflags "-X main.version=%{version} -s -w" \
     -o ../_build/%{name} \
 	./cli/gitsocial
