@@ -26,7 +26,7 @@ go build \
 	-C library \
     -ldflags "-X main.version=%{version} -s -w" \
     -o ../_build/%{name} \
-	./cli
+	./cli/gitsocial
 go-md2man -in README.md -out %{name}.1
 
 %install
