@@ -2,7 +2,7 @@
 
 Name:       gitsocial
 # renovate: datasource=github-releases depName=gitsocial-org/gitsocial extractVersion=true
-Version:    0.10.4
+Version:    0.11.2
 Release:    1%{?dist}
 Summary:    Git-native cross-forge collaboration: posts, issues, PRs, releases, all in your repo
 License:    MIT
@@ -26,7 +26,7 @@ go build \
 	-C library \
     -ldflags "-X main.version=%{version} -s -w" \
     -o ../_build/%{name} \
-	./cli
+	./cli/gitsocial
 go-md2man -in README.md -out %{name}.1
 
 %install
