@@ -24,7 +24,7 @@ Requires: git
 export GOTOOLCHAIN=auto
 go build \
     -ldflags "-X main.version=%{version} -s -w" \
-    -o ../_build/%{name} \
+    -o _build/%{name} \
 	./cli/gitsocial
 go-md2man -in README.md -out %{name}.1
 
