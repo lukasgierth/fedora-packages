@@ -120,13 +120,9 @@ install-recommended-fisher-plugins:
 
 
 install-recommended-misetools:
-	#!/usr/bin/env bash
-	echo "Example for additional tools:"
-	echo ""
-	echo "mise-install-global calicoctl@latest"
-	echo "mise-install-global teleport-community@latest"
-	echo "mise-install-global velero@latest"
-	echo "mise-install-global flux2@latest"
+	#!/usr/bin/env fish
+	mise-install-global opencode@latest
+	mise-install-global pi@latest
 
 install-recommended-krewtools:
 	#!/usr/bin/env bash
