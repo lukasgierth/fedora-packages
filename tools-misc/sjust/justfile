@@ -124,12 +124,16 @@ install-recommended-fisher-plugins:
 install-recommended-misetools:
 	#!/usr/bin/env fish
 	mise-install-global argocd
+	mise-install-global argonaut
 	mise-install-global calicoctl
 	mise-install-global cosign
 	mise-install-global crush
 	mise-install-global ctop
 	mise-install-global dive
 	mise-install-global flux2
+	mise-install-global flux9s
+	mise-install-global github-cli
+	mise-install-global gh-dash
 	mise-install-global goreleaser
 	mise-install-global grype
 	mise-install-global helm
@@ -143,8 +147,10 @@ install-recommended-misetools:
 	mise-install-global omnictl
 	mise-install-global opencode
 	mise-install-global oras
+	mise-install-global pangolin-cli
 	mise-install-global pi
 	mise-install-global sops
+	mise-install-global stacker
 	mise-install-global talosctl
 	mise-install-global trivy
 	mise-install-global trufflehog
