@@ -156,6 +156,7 @@ install-recommended-misetools:
 	mise-install-global trivy
 	mise-install-global trufflehog
 	mise-install-global umoci
+	mise-install-global usage
 	mise-install-global zizmor
 	misecompsync
 
