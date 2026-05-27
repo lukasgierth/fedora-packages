@@ -125,6 +125,8 @@ install-recommended-misetools:
 	#!/usr/bin/env fish
 	mise-install-global argocd
 	mise-install-global calicoctl
+	mise-install-global cosign
+	mise-install-global crush
 	mise-install-global ctop
 	mise-install-global dive
 	mise-install-global flux2
@@ -135,7 +137,6 @@ install-recommended-misetools:
 	mise-install-global ko
 	mise-install-global kubecolor
 	mise-install-global kubectl
-	mise-install-global kubectx
 	mise-install-global kubens
 	mise-install-global kustomize
 	mise-install-global ollama
@@ -159,12 +160,14 @@ install-recommended-krewtools:
 
 		krew install cert-manager
 		krew install cnpg
+		krew install ctx
 		krew install konfig
 		krew install ktop
 		krew install kubescape
 		krew install kubetail
 		krew install netshoot/netshoot
 		krew install node-resource
+		krew install ns
 		krew install radar
 		krew install relay
 		krew install stern
