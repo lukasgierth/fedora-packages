@@ -237,3 +237,21 @@ set-hostname:
 	if INPUT_STR=$(gum input --placeholder hostname); then
 		sudo hostnamectl hostname "${INPUT_STR}"
 	fi
+
+upgrade-nix:
+	#!/usr/bin/env bash
+	if command -v nix >/dev/null; then
+		echo "Installing latest Lix packages"
+		nix profile install nixpkgs#lix && nix upgrade-nix
+	else
+		echo "Nix not available in this system!"
+	fi
+
+install-nix-software-center:
+	#!/usr/bin/env bash
+	if command -v nix >/dev/null; then
+		echo "Installing Nix Software Center"
+		nix profile install github:snowfallorg/nix-software-center
+	else
+		echo "Nix not available in this system!"
+	fi
