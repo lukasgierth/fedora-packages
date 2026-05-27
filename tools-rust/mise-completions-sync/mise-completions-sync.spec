@@ -2,8 +2,8 @@
 
 Name:    mise-completions-sync
 # renovate: datasource=github-releases depName=alltuner/mise-completions-sync extractVersion=true
-Version: 0.5.7
-Release: 2%{?dist}
+Version: 0.5.9
+Release: 1%{?dist}
 Summary: Automatically sync shell completions for tools managed by mise
 License: MIT
 URL:     https://github.com/alltuner/%{name}
