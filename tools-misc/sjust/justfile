@@ -132,8 +132,13 @@ install-recommended-misetools:
 	mise-install-global dive
 	mise-install-global flux2
 	mise-install-global flux9s
-	mise-install-global github-cli
 	mise-install-global gh-dash
+	mise-install-global github-cli
+	mise-install-global github:darksworm/argonaut
+	mise-install-global github:dgunzy/flux9s
+	mise-install-global github:dlvhdr/gh-dash
+	mise-install-global github:fosrl/cli
+	mise-install-global github:project-stacker/stacker
 	mise-install-global goreleaser
 	mise-install-global grype
 	mise-install-global helm
