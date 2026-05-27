@@ -129,22 +129,30 @@ install-recommended-misetools:
 	mise-install-global crush
 	mise-install-global ctop
 	mise-install-global dive
+	mise-install-global doggo
 	mise-install-global flux2
 	mise-install-global github-cli
+	mise-install-global github:MattiaPun/SubTUI
+	mise-install-global github:SurgeDM/Surge
+	mise-install-global github:control-theory/gonzo
 	mise-install-global github:darksworm/argonaut
 	mise-install-global github:dgunzy/flux9s
 	mise-install-global github:dlvhdr/gh-dash
 	mise-install-global github:fosrl/cli
+	mise-install-global github:gitsocial-org/gitsocial
 	mise-install-global github:project-stacker/stacker
+	mise-install-global github:sinclairtarget/git-who
 	mise-install-global goreleaser
 	mise-install-global grype
 	mise-install-global helm
 	mise-install-global k9s
 	mise-install-global ko
+	mise-install-global krew
 	mise-install-global kubecolor
 	mise-install-global kubectl
 	mise-install-global kubens
 	mise-install-global kustomize
+	mise-install-global lazygit
 	mise-install-global ollama
 	mise-install-global omnictl
 	mise-install-global opencode
