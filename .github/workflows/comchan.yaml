@@ -1,12 +1,12 @@
 ---
 # yamllint disable rule:line-length
-name: comchan copr rebuild
+name: sjust copr rebuild
 on:
   push:
     branches:
       - main
     paths:
-      - tools-rust/comchan/comchan.spec
+      - tools-misc/comchan/comchan.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_RUST }}/comchan
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/comchan

@@ -1,21 +1,23 @@
 %global debug_package %{nil}
 
-Name:    starship
-# renovate: datasource=github-releases depName=starship/starship extractVersion=true
-Version: 1.25.1
+Name:    comchan
+# renovate: datasource=github-releases depName=Vaishnav-Sabari-Girish/ComChan extractVersion=true
+Version: 0.6.0
 Release: 1%{?dist}
-Summary: The minimal, blazing-fast, and infinitely customizable prompt for any shell!
-License: ISC
-URL:     https://github.com/%{name}/%{name}
+Summary: A Blazingly Fast Minimal Serial Monitor written in Rust
+License: MIT
+URL:     https://github.com/Vaishnav-Sabari-Girish/ComChan
 Source:  %{url}/archive/refs/tags/v%{version}.tar.gz
 
 BuildRequires: cargo
+BuildRequires: fontconfig-devel
 BuildRequires: rust
+BuildRequires: rust-libudev-devel
 
 %description
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n ComChan-%{version}
 
 %build
 export RUSTFLAGS="%{build_rustflags}"
@@ -31,3 +33,4 @@ install -Dpm 0755 target/release/%{name} -t %{buildroot}%{_bindir}/
 
 %changelog
 %autochangelog
+

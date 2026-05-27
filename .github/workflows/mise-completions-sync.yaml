@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - tools-rust/mise-completions-sync/mise-completions-sync.spec
+      - tools-misc/mise-completions-sync/mise-completions-sync.spec
   workflow_dispatch:
 
 jobs:
@@ -15,4 +15,4 @@ jobs:
     steps:
       - name: Run webhook for copr
         run: |
-          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_RUST }}/mise-completions-sync
+          curl -X POST https://copr.fedorainfracloud.org/webhooks/custom/${{ secrets.COPR_TOOLS_MISC }}/mise-completions-sync

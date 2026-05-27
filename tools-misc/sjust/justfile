@@ -166,6 +166,26 @@ install-recommended-misetools:
 	mise-install-global umoci
 	mise-install-global usage
 	mise-install-global zizmor
+	mise-install-global github:armgabrielyan/deadbranch
+	mise-install-global github:christo-auer/eilmeldung
+	mise-install-global hurl
+	mise-install-global rustic
+	mise-install-global eza
+	mise-install-global git-cliff
+	mise-install-global jaq
+	mise-install-global jujutsu
+	mise-install-global llmfit
+	mise-install-global oha
+	mise-install-global github:erickochen/purple
+	mise-install-global github:drdo/redu
+	mise-install-global github:domcyrus/rustnet
+	mise-install-global github:bee-san/RustScan
+	mise-install-global github:fujiapple852/trippy
+	mise-install-global github:mroboff/vm-curator
+	mise-install-global zellij
+	mise-install-global yazi
+	mise-install-global starship
+
 	misecompsync
 
 install-recommended-krewtools:
