@@ -146,6 +146,7 @@ install-recommended-misetools:
 	mise-install-global sops
 	mise-install-global talosctl
 	mise-install-global trivy
+	mise-install-global trufflehog
 	mise-install-global umoci
 	mise-install-global zizmor
 	misecompsync
