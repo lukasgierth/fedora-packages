@@ -44,6 +44,8 @@ system-update:
 	fish -c "source /usr/share/fish/vendor_conf.d/10-fisher.fish; if type -q fisher; if string length --quiet (fisher list); fisher update >/dev/null; end; end"
 	echo "== Update Mise Tools =="
 	mise upgrade
+	echo "== Run misecompsync =="
+	misecompsync
 	echo "== Update Krew Tools =="
 	krew upgrade
 	echo "== Update Flatpak Applications =="
@@ -121,8 +123,11 @@ install-recommended-fisher-plugins:
 
 install-recommended-misetools:
 	#!/usr/bin/env fish
-	mise-install-global opencode@latest
-	mise-install-global pi@latest
+	mise-install-global kubectx
+	mise-install-global kubens
+	mise-install-global opencode
+	mise-install-global pi
+	misecompsync
 
 install-recommended-krewtools:
 	#!/usr/bin/env bash
