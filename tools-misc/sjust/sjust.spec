@@ -1,6 +1,6 @@
 %global __os_install_post %{nil}
 Name:    sjust
-Version: 2026.05.5
+Version: 2026.05.6
 Release: 1%{?dist}
 Summary: Helper based on just
 License: GPL-3.0-or-later

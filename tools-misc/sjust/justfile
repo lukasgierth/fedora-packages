@@ -147,6 +147,7 @@ install-recommended-misetools:
 	mise-install-global omnictl
 	mise-install-global opencode
 	mise-install-global oras
+	mise-install-global pandoc
 	mise-install-global pangolin-cli
 	mise-install-global pi
 	mise-install-global sops
