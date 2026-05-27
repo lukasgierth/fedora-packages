@@ -138,6 +138,7 @@ install-recommended-misetools:
 	mise-install-global kubectx
 	mise-install-global kubens
 	mise-install-global kustomize
+	mise-install-global ollama
 	mise-install-global omnictl
 	mise-install-global opencode
 	mise-install-global oras
