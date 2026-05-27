@@ -123,10 +123,30 @@ install-recommended-fisher-plugins:
 
 install-recommended-misetools:
 	#!/usr/bin/env fish
+	mise-install-global argocd
+	mise-install-global calicoctl
+	mise-install-global ctop
+	mise-install-global dive
+	mise-install-global flux2
+	mise-install-global goreleaser
+	mise-install-global grype
+	mise-install-global helm
+	mise-install-global k9s
+	mise-install-global ko
+	mise-install-global kubecolor
+	mise-install-global kubectl
 	mise-install-global kubectx
 	mise-install-global kubens
+	mise-install-global kustomize
+	mise-install-global omnictl
 	mise-install-global opencode
+	mise-install-global oras
 	mise-install-global pi
+	mise-install-global sops
+	mise-install-global talosctl
+	mise-install-global trivy
+	mise-install-global umoci
+	mise-install-global zizmor
 	misecompsync
 
 install-recommended-krewtools:
