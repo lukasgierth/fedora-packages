@@ -67,14 +67,6 @@ system-update:
 		systemctl reboot
 	fi
 
-system-clean:
-	#!/usr/bin/env bash
-	podman image prune -af
-	podman volume prune -f
-	sudo docker image prune -af
-	sudo docker volume prune -f
-	flatpak uninstall --unused --noninteractive --assumeyes
-
 [no-exit-message]
 firmware-update:
 	#!/usr/bin/env bash
@@ -124,7 +116,7 @@ install-recommended-fisher-plugins:
 	install-plugin nickeb96/puffer-fish
 	install-plugin lukasgierth/docker-abbr
 
-install-recommended-krewtools:
+install-recommended-krew-plugins:
 	#!/usr/bin/env bash
 	if which krew >/dev/null; then
 		# add extra repo for netshoot
