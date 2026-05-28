@@ -51,6 +51,8 @@ system-update:
 	fi
 	if command -v home-manager >/dev/null; then
 		echo "== Home-Manager Tools =="
+		pushd ~/.config/home-manager && nix flake update
+		popd
 		home-manager switch
 	fi
 	echo "== Update Flatpak Applications =="
@@ -60,7 +62,7 @@ system-update:
 
 	key=$(gum choose Quit Reboot Poweroff)
 	if [[ $key == "Quit" ]]; then
-		break
+		exit 0
 	elif [[ $key == "Poweroff" ]]; then
 		systemctl poweroff
 	elif [[ $key == "Reboot" ]]; then
